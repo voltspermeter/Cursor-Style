@@ -74,6 +74,12 @@ module async_fifo_reset_sync_tb;
     data = rd_data;
   endtask
 
+  // VCD generation
+  initial begin
+    $dumpfile("test_case_1.vcd");
+    $dumpvars();
+  end
+
   // Helper task: Wait for internal reset to complete
   task automatic wait_reset_complete();
     // Wait for both wr_rst and rd_rst to deassert

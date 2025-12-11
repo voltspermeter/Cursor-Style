@@ -55,6 +55,12 @@ module async_fifo_read_empty_tb;
       , .has_data(has_data)
   );
 
+  // VCD generation
+  initial begin
+    $dumpfile("test_case_1.vcd");
+    $dumpvars();
+  end
+
   // Helper task: Wait for reset complete
   task automatic wait_reset_complete();
     while (DUT.wr_rst || DUT.rd_rst) @(posedge wr_clk);
