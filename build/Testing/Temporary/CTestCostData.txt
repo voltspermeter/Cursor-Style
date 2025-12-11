@@ -1,9 +1,13 @@
-async_fifo_clkrates_tb 1 0.0916428
-async_fifo_writepast_tb 1 0.00863816
-async_fifo_fwft_writepast_tb 1 0.00821688
-async_fifo_reset_sync_tb 1 0.00709368
-async_fifo_ptr_wraparound_tb 1 0.00993846
-async_fifo_empty_timing_tb 1 0.00663457
-async_fifo_full_timing_tb 1 0.00704077
-async_fifo_read_empty_tb 1 0.00681692
+async_fifo_clkrates_tb 3 0.0334096
+async_fifo_writepast_tb 3 0.00246237
+async_fifo_fwft_writepast_tb 3 0.00262807
+async_fifo_reset_sync_tb 3 0.0027311
+async_fifo_ptr_wraparound_tb 3 0.00523414
+async_fifo_empty_timing_tb 3 0.00265879
+async_fifo_full_timing_tb 3 0.002968
+async_fifo_read_empty_tb 3 0.0026104
+async_fifo_data_patterns_tb 2 0.167821
+async_fifo_back_to_back_tb 1 0.0242589
+async_fifo_simultaneous_tb 1 0.0338563
+async_fifo_single_entry_tb 2 0.00860359
 ---

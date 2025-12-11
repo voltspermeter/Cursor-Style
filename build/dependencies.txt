@@ -62,3 +62,19 @@ TEST async_fifo_read_empty_tb
   SOURCE /workspace/src/cores/async_fifo/test/read_empty/async_fifo_read_empty_tb.sv
   DEPENDS async_fifo
 
+TEST async_fifo_data_patterns_tb
+  SOURCE /workspace/src/cores/async_fifo/test/data_patterns/async_fifo_data_patterns_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_back_to_back_tb
+  SOURCE /workspace/src/cores/async_fifo/test/back_to_back/async_fifo_back_to_back_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_simultaneous_tb
+  SOURCE /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_single_entry_tb
+  SOURCE /workspace/src/cores/async_fifo/test/single_entry/async_fifo_single_entry_tb.sv
+  DEPENDS async_fifo_fwft
+

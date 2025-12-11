@@ -1,10 +1,10 @@
-Start testing: Dec 11 15:30 UTC
+Start testing: Dec 11 16:40 UTC
 ----------------------------------------------------------
-1/8 Testing: async_fifo_clkrates_tb
-1/8 Test: async_fifo_clkrates_tb
+1/12 Testing: async_fifo_clkrates_tb
+1/12 Test: async_fifo_clkrates_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clkrates_tb.vvp"
 Directory: /workspace/build
-"async_fifo_clkrates_tb" start time: Dec 11 15:30 UTC
+"async_fifo_clkrates_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4034,18 +4034,18 @@ Output data was 237,           MATCH
 
 /workspace/src/cores/async_fifo/test/clock_rates/async_fifo_clkrates_tb.sv:166: $finish called at 53198044 (1ps)
 <end of output>
-Test time =   0.09 sec
+Test time =   0.10 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_clkrates_tb" end time: Dec 11 15:30 UTC
+"async_fifo_clkrates_tb" end time: Dec 11 16:40 UTC
 "async_fifo_clkrates_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/8 Testing: async_fifo_writepast_tb
-2/8 Test: async_fifo_writepast_tb
+2/12 Testing: async_fifo_writepast_tb
+2/12 Test: async_fifo_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_writepast_tb" start time: Dec 11 15:30 UTC
+"async_fifo_writepast_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4143,15 +4143,15 @@ Output data was  35,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_writepast_tb" end time: Dec 11 15:30 UTC
+"async_fifo_writepast_tb" end time: Dec 11 16:40 UTC
 "async_fifo_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/8 Testing: async_fifo_fwft_writepast_tb
-3/8 Test: async_fifo_fwft_writepast_tb
+3/12 Testing: async_fifo_fwft_writepast_tb
+3/12 Test: async_fifo_fwft_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_fwft_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_fwft_writepast_tb" start time: Dec 11 15:30 UTC
+"async_fifo_fwft_writepast_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4251,17 +4251,19 @@ Output data was  36,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_fwft_writepast_tb" end time: Dec 11 15:30 UTC
+"async_fifo_fwft_writepast_tb" end time: Dec 11 16:40 UTC
 "async_fifo_fwft_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/8 Testing: async_fifo_reset_sync_tb
-4/8 Test: async_fifo_reset_sync_tb
+4/12 Testing: async_fifo_reset_sync_tb
+4/12 Test: async_fifo_reset_sync_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_reset_sync_tb.vvp"
 Directory: /workspace/build
-"async_fifo_reset_sync_tb" start time: Dec 11 15:30 UTC
+"async_fifo_reset_sync_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
 
 ============================================================
   TEST CASE: Reset-Clears-Data
@@ -4337,22 +4339,24 @@ Testing: FIFO functional after reset
   RESULT: *** PASSED ***
 ============================================================
 
-/workspace/src/cores/async_fifo/test/reset_sync/async_fifo_reset_sync_tb.sv:433: $finish called at 12670000 (1ps)
+/workspace/src/cores/async_fifo/test/reset_sync/async_fifo_reset_sync_tb.sv:439: $finish called at 12670000 (1ps)
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_reset_sync_tb" end time: Dec 11 15:30 UTC
+"async_fifo_reset_sync_tb" end time: Dec 11 16:40 UTC
 "async_fifo_reset_sync_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/8 Testing: async_fifo_ptr_wraparound_tb
-5/8 Test: async_fifo_ptr_wraparound_tb
+5/12 Testing: async_fifo_ptr_wraparound_tb
+5/12 Test: async_fifo_ptr_wraparound_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_ptr_wraparound_tb.vvp"
 Directory: /workspace/build
-"async_fifo_ptr_wraparound_tb" start time: Dec 11 15:30 UTC
+"async_fifo_ptr_wraparound_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
 
 ============================================================
   TEST CASE: Basic-Wraparound
@@ -4422,22 +4426,24 @@ Testing: Continuous streaming across 100 entries
   RESULT: *** PASSED ***
 ============================================================
 
-/workspace/src/cores/async_fifo/test/ptr_wraparound/async_fifo_ptr_wraparound_tb.sv:372: $finish called at 24450000 (1ps)
+/workspace/src/cores/async_fifo/test/ptr_wraparound/async_fifo_ptr_wraparound_tb.sv:378: $finish called at 24450000 (1ps)
 <end of output>
-Test time =   0.01 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_ptr_wraparound_tb" end time: Dec 11 15:30 UTC
+"async_fifo_ptr_wraparound_tb" end time: Dec 11 16:40 UTC
 "async_fifo_ptr_wraparound_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/8 Testing: async_fifo_empty_timing_tb
-6/8 Test: async_fifo_empty_timing_tb
+6/12 Testing: async_fifo_empty_timing_tb
+6/12 Test: async_fifo_empty_timing_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_empty_timing_tb.vvp"
 Directory: /workspace/build
-"async_fifo_empty_timing_tb" start time: Dec 11 15:30 UTC
+"async_fifo_empty_timing_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
 
 ============================================================
   TEST CASE: Empty-Deassert-Timing
@@ -4499,22 +4505,24 @@ Testing: Empty timing consistency
   RESULT: *** PASSED ***
 ============================================================
 
-/workspace/src/cores/async_fifo/test/empty_timing/async_fifo_empty_timing_tb.sv:367: $finish called at 10210000 (1ps)
+/workspace/src/cores/async_fifo/test/empty_timing/async_fifo_empty_timing_tb.sv:373: $finish called at 10210000 (1ps)
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_empty_timing_tb" end time: Dec 11 15:30 UTC
+"async_fifo_empty_timing_tb" end time: Dec 11 16:40 UTC
 "async_fifo_empty_timing_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/8 Testing: async_fifo_full_timing_tb
-7/8 Test: async_fifo_full_timing_tb
+7/12 Testing: async_fifo_full_timing_tb
+7/12 Test: async_fifo_full_timing_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_full_timing_tb.vvp"
 Directory: /workspace/build
-"async_fifo_full_timing_tb" start time: Dec 11 15:30 UTC
+"async_fifo_full_timing_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
 
 ============================================================
   TEST CASE: Full-Assert-At-Capacity
@@ -4598,22 +4606,24 @@ Testing: Full flag transitions
   RESULT: *** PASSED ***
 ============================================================
 
-/workspace/src/cores/async_fifo/test/full_timing/async_fifo_full_timing_tb.sv:360: $finish called at 13330000 (1ps)
+/workspace/src/cores/async_fifo/test/full_timing/async_fifo_full_timing_tb.sv:366: $finish called at 13330000 (1ps)
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_full_timing_tb" end time: Dec 11 15:30 UTC
+"async_fifo_full_timing_tb" end time: Dec 11 16:40 UTC
 "async_fifo_full_timing_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-8/8 Testing: async_fifo_read_empty_tb
-8/8 Test: async_fifo_read_empty_tb
+8/12 Testing: async_fifo_read_empty_tb
+8/12 Test: async_fifo_read_empty_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_read_empty_tb.vvp"
 Directory: /workspace/build
-"async_fifo_read_empty_tb" start time: Dec 11 15:30 UTC
+"async_fifo_read_empty_tb" start time: Dec 11 16:40 UTC
 Output:
 ----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
 
 ============================================================
   TEST CASE: Read-While-Empty-NoPtr
@@ -4679,13 +4689,2515 @@ Testing: Interleaved writes/reads with empty gaps
   RESULT: *** PASSED ***
 ============================================================
 
-/workspace/src/cores/async_fifo/test/read_empty/async_fifo_read_empty_tb.sv:478: $finish called at 11830000 (1ps)
+/workspace/src/cores/async_fifo/test/read_empty/async_fifo_read_empty_tb.sv:484: $finish called at 11830000 (1ps)
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_read_empty_tb" end time: Dec 11 15:30 UTC
+"async_fifo_read_empty_tb" end time: Dec 11 16:40 UTC
 "async_fifo_read_empty_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 11 15:30 UTC
+9/12 Testing: async_fifo_data_patterns_tb
+9/12 Test: async_fifo_data_patterns_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_data_patterns_tb.vvp"
+Directory: /workspace/build
+"async_fifo_data_patterns_tb" start time: Dec 11 16:40 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: All-Zeros
+============================================================
+
+Testing: All zeros pattern (0x00)
+  PASS: All zeros pattern
+
+============================================================
+  TEST CASE: All-Ones
+============================================================
+
+Testing: All ones pattern (0xFF)
+  PASS: All ones pattern
+
+============================================================
+  TEST CASE: Alternating-Bits
+============================================================
+
+Testing: Alternating bits (0xAA, 0x55)
+  PASS: Alternating bits pattern
+
+============================================================
+  TEST CASE: Walking-Ones
+============================================================
+
+Testing: Walking ones pattern
+  PASS: Walking ones pattern
+
+============================================================
+  TEST CASE: Walking-Zeros
+============================================================
+
+Testing: Walking zeros pattern
+  PASS: Walking zeros pattern
+
+============================================================
+  TEST CASE: Sequential-Count
+============================================================
+
+Testing: Sequential count pattern
+  PASS: Sequential count pattern
+
+============================================================
+  TEST CASE: LFSR-Random
+============================================================
+
+Testing: LFSR pseudo-random pattern
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  WATCHDOG TIMEOUT after 2000000000
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 328
+  Failures     : 1
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/data_patterns/async_fifo_data_patterns_tb.sv:383: $finish called at 2000000000 (1ps)
+<end of output>
+Test time =   0.34 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_data_patterns_tb" end time: Dec 11 16:40 UTC
+"async_fifo_data_patterns_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/12 Testing: async_fifo_back_to_back_tb
+10/12 Test: async_fifo_back_to_back_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_back_to_back_tb.vvp"
+Directory: /workspace/build
+"async_fifo_back_to_back_tb" start time: Dec 11 16:40 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Fill-To-Full
+============================================================
+
+Testing: Continuous writes until full
+  Wrote 17 entries before full
+  Read 16 entries
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/back_to_back/async_fifo_back_to_back_tb.sv:119
+  Test: Fill-To-Full
+  Expected: 16 (0x10)
+  Actual:   17 (0x11)
+
+  PASS: Fill to full
+
+============================================================
+  TEST CASE: Steady-State-Stream
+============================================================
+
+Testing: Steady-state streaming (200 entries)
+  Wrote: 200, Read: 200
+  PASS: Steady-state streaming
+
+============================================================
+  TEST CASE: Burst-Transfer
+============================================================
+
+Testing: Burst transfers (5 x 14 entries)
+  PASS: Burst transfers
+
+============================================================
+  TEST CASE: Write-Gaps
+============================================================
+
+Testing: Single-cycle gaps in write stream
+  PASS: Write gaps
+
+============================================================
+  TEST CASE: Read-Gaps
+============================================================
+
+Testing: Single-cycle gaps in read stream
+  PASS: Read gaps
+
+============================================================
+  TEST CASE: Max-Throughput
+============================================================
+
+Testing: Maximum throughput
+  Transferred 100 entries in 6000000
+  PASS: Maximum throughput
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 495
+  Failures     : 1
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/back_to_back/async_fifo_back_to_back_tb.sv:444: $finish called at 39910000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_back_to_back_tb" end time: Dec 11 16:40 UTC
+"async_fifo_back_to_back_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/12 Testing: async_fifo_simultaneous_tb
+11/12 Test: async_fifo_simultaneous_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_simultaneous_tb.vvp"
+Directory: /workspace/build
+"async_fifo_simultaneous_tb" start time: Dec 11 16:40 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Aligned-Simultaneous
+============================================================
+
+Testing: Simultaneous R/W with aligned clocks
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 1 (0x1)
+  Actual:   0 (0x0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 3 (0x3)
+  Actual:   1 (0x1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 5 (0x5)
+  Actual:   2 (0x2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 7 (0x7)
+  Actual:   3 (0x3)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 9 (0x9)
+  Actual:   4 (0x4)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 11 (0xb)
+  Actual:   5 (0x5)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 13 (0xd)
+  Actual:   6 (0x6)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 14 (0xe)
+  Actual:   7 (0x7)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 16 (0x10)
+  Actual:   8 (0x8)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 17 (0x11)
+  Actual:   9 (0x9)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 19 (0x13)
+  Actual:   10 (0xa)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 20 (0x14)
+  Actual:   11 (0xb)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 22 (0x16)
+  Actual:   12 (0xc)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 23 (0x17)
+  Actual:   13 (0xd)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 25 (0x19)
+  Actual:   14 (0xe)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 26 (0x1a)
+  Actual:   15 (0xf)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 28 (0x1c)
+  Actual:   16 (0x10)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 29 (0x1d)
+  Actual:   17 (0x11)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 31 (0x1f)
+  Actual:   18 (0x12)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 32 (0x20)
+  Actual:   19 (0x13)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 34 (0x22)
+  Actual:   20 (0x14)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 35 (0x23)
+  Actual:   21 (0x15)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 37 (0x25)
+  Actual:   22 (0x16)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 38 (0x26)
+  Actual:   23 (0x17)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 40 (0x28)
+  Actual:   24 (0x18)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 41 (0x29)
+  Actual:   25 (0x19)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 43 (0x2b)
+  Actual:   26 (0x1a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 44 (0x2c)
+  Actual:   27 (0x1b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 46 (0x2e)
+  Actual:   28 (0x1c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 47 (0x2f)
+  Actual:   29 (0x1d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 49 (0x31)
+  Actual:   30 (0x1e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 50 (0x32)
+  Actual:   31 (0x1f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 52 (0x34)
+  Actual:   32 (0x20)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 53 (0x35)
+  Actual:   33 (0x21)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 55 (0x37)
+  Actual:   34 (0x22)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 56 (0x38)
+  Actual:   35 (0x23)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 58 (0x3a)
+  Actual:   36 (0x24)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 59 (0x3b)
+  Actual:   37 (0x25)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 61 (0x3d)
+  Actual:   38 (0x26)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 62 (0x3e)
+  Actual:   39 (0x27)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 64 (0x40)
+  Actual:   40 (0x28)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 65 (0x41)
+  Actual:   41 (0x29)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 67 (0x43)
+  Actual:   42 (0x2a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 68 (0x44)
+  Actual:   43 (0x2b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 70 (0x46)
+  Actual:   44 (0x2c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 71 (0x47)
+  Actual:   45 (0x2d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 73 (0x49)
+  Actual:   46 (0x2e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 74 (0x4a)
+  Actual:   47 (0x2f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 76 (0x4c)
+  Actual:   48 (0x30)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 77 (0x4d)
+  Actual:   49 (0x31)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 79 (0x4f)
+  Actual:   50 (0x32)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 80 (0x50)
+  Actual:   51 (0x33)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 82 (0x52)
+  Actual:   52 (0x34)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 83 (0x53)
+  Actual:   53 (0x35)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 85 (0x55)
+  Actual:   54 (0x36)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 86 (0x56)
+  Actual:   55 (0x37)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 88 (0x58)
+  Actual:   56 (0x38)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 89 (0x59)
+  Actual:   57 (0x39)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 91 (0x5b)
+  Actual:   58 (0x3a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 92 (0x5c)
+  Actual:   59 (0x3b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 94 (0x5e)
+  Actual:   60 (0x3c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 95 (0x5f)
+  Actual:   61 (0x3d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 97 (0x61)
+  Actual:   62 (0x3e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 98 (0x62)
+  Actual:   63 (0x3f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 100 (0x64)
+  Actual:   64 (0x40)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 101 (0x65)
+  Actual:   65 (0x41)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 103 (0x67)
+  Actual:   66 (0x42)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 104 (0x68)
+  Actual:   67 (0x43)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:123
+  Test: Aligned-Simultaneous
+  Expected: 106 (0x6a)
+  Actual:   68 (0x44)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:137
+  Test: Aligned-Simultaneous
+  Expected: 107 (0x6b)
+  Actual:   69 (0x45)
+
+  Written: 108, Read: 70
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:142
+  Test: Aligned-Simultaneous
+  Expected: 108 (0x6c)
+  Actual:   70 (0x46)
+
+  PASS: Aligned simultaneous R/W
+
+============================================================
+  TEST CASE: Near-Full-Simultaneous
+============================================================
+
+Testing: Simultaneous R/W at near-full
+  PASS: Near-full simultaneous R/W
+
+============================================================
+  TEST CASE: Near-Empty-Simultaneous
+============================================================
+
+Testing: Simultaneous R/W at near-empty
+  PASS: Near-empty simultaneous R/W
+
+============================================================
+  TEST CASE: Continuous-Stress
+============================================================
+
+Testing: Continuous simultaneous stress (500 entries)
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 0 (0x0)
+  Actual:   256 (0x100)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 1 (0x1)
+  Actual:   257 (0x101)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 2 (0x2)
+  Actual:   258 (0x102)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 3 (0x3)
+  Actual:   259 (0x103)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 4 (0x4)
+  Actual:   260 (0x104)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 5 (0x5)
+  Actual:   261 (0x105)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 6 (0x6)
+  Actual:   262 (0x106)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 7 (0x7)
+  Actual:   263 (0x107)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 8 (0x8)
+  Actual:   264 (0x108)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 9 (0x9)
+  Actual:   265 (0x109)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 10 (0xa)
+  Actual:   266 (0x10a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 11 (0xb)
+  Actual:   267 (0x10b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 12 (0xc)
+  Actual:   268 (0x10c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 13 (0xd)
+  Actual:   269 (0x10d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 14 (0xe)
+  Actual:   270 (0x10e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 15 (0xf)
+  Actual:   271 (0x10f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 16 (0x10)
+  Actual:   272 (0x110)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 17 (0x11)
+  Actual:   273 (0x111)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 18 (0x12)
+  Actual:   274 (0x112)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 19 (0x13)
+  Actual:   275 (0x113)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 20 (0x14)
+  Actual:   276 (0x114)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 21 (0x15)
+  Actual:   277 (0x115)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 22 (0x16)
+  Actual:   278 (0x116)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 23 (0x17)
+  Actual:   279 (0x117)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 24 (0x18)
+  Actual:   280 (0x118)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 25 (0x19)
+  Actual:   281 (0x119)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 26 (0x1a)
+  Actual:   282 (0x11a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 27 (0x1b)
+  Actual:   283 (0x11b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 28 (0x1c)
+  Actual:   284 (0x11c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 29 (0x1d)
+  Actual:   285 (0x11d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 30 (0x1e)
+  Actual:   286 (0x11e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 31 (0x1f)
+  Actual:   287 (0x11f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 32 (0x20)
+  Actual:   288 (0x120)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 33 (0x21)
+  Actual:   289 (0x121)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 34 (0x22)
+  Actual:   290 (0x122)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 35 (0x23)
+  Actual:   291 (0x123)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 36 (0x24)
+  Actual:   292 (0x124)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 37 (0x25)
+  Actual:   293 (0x125)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 38 (0x26)
+  Actual:   294 (0x126)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 39 (0x27)
+  Actual:   295 (0x127)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 40 (0x28)
+  Actual:   296 (0x128)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 41 (0x29)
+  Actual:   297 (0x129)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 42 (0x2a)
+  Actual:   298 (0x12a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 43 (0x2b)
+  Actual:   299 (0x12b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 44 (0x2c)
+  Actual:   300 (0x12c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 45 (0x2d)
+  Actual:   301 (0x12d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 46 (0x2e)
+  Actual:   302 (0x12e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 47 (0x2f)
+  Actual:   303 (0x12f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 48 (0x30)
+  Actual:   304 (0x130)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 49 (0x31)
+  Actual:   305 (0x131)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 50 (0x32)
+  Actual:   306 (0x132)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 51 (0x33)
+  Actual:   307 (0x133)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 52 (0x34)
+  Actual:   308 (0x134)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 53 (0x35)
+  Actual:   309 (0x135)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 54 (0x36)
+  Actual:   310 (0x136)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 55 (0x37)
+  Actual:   311 (0x137)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 56 (0x38)
+  Actual:   312 (0x138)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 57 (0x39)
+  Actual:   313 (0x139)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 58 (0x3a)
+  Actual:   314 (0x13a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 59 (0x3b)
+  Actual:   315 (0x13b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 60 (0x3c)
+  Actual:   316 (0x13c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 61 (0x3d)
+  Actual:   317 (0x13d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 62 (0x3e)
+  Actual:   318 (0x13e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 63 (0x3f)
+  Actual:   319 (0x13f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 64 (0x40)
+  Actual:   320 (0x140)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 65 (0x41)
+  Actual:   321 (0x141)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 66 (0x42)
+  Actual:   322 (0x142)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 67 (0x43)
+  Actual:   323 (0x143)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 68 (0x44)
+  Actual:   324 (0x144)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 69 (0x45)
+  Actual:   325 (0x145)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 70 (0x46)
+  Actual:   326 (0x146)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 71 (0x47)
+  Actual:   327 (0x147)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 72 (0x48)
+  Actual:   328 (0x148)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 73 (0x49)
+  Actual:   329 (0x149)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 74 (0x4a)
+  Actual:   330 (0x14a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 75 (0x4b)
+  Actual:   331 (0x14b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 76 (0x4c)
+  Actual:   332 (0x14c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 77 (0x4d)
+  Actual:   333 (0x14d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 78 (0x4e)
+  Actual:   334 (0x14e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 79 (0x4f)
+  Actual:   335 (0x14f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 80 (0x50)
+  Actual:   336 (0x150)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 81 (0x51)
+  Actual:   337 (0x151)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 82 (0x52)
+  Actual:   338 (0x152)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 83 (0x53)
+  Actual:   339 (0x153)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 84 (0x54)
+  Actual:   340 (0x154)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 85 (0x55)
+  Actual:   341 (0x155)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 86 (0x56)
+  Actual:   342 (0x156)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 87 (0x57)
+  Actual:   343 (0x157)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 88 (0x58)
+  Actual:   344 (0x158)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 89 (0x59)
+  Actual:   345 (0x159)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 90 (0x5a)
+  Actual:   346 (0x15a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 91 (0x5b)
+  Actual:   347 (0x15b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 92 (0x5c)
+  Actual:   348 (0x15c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 93 (0x5d)
+  Actual:   349 (0x15d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 94 (0x5e)
+  Actual:   350 (0x15e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 95 (0x5f)
+  Actual:   351 (0x15f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 96 (0x60)
+  Actual:   352 (0x160)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 97 (0x61)
+  Actual:   353 (0x161)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 98 (0x62)
+  Actual:   354 (0x162)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 99 (0x63)
+  Actual:   355 (0x163)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 100 (0x64)
+  Actual:   356 (0x164)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 101 (0x65)
+  Actual:   357 (0x165)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 102 (0x66)
+  Actual:   358 (0x166)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 103 (0x67)
+  Actual:   359 (0x167)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 104 (0x68)
+  Actual:   360 (0x168)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 105 (0x69)
+  Actual:   361 (0x169)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 106 (0x6a)
+  Actual:   362 (0x16a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 107 (0x6b)
+  Actual:   363 (0x16b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 108 (0x6c)
+  Actual:   364 (0x16c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 109 (0x6d)
+  Actual:   365 (0x16d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 110 (0x6e)
+  Actual:   366 (0x16e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 111 (0x6f)
+  Actual:   367 (0x16f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 112 (0x70)
+  Actual:   368 (0x170)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 113 (0x71)
+  Actual:   369 (0x171)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 114 (0x72)
+  Actual:   370 (0x172)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 115 (0x73)
+  Actual:   371 (0x173)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 116 (0x74)
+  Actual:   372 (0x174)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 117 (0x75)
+  Actual:   373 (0x175)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 118 (0x76)
+  Actual:   374 (0x176)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 119 (0x77)
+  Actual:   375 (0x177)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 120 (0x78)
+  Actual:   376 (0x178)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 121 (0x79)
+  Actual:   377 (0x179)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 122 (0x7a)
+  Actual:   378 (0x17a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 123 (0x7b)
+  Actual:   379 (0x17b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 124 (0x7c)
+  Actual:   380 (0x17c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 125 (0x7d)
+  Actual:   381 (0x17d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 126 (0x7e)
+  Actual:   382 (0x17e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 127 (0x7f)
+  Actual:   383 (0x17f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 128 (0x80)
+  Actual:   384 (0x180)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 129 (0x81)
+  Actual:   385 (0x181)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 130 (0x82)
+  Actual:   386 (0x182)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 131 (0x83)
+  Actual:   387 (0x183)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 132 (0x84)
+  Actual:   388 (0x184)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 133 (0x85)
+  Actual:   389 (0x185)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 134 (0x86)
+  Actual:   390 (0x186)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 135 (0x87)
+  Actual:   391 (0x187)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 136 (0x88)
+  Actual:   392 (0x188)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 137 (0x89)
+  Actual:   393 (0x189)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 138 (0x8a)
+  Actual:   394 (0x18a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 139 (0x8b)
+  Actual:   395 (0x18b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 140 (0x8c)
+  Actual:   396 (0x18c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 141 (0x8d)
+  Actual:   397 (0x18d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 142 (0x8e)
+  Actual:   398 (0x18e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 143 (0x8f)
+  Actual:   399 (0x18f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 144 (0x90)
+  Actual:   400 (0x190)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 145 (0x91)
+  Actual:   401 (0x191)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 146 (0x92)
+  Actual:   402 (0x192)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 147 (0x93)
+  Actual:   403 (0x193)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 148 (0x94)
+  Actual:   404 (0x194)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 149 (0x95)
+  Actual:   405 (0x195)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 150 (0x96)
+  Actual:   406 (0x196)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 151 (0x97)
+  Actual:   407 (0x197)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 152 (0x98)
+  Actual:   408 (0x198)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 153 (0x99)
+  Actual:   409 (0x199)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 154 (0x9a)
+  Actual:   410 (0x19a)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 155 (0x9b)
+  Actual:   411 (0x19b)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 156 (0x9c)
+  Actual:   412 (0x19c)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 157 (0x9d)
+  Actual:   413 (0x19d)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 158 (0x9e)
+  Actual:   414 (0x19e)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 159 (0x9f)
+  Actual:   415 (0x19f)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 160 (0xa0)
+  Actual:   416 (0x1a0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 161 (0xa1)
+  Actual:   417 (0x1a1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 162 (0xa2)
+  Actual:   418 (0x1a2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 163 (0xa3)
+  Actual:   419 (0x1a3)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 164 (0xa4)
+  Actual:   420 (0x1a4)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 165 (0xa5)
+  Actual:   421 (0x1a5)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 166 (0xa6)
+  Actual:   422 (0x1a6)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 167 (0xa7)
+  Actual:   423 (0x1a7)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 168 (0xa8)
+  Actual:   424 (0x1a8)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 169 (0xa9)
+  Actual:   425 (0x1a9)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 170 (0xaa)
+  Actual:   426 (0x1aa)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 171 (0xab)
+  Actual:   427 (0x1ab)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 172 (0xac)
+  Actual:   428 (0x1ac)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 173 (0xad)
+  Actual:   429 (0x1ad)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 174 (0xae)
+  Actual:   430 (0x1ae)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 175 (0xaf)
+  Actual:   431 (0x1af)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 176 (0xb0)
+  Actual:   432 (0x1b0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 177 (0xb1)
+  Actual:   433 (0x1b1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 178 (0xb2)
+  Actual:   434 (0x1b2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 179 (0xb3)
+  Actual:   435 (0x1b3)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 180 (0xb4)
+  Actual:   436 (0x1b4)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 181 (0xb5)
+  Actual:   437 (0x1b5)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 182 (0xb6)
+  Actual:   438 (0x1b6)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 183 (0xb7)
+  Actual:   439 (0x1b7)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 184 (0xb8)
+  Actual:   440 (0x1b8)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 185 (0xb9)
+  Actual:   441 (0x1b9)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 186 (0xba)
+  Actual:   442 (0x1ba)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 187 (0xbb)
+  Actual:   443 (0x1bb)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 188 (0xbc)
+  Actual:   444 (0x1bc)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 189 (0xbd)
+  Actual:   445 (0x1bd)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 190 (0xbe)
+  Actual:   446 (0x1be)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 191 (0xbf)
+  Actual:   447 (0x1bf)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 192 (0xc0)
+  Actual:   448 (0x1c0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 193 (0xc1)
+  Actual:   449 (0x1c1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 194 (0xc2)
+  Actual:   450 (0x1c2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 195 (0xc3)
+  Actual:   451 (0x1c3)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 196 (0xc4)
+  Actual:   452 (0x1c4)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 197 (0xc5)
+  Actual:   453 (0x1c5)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 198 (0xc6)
+  Actual:   454 (0x1c6)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 199 (0xc7)
+  Actual:   455 (0x1c7)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 200 (0xc8)
+  Actual:   456 (0x1c8)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 201 (0xc9)
+  Actual:   457 (0x1c9)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 202 (0xca)
+  Actual:   458 (0x1ca)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 203 (0xcb)
+  Actual:   459 (0x1cb)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 204 (0xcc)
+  Actual:   460 (0x1cc)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 205 (0xcd)
+  Actual:   461 (0x1cd)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 206 (0xce)
+  Actual:   462 (0x1ce)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 207 (0xcf)
+  Actual:   463 (0x1cf)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 208 (0xd0)
+  Actual:   464 (0x1d0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 209 (0xd1)
+  Actual:   465 (0x1d1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 210 (0xd2)
+  Actual:   466 (0x1d2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 211 (0xd3)
+  Actual:   467 (0x1d3)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 212 (0xd4)
+  Actual:   468 (0x1d4)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 213 (0xd5)
+  Actual:   469 (0x1d5)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 214 (0xd6)
+  Actual:   470 (0x1d6)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 215 (0xd7)
+  Actual:   471 (0x1d7)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 216 (0xd8)
+  Actual:   472 (0x1d8)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 217 (0xd9)
+  Actual:   473 (0x1d9)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 218 (0xda)
+  Actual:   474 (0x1da)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 219 (0xdb)
+  Actual:   475 (0x1db)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 220 (0xdc)
+  Actual:   476 (0x1dc)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 221 (0xdd)
+  Actual:   477 (0x1dd)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 222 (0xde)
+  Actual:   478 (0x1de)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 223 (0xdf)
+  Actual:   479 (0x1df)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 224 (0xe0)
+  Actual:   480 (0x1e0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 225 (0xe1)
+  Actual:   481 (0x1e1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 226 (0xe2)
+  Actual:   482 (0x1e2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 227 (0xe3)
+  Actual:   483 (0x1e3)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 228 (0xe4)
+  Actual:   484 (0x1e4)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 229 (0xe5)
+  Actual:   485 (0x1e5)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 230 (0xe6)
+  Actual:   486 (0x1e6)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 231 (0xe7)
+  Actual:   487 (0x1e7)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 232 (0xe8)
+  Actual:   488 (0x1e8)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 233 (0xe9)
+  Actual:   489 (0x1e9)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 234 (0xea)
+  Actual:   490 (0x1ea)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 235 (0xeb)
+  Actual:   491 (0x1eb)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 236 (0xec)
+  Actual:   492 (0x1ec)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 237 (0xed)
+  Actual:   493 (0x1ed)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 238 (0xee)
+  Actual:   494 (0x1ee)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 239 (0xef)
+  Actual:   495 (0x1ef)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 240 (0xf0)
+  Actual:   496 (0x1f0)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 241 (0xf1)
+  Actual:   497 (0x1f1)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 242 (0xf2)
+  Actual:   498 (0x1f2)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:345
+  Test: Continuous-Stress
+  Expected: 243 (0xf3)
+  Actual:   499 (0x1f3)
+
+  Written: 500, Read: 500
+  PASS: Continuous stress
+
+============================================================
+  TEST CASE: Alternating-Single
+============================================================
+
+Testing: Alternating single write/read
+  PASS: Alternating single operations
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 721
+  Failures     : 315
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/simultaneous_rdwr/async_fifo_simultaneous_tb.sv:425: $finish called at 55150000 (1ps)
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_simultaneous_tb" end time: Dec 11 16:40 UTC
+"async_fifo_simultaneous_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/12 Testing: async_fifo_single_entry_tb
+12/12 Test: async_fifo_single_entry_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_single_entry_tb.vvp"
+Directory: /workspace/build
+"async_fifo_single_entry_tb" start time: Dec 11 16:40 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Single-Entry-Cycles
+============================================================
+
+Testing: Single entry write/read cycles (50 iterations)
+  PASS: Single entry cycles
+
+============================================================
+  TEST CASE: FWFT-Latency
+============================================================
+
+Testing: FWFT latency measurement
+  Trial 0: latency = 6 rd_clk cycles
+  Trial 1: latency = 6 rd_clk cycles
+  Trial 2: latency = 6 rd_clk cycles
+  Trial 3: latency = 6 rd_clk cycles
+  Trial 4: latency = 6 rd_clk cycles
+  PASS: FWFT latency verified
+
+============================================================
+  TEST CASE: Single-Entry-Flags
+============================================================
+
+Testing: Flag transitions for single entry
+  Initial: empty=1, has_data=0, full=0
+  After write: empty=0, has_data=1, full=0
+  After read: empty=1, has_data=0, full=0
+  PASS: Single entry flags
+
+============================================================
+  TEST CASE: Rapid-Single-Entry
+============================================================
+
+Testing: Rapid single entry operations
+  PASS: Rapid single entry operations
+
+============================================================
+  TEST CASE: Single-Entry-Integrity
+============================================================
+
+Testing: Single entry data integrity
+  PASS: Single entry data integrity
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 434
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/single_entry/async_fifo_single_entry_tb.sv:362: $finish called at 42430000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_single_entry_tb" end time: Dec 11 16:40 UTC
+"async_fifo_single_entry_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 11 16:40 UTC

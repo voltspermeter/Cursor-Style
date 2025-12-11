@@ -77,3 +77,23 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/workspace/build/src/cores/async_fifo/test/read_empty/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/workspace/build/src/cores/async_fifo/test/data_patterns/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/workspace/build/src/cores/async_fifo/test/back_to_back/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/workspace/build/src/cores/async_fifo/test/simultaneous_rdwr/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/workspace/build/src/cores/async_fifo/test/single_entry/cmake_install.cmake")
+endif()
+

@@ -530,6 +530,162 @@ test_async_fifo_read_empty_tb/fast:
 .PHONY : test_async_fifo_read_empty_tb/fast
 
 #=============================================================================
+# Target rules for targets named test_async_fifo_data_patterns_tb_compile
+
+# Build rule for target.
+test_async_fifo_data_patterns_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_data_patterns_tb_compile
+.PHONY : test_async_fifo_data_patterns_tb_compile
+
+# fast build rule for target.
+test_async_fifo_data_patterns_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/build
+.PHONY : test_async_fifo_data_patterns_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_data_patterns_tb_run
+
+# Build rule for target.
+test_async_fifo_data_patterns_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_data_patterns_tb_run
+.PHONY : test_async_fifo_data_patterns_tb_run
+
+# fast build rule for target.
+test_async_fifo_data_patterns_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/build
+.PHONY : test_async_fifo_data_patterns_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_data_patterns_tb
+
+# Build rule for target.
+test_async_fifo_data_patterns_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_data_patterns_tb
+.PHONY : test_async_fifo_data_patterns_tb
+
+# fast build rule for target.
+test_async_fifo_data_patterns_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb.dir/build
+.PHONY : test_async_fifo_data_patterns_tb/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_back_to_back_tb_compile
+
+# Build rule for target.
+test_async_fifo_back_to_back_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_back_to_back_tb_compile
+.PHONY : test_async_fifo_back_to_back_tb_compile
+
+# fast build rule for target.
+test_async_fifo_back_to_back_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/build
+.PHONY : test_async_fifo_back_to_back_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_back_to_back_tb_run
+
+# Build rule for target.
+test_async_fifo_back_to_back_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_back_to_back_tb_run
+.PHONY : test_async_fifo_back_to_back_tb_run
+
+# fast build rule for target.
+test_async_fifo_back_to_back_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/build
+.PHONY : test_async_fifo_back_to_back_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_back_to_back_tb
+
+# Build rule for target.
+test_async_fifo_back_to_back_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_back_to_back_tb
+.PHONY : test_async_fifo_back_to_back_tb
+
+# fast build rule for target.
+test_async_fifo_back_to_back_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb.dir/build
+.PHONY : test_async_fifo_back_to_back_tb/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_simultaneous_tb_compile
+
+# Build rule for target.
+test_async_fifo_simultaneous_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_simultaneous_tb_compile
+.PHONY : test_async_fifo_simultaneous_tb_compile
+
+# fast build rule for target.
+test_async_fifo_simultaneous_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/build
+.PHONY : test_async_fifo_simultaneous_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_simultaneous_tb_run
+
+# Build rule for target.
+test_async_fifo_simultaneous_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_simultaneous_tb_run
+.PHONY : test_async_fifo_simultaneous_tb_run
+
+# fast build rule for target.
+test_async_fifo_simultaneous_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/build
+.PHONY : test_async_fifo_simultaneous_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_simultaneous_tb
+
+# Build rule for target.
+test_async_fifo_simultaneous_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_simultaneous_tb
+.PHONY : test_async_fifo_simultaneous_tb
+
+# fast build rule for target.
+test_async_fifo_simultaneous_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb.dir/build
+.PHONY : test_async_fifo_simultaneous_tb/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_single_entry_tb_compile
+
+# Build rule for target.
+test_async_fifo_single_entry_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_single_entry_tb_compile
+.PHONY : test_async_fifo_single_entry_tb_compile
+
+# fast build rule for target.
+test_async_fifo_single_entry_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/build
+.PHONY : test_async_fifo_single_entry_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_single_entry_tb_run
+
+# Build rule for target.
+test_async_fifo_single_entry_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_single_entry_tb_run
+.PHONY : test_async_fifo_single_entry_tb_run
+
+# fast build rule for target.
+test_async_fifo_single_entry_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_run.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_run.dir/build
+.PHONY : test_async_fifo_single_entry_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_single_entry_tb
+
+# Build rule for target.
+test_async_fifo_single_entry_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_single_entry_tb
+.PHONY : test_async_fifo_single_entry_tb
+
+# fast build rule for target.
+test_async_fifo_single_entry_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb.dir/build
+.PHONY : test_async_fifo_single_entry_tb/fast
+
+#=============================================================================
 # Target rules for targets named run_all_tests
 
 # Build rule for target.
@@ -559,9 +715,15 @@ help:
 	@echo "... hdl_async_fifo_fwft"
 	@echo "... hdl_sync_reg"
 	@echo "... run_all_tests"
+	@echo "... test_async_fifo_back_to_back_tb"
+	@echo "... test_async_fifo_back_to_back_tb_compile"
+	@echo "... test_async_fifo_back_to_back_tb_run"
 	@echo "... test_async_fifo_clkrates_tb"
 	@echo "... test_async_fifo_clkrates_tb_compile"
 	@echo "... test_async_fifo_clkrates_tb_run"
+	@echo "... test_async_fifo_data_patterns_tb"
+	@echo "... test_async_fifo_data_patterns_tb_compile"
+	@echo "... test_async_fifo_data_patterns_tb_run"
 	@echo "... test_async_fifo_empty_timing_tb"
 	@echo "... test_async_fifo_empty_timing_tb_compile"
 	@echo "... test_async_fifo_empty_timing_tb_run"
@@ -580,6 +742,12 @@ help:
 	@echo "... test_async_fifo_reset_sync_tb"
 	@echo "... test_async_fifo_reset_sync_tb_compile"
 	@echo "... test_async_fifo_reset_sync_tb_run"
+	@echo "... test_async_fifo_simultaneous_tb"
+	@echo "... test_async_fifo_simultaneous_tb_compile"
+	@echo "... test_async_fifo_simultaneous_tb_run"
+	@echo "... test_async_fifo_single_entry_tb"
+	@echo "... test_async_fifo_single_entry_tb_compile"
+	@echo "... test_async_fifo_single_entry_tb_run"
 	@echo "... test_async_fifo_writepast_tb"
 	@echo "... test_async_fifo_writepast_tb_compile"
 	@echo "... test_async_fifo_writepast_tb_run"

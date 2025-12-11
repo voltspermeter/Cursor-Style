@@ -104,6 +104,18 @@ clean: CMakeFiles/test_async_fifo_full_timing_tb.dir/clean
 clean: CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/clean
 clean: CMakeFiles/test_async_fifo_read_empty_tb_run.dir/clean
 clean: CMakeFiles/test_async_fifo_read_empty_tb.dir/clean
+clean: CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/clean
+clean: CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/clean
+clean: CMakeFiles/test_async_fifo_data_patterns_tb.dir/clean
+clean: CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/clean
+clean: CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/clean
+clean: CMakeFiles/test_async_fifo_back_to_back_tb.dir/clean
+clean: CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/clean
+clean: CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/clean
+clean: CMakeFiles/test_async_fifo_simultaneous_tb.dir/clean
+clean: CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/clean
+clean: CMakeFiles/test_async_fifo_single_entry_tb_run.dir/clean
+clean: CMakeFiles/test_async_fifo_single_entry_tb.dir/clean
 clean: CMakeFiles/run_all_tests.dir/clean
 clean: src/cores/async_fifo/rtl/clean
 clean: src/cores/async_fifo/test/clean
@@ -136,6 +148,10 @@ src/cores/async_fifo/test/all: src/cores/async_fifo/test/ptr_wraparound/all
 src/cores/async_fifo/test/all: src/cores/async_fifo/test/empty_timing/all
 src/cores/async_fifo/test/all: src/cores/async_fifo/test/full_timing/all
 src/cores/async_fifo/test/all: src/cores/async_fifo/test/read_empty/all
+src/cores/async_fifo/test/all: src/cores/async_fifo/test/data_patterns/all
+src/cores/async_fifo/test/all: src/cores/async_fifo/test/back_to_back/all
+src/cores/async_fifo/test/all: src/cores/async_fifo/test/simultaneous_rdwr/all
+src/cores/async_fifo/test/all: src/cores/async_fifo/test/single_entry/all
 .PHONY : src/cores/async_fifo/test/all
 
 # Recursive "preinstall" directory target.
@@ -147,6 +163,10 @@ src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/ptr_wraparound/p
 src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/empty_timing/preinstall
 src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/full_timing/preinstall
 src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/read_empty/preinstall
+src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/data_patterns/preinstall
+src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/back_to_back/preinstall
+src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/simultaneous_rdwr/preinstall
+src/cores/async_fifo/test/preinstall: src/cores/async_fifo/test/single_entry/preinstall
 .PHONY : src/cores/async_fifo/test/preinstall
 
 # Recursive "clean" directory target.
@@ -158,7 +178,26 @@ src/cores/async_fifo/test/clean: src/cores/async_fifo/test/ptr_wraparound/clean
 src/cores/async_fifo/test/clean: src/cores/async_fifo/test/empty_timing/clean
 src/cores/async_fifo/test/clean: src/cores/async_fifo/test/full_timing/clean
 src/cores/async_fifo/test/clean: src/cores/async_fifo/test/read_empty/clean
+src/cores/async_fifo/test/clean: src/cores/async_fifo/test/data_patterns/clean
+src/cores/async_fifo/test/clean: src/cores/async_fifo/test/back_to_back/clean
+src/cores/async_fifo/test/clean: src/cores/async_fifo/test/simultaneous_rdwr/clean
+src/cores/async_fifo/test/clean: src/cores/async_fifo/test/single_entry/clean
 .PHONY : src/cores/async_fifo/test/clean
+
+#=============================================================================
+# Directory level rules for directory src/cores/async_fifo/test/back_to_back
+
+# Recursive "all" directory target.
+src/cores/async_fifo/test/back_to_back/all:
+.PHONY : src/cores/async_fifo/test/back_to_back/all
+
+# Recursive "preinstall" directory target.
+src/cores/async_fifo/test/back_to_back/preinstall:
+.PHONY : src/cores/async_fifo/test/back_to_back/preinstall
+
+# Recursive "clean" directory target.
+src/cores/async_fifo/test/back_to_back/clean:
+.PHONY : src/cores/async_fifo/test/back_to_back/clean
 
 #=============================================================================
 # Directory level rules for directory src/cores/async_fifo/test/clock_rates
@@ -174,6 +213,21 @@ src/cores/async_fifo/test/clock_rates/preinstall:
 # Recursive "clean" directory target.
 src/cores/async_fifo/test/clock_rates/clean:
 .PHONY : src/cores/async_fifo/test/clock_rates/clean
+
+#=============================================================================
+# Directory level rules for directory src/cores/async_fifo/test/data_patterns
+
+# Recursive "all" directory target.
+src/cores/async_fifo/test/data_patterns/all:
+.PHONY : src/cores/async_fifo/test/data_patterns/all
+
+# Recursive "preinstall" directory target.
+src/cores/async_fifo/test/data_patterns/preinstall:
+.PHONY : src/cores/async_fifo/test/data_patterns/preinstall
+
+# Recursive "clean" directory target.
+src/cores/async_fifo/test/data_patterns/clean:
+.PHONY : src/cores/async_fifo/test/data_patterns/clean
 
 #=============================================================================
 # Directory level rules for directory src/cores/async_fifo/test/empty_timing
@@ -249,6 +303,36 @@ src/cores/async_fifo/test/reset_sync/preinstall:
 # Recursive "clean" directory target.
 src/cores/async_fifo/test/reset_sync/clean:
 .PHONY : src/cores/async_fifo/test/reset_sync/clean
+
+#=============================================================================
+# Directory level rules for directory src/cores/async_fifo/test/simultaneous_rdwr
+
+# Recursive "all" directory target.
+src/cores/async_fifo/test/simultaneous_rdwr/all:
+.PHONY : src/cores/async_fifo/test/simultaneous_rdwr/all
+
+# Recursive "preinstall" directory target.
+src/cores/async_fifo/test/simultaneous_rdwr/preinstall:
+.PHONY : src/cores/async_fifo/test/simultaneous_rdwr/preinstall
+
+# Recursive "clean" directory target.
+src/cores/async_fifo/test/simultaneous_rdwr/clean:
+.PHONY : src/cores/async_fifo/test/simultaneous_rdwr/clean
+
+#=============================================================================
+# Directory level rules for directory src/cores/async_fifo/test/single_entry
+
+# Recursive "all" directory target.
+src/cores/async_fifo/test/single_entry/all:
+.PHONY : src/cores/async_fifo/test/single_entry/all
+
+# Recursive "preinstall" directory target.
+src/cores/async_fifo/test/single_entry/preinstall:
+.PHONY : src/cores/async_fifo/test/single_entry/preinstall
+
+# Recursive "clean" directory target.
+src/cores/async_fifo/test/single_entry/clean:
+.PHONY : src/cores/async_fifo/test/single_entry/clean
 
 #=============================================================================
 # Directory level rules for directory src/cores/async_fifo/test/write_past
@@ -469,7 +553,7 @@ CMakeFiles/hdl_async_fifo_asymm_split_fwft.dir/clean:
 CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=9 "Built target test_async_fifo_clkrates_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=12 "Built target test_async_fifo_clkrates_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -495,7 +579,7 @@ CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_clkrates_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb_run.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb_run.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=10,11 "Built target test_async_fifo_clkrates_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=13,14 "Built target test_async_fifo_clkrates_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_clkrates_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -547,7 +631,7 @@ CMakeFiles/test_async_fifo_clkrates_tb.dir/clean:
 CMakeFiles/test_async_fifo_writepast_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb_compile.dir/build.make CMakeFiles/test_async_fifo_writepast_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb_compile.dir/build.make CMakeFiles/test_async_fifo_writepast_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=30 "Built target test_async_fifo_writepast_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=42 "Built target test_async_fifo_writepast_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_writepast_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -573,7 +657,7 @@ CMakeFiles/test_async_fifo_writepast_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_writepast_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb_run.dir/build.make CMakeFiles/test_async_fifo_writepast_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb_run.dir/build.make CMakeFiles/test_async_fifo_writepast_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=31,32 "Built target test_async_fifo_writepast_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=43,44 "Built target test_async_fifo_writepast_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_writepast_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -625,7 +709,7 @@ CMakeFiles/test_async_fifo_writepast_tb.dir/clean:
 CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=18 "Built target test_async_fifo_fwft_writepast_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=24 "Built target test_async_fifo_fwft_writepast_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -651,7 +735,7 @@ CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=19,20 "Built target test_async_fifo_fwft_writepast_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=25,26 "Built target test_async_fifo_fwft_writepast_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -703,7 +787,7 @@ CMakeFiles/test_async_fifo_fwft_writepast_tb.dir/clean:
 CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/build.make CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/build.make CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=27 "Built target test_async_fifo_reset_sync_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=33 "Built target test_async_fifo_reset_sync_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -729,7 +813,7 @@ CMakeFiles/test_async_fifo_reset_sync_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_reset_sync_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_reset_sync_tb_run.dir/build.make CMakeFiles/test_async_fifo_reset_sync_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_reset_sync_tb_run.dir/build.make CMakeFiles/test_async_fifo_reset_sync_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=28,29 "Built target test_async_fifo_reset_sync_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=34,35 "Built target test_async_fifo_reset_sync_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_reset_sync_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -781,7 +865,7 @@ CMakeFiles/test_async_fifo_reset_sync_tb.dir/clean:
 CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/build.make CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/build.make CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=21 "Built target test_async_fifo_ptr_wraparound_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=27 "Built target test_async_fifo_ptr_wraparound_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -807,7 +891,7 @@ CMakeFiles/test_async_fifo_ptr_wraparound_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_ptr_wraparound_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_ptr_wraparound_tb_run.dir/build.make CMakeFiles/test_async_fifo_ptr_wraparound_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_ptr_wraparound_tb_run.dir/build.make CMakeFiles/test_async_fifo_ptr_wraparound_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=22,23 "Built target test_async_fifo_ptr_wraparound_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=28,29 "Built target test_async_fifo_ptr_wraparound_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_ptr_wraparound_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -859,7 +943,7 @@ CMakeFiles/test_async_fifo_ptr_wraparound_tb.dir/clean:
 CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/build.make CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/build.make CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=12 "Built target test_async_fifo_empty_timing_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=18 "Built target test_async_fifo_empty_timing_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -885,7 +969,7 @@ CMakeFiles/test_async_fifo_empty_timing_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/build.make CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/build.make CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=13,14 "Built target test_async_fifo_empty_timing_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=19,20 "Built target test_async_fifo_empty_timing_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -937,7 +1021,7 @@ CMakeFiles/test_async_fifo_empty_timing_tb.dir/clean:
 CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/build.make CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/build.make CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=15 "Built target test_async_fifo_full_timing_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=21 "Built target test_async_fifo_full_timing_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -963,7 +1047,7 @@ CMakeFiles/test_async_fifo_full_timing_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_full_timing_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_full_timing_tb_run.dir/build.make CMakeFiles/test_async_fifo_full_timing_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_full_timing_tb_run.dir/build.make CMakeFiles/test_async_fifo_full_timing_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=16,17 "Built target test_async_fifo_full_timing_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=22,23 "Built target test_async_fifo_full_timing_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_full_timing_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1015,7 +1099,7 @@ CMakeFiles/test_async_fifo_full_timing_tb.dir/clean:
 CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/build.make CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/build.make CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=24 "Built target test_async_fifo_read_empty_tb_compile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=30 "Built target test_async_fifo_read_empty_tb_compile"
 .PHONY : CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1041,7 +1125,7 @@ CMakeFiles/test_async_fifo_read_empty_tb_compile.dir/clean:
 CMakeFiles/test_async_fifo_read_empty_tb_run.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_read_empty_tb_run.dir/build.make CMakeFiles/test_async_fifo_read_empty_tb_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_read_empty_tb_run.dir/build.make CMakeFiles/test_async_fifo_read_empty_tb_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=25,26 "Built target test_async_fifo_read_empty_tb_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=31,32 "Built target test_async_fifo_read_empty_tb_run"
 .PHONY : CMakeFiles/test_async_fifo_read_empty_tb_run.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1087,6 +1171,318 @@ CMakeFiles/test_async_fifo_read_empty_tb.dir/clean:
 .PHONY : CMakeFiles/test_async_fifo_read_empty_tb.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=15 "Built target test_async_fifo_data_patterns_tb_compile"
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/rule
+
+# Convenience name for target.
+test_async_fifo_data_patterns_tb_compile: CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/rule
+.PHONY : test_async_fifo_data_patterns_tb_compile
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb_compile.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_data_patterns_tb_run.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=16,17 "Built target test_async_fifo_data_patterns_tb_run"
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/rule
+
+# Convenience name for target.
+test_async_fifo_data_patterns_tb_run: CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/rule
+.PHONY : test_async_fifo_data_patterns_tb_run
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_data_patterns_tb.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_data_patterns_tb.dir/all: CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num= "Built target test_async_fifo_data_patterns_tb"
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_data_patterns_tb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_data_patterns_tb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb.dir/rule
+
+# Convenience name for target.
+test_async_fifo_data_patterns_tb: CMakeFiles/test_async_fifo_data_patterns_tb.dir/rule
+.PHONY : test_async_fifo_data_patterns_tb
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_data_patterns_tb.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_data_patterns_tb.dir/build.make CMakeFiles/test_async_fifo_data_patterns_tb.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_data_patterns_tb.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=9 "Built target test_async_fifo_back_to_back_tb_compile"
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/rule
+
+# Convenience name for target.
+test_async_fifo_back_to_back_tb_compile: CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/rule
+.PHONY : test_async_fifo_back_to_back_tb_compile
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb_compile.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_back_to_back_tb_run.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=10,11 "Built target test_async_fifo_back_to_back_tb_run"
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/rule
+
+# Convenience name for target.
+test_async_fifo_back_to_back_tb_run: CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/rule
+.PHONY : test_async_fifo_back_to_back_tb_run
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_back_to_back_tb.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_back_to_back_tb.dir/all: CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num= "Built target test_async_fifo_back_to_back_tb"
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_back_to_back_tb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_back_to_back_tb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb.dir/rule
+
+# Convenience name for target.
+test_async_fifo_back_to_back_tb: CMakeFiles/test_async_fifo_back_to_back_tb.dir/rule
+.PHONY : test_async_fifo_back_to_back_tb
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_back_to_back_tb.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_back_to_back_tb.dir/build.make CMakeFiles/test_async_fifo_back_to_back_tb.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_back_to_back_tb.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=36 "Built target test_async_fifo_simultaneous_tb_compile"
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/rule
+
+# Convenience name for target.
+test_async_fifo_simultaneous_tb_compile: CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/rule
+.PHONY : test_async_fifo_simultaneous_tb_compile
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb_compile.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_simultaneous_tb_run.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=37,38 "Built target test_async_fifo_simultaneous_tb_run"
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/rule
+
+# Convenience name for target.
+test_async_fifo_simultaneous_tb_run: CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/rule
+.PHONY : test_async_fifo_simultaneous_tb_run
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_simultaneous_tb.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_simultaneous_tb.dir/all: CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num= "Built target test_async_fifo_simultaneous_tb"
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_simultaneous_tb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_simultaneous_tb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb.dir/rule
+
+# Convenience name for target.
+test_async_fifo_simultaneous_tb: CMakeFiles/test_async_fifo_simultaneous_tb.dir/rule
+.PHONY : test_async_fifo_simultaneous_tb
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_simultaneous_tb.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_simultaneous_tb.dir/build.make CMakeFiles/test_async_fifo_simultaneous_tb.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_simultaneous_tb.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_single_entry_tb_compile.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=39 "Built target test_async_fifo_single_entry_tb_compile"
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/rule
+
+# Convenience name for target.
+test_async_fifo_single_entry_tb_compile: CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/rule
+.PHONY : test_async_fifo_single_entry_tb_compile
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb_compile.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_single_entry_tb_run.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_single_entry_tb_run.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_run.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_run.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_run.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_run.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=40,41 "Built target test_async_fifo_single_entry_tb_run"
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb_run.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_single_entry_tb_run.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_single_entry_tb_run.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb_run.dir/rule
+
+# Convenience name for target.
+test_async_fifo_single_entry_tb_run: CMakeFiles/test_async_fifo_single_entry_tb_run.dir/rule
+.PHONY : test_async_fifo_single_entry_tb_run
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_single_entry_tb_run.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb_run.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb_run.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb_run.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_async_fifo_single_entry_tb.dir
+
+# All Build rule for target.
+CMakeFiles/test_async_fifo_single_entry_tb.dir/all: CMakeFiles/test_async_fifo_single_entry_tb_run.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num= "Built target test_async_fifo_single_entry_tb"
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_async_fifo_single_entry_tb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_async_fifo_single_entry_tb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb.dir/rule
+
+# Convenience name for target.
+test_async_fifo_single_entry_tb: CMakeFiles/test_async_fifo_single_entry_tb.dir/rule
+.PHONY : test_async_fifo_single_entry_tb
+
+# clean rule for target.
+CMakeFiles/test_async_fifo_single_entry_tb.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_single_entry_tb.dir/build.make CMakeFiles/test_async_fifo_single_entry_tb.dir/clean
+.PHONY : CMakeFiles/test_async_fifo_single_entry_tb.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/run_all_tests.dir
 
 # All Build rule for target.
@@ -1098,6 +1494,10 @@ CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_ptr_wraparound_tb_r
 CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_empty_timing_tb_run.dir/all
 CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_full_timing_tb_run.dir/all
 CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_read_empty_tb_run.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_data_patterns_tb_run.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_back_to_back_tb_run.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_simultaneous_tb_run.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_single_entry_tb_run.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_all_tests.dir/build.make CMakeFiles/run_all_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_all_tests.dir/build.make CMakeFiles/run_all_tests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=8 "Built target run_all_tests"
@@ -1105,7 +1505,7 @@ CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_async_fifo_read_empty_tb_run.d
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run_all_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_all_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
 .PHONY : CMakeFiles/run_all_tests.dir/rule
