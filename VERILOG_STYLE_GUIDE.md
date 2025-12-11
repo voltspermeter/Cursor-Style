@@ -604,22 +604,43 @@ This project uses CMake with custom functions for HDL source management and VUni
 
 ### Directory Structure
 
+The project uses a hierarchical CMake structure with `CMakeText.txt` files at each level:
+
 ```
 project/
-├── CMakeText.txt          # Top-level: includes rtl/ and test/
-├── rtl/
-│   └── CMakeLists.txt     # RTL source definitions
-└── test/
-    ├── CMakeLists.txt     # Test subdirectory includes
-    └── <test_name>/
-        └── CMakeLists.txt # Individual test definitions
+├── src/
+│   ├── CMakeText.txt           # Top-level: add_subdirectory(cores)
+│   └── cores/
+│       ├── CMakeText.txt       # Cores index: add_subdirectory(async_fifo)
+│       └── <core_name>/
+│           ├── CMakeText.txt   # Core-level: includes rtl/ and test/
+│           ├── rtl/
+│           │   └── CMakeLists.txt    # RTL source definitions
+│           └── test/
+│               ├── CMakeLists.txt    # Test subdirectory includes
+│               └── <test_name>/
+│                   └── CMakeLists.txt # Individual test definitions
 ```
 
-### Top-Level CMake File
+### CMake File Naming Convention
 
-The top-level file uses `add_subdirectory()` to include RTL and test directories:
+| File Name | Purpose |
+|-----------|---------|
+| `CMakeText.txt` | Directory includes only (`add_subdirectory()` calls) |
+| `CMakeLists.txt` | Source/test definitions (`add_hdl_source()` or `add_vunit_test()`) |
+
+### Top-Level CMake Files
+
+Each level uses `add_subdirectory()` to include child directories:
 
 ```cmake
+# src/CMakeText.txt
+add_subdirectory(cores)
+
+# src/cores/CMakeText.txt
+add_subdirectory(async_fifo)
+
+# src/cores/async_fifo/CMakeText.txt
 add_subdirectory(rtl)
 add_subdirectory(test)
 ```

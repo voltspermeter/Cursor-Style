@@ -102,15 +102,23 @@ add_vunit_test( module_tb.sv
 
 ### Directory Organization
 ```
-module/
-├── CMakeText.txt      # Top-level: add_subdirectory(rtl), add_subdirectory(test)
-├── rtl/
-│   └── CMakeLists.txt # add_hdl_source() calls
-└── test/
-    ├── CMakeLists.txt # add_subdirectory() for each test
-    └── test_name/
-        └── CMakeLists.txt # add_vunit_test() call
+src/
+├── CMakeText.txt           # add_subdirectory(cores)
+└── cores/
+    ├── CMakeText.txt       # add_subdirectory(<core_name>)
+    └── <core_name>/
+        ├── CMakeText.txt   # add_subdirectory(rtl), add_subdirectory(test)
+        ├── rtl/
+        │   └── CMakeLists.txt # add_hdl_source() calls
+        └── test/
+            ├── CMakeLists.txt # add_subdirectory() for each test
+            └── test_name/
+                └── CMakeLists.txt # add_vunit_test() call
 ```
+
+### CMake File Naming
+- `CMakeText.txt` - Directory includes only (add_subdirectory calls)
+- `CMakeLists.txt` - Source/test definitions (add_hdl_source or add_vunit_test)
 
 ### CMake Formatting
 - 2-space indentation for continuation

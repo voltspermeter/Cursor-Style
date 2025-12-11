@@ -62,7 +62,7 @@ All modules depend on `sync_reg` - a synchronizer register module for clock doma
 
 ### async_fifo
 
-**File:** `rtl/async_fifo.v`
+**File:** `src/cores/async_fifo/rtl/async_fifo.v`
 
 The base asynchronous FIFO with standard read latency (data appears one cycle after `rd_en`).
 
@@ -115,7 +115,7 @@ rd_data: ---------<XX><D0><D1>--
 
 ### async_fifo_fwft
 
-**File:** `rtl/async_fifo_fwft.v`
+**File:** `src/cores/async_fifo/rtl/async_fifo_fwft.v`
 
 First Word Fall Through variant. Data is pre-fetched and available on `rd_data` as soon as `has_data=1`, with zero read latency.
 
@@ -158,7 +158,7 @@ rd_en:    ________|‾‾‾‾‾|__________
 
 ### async_fifo_flags
 
-**File:** `rtl/async_fifo_flags.v`
+**File:** `src/cores/async_fifo/rtl/async_fifo_flags.v`
 
 Extended version with separate `full` and `prog_full` outputs.
 
@@ -187,7 +187,7 @@ Extended version with separate `full` and `prog_full` outputs.
 
 ### async_fifo_flags_fwft
 
-**File:** `rtl/async_fifo_flags_fwft.v`
+**File:** `src/cores/async_fifo/rtl/async_fifo_flags_fwft.v`
 
 FWFT variant with both `full` and `prog_full` flags.
 
@@ -203,7 +203,7 @@ Combines FWFT behavior with dual full flags.
 
 ### async_fifo_asymm_concat_fwft
 
-**File:** `rtl/async_fifo_asymm_concat_fwft.v`
+**File:** `src/cores/async_fifo/rtl/async_fifo_asymm_concat_fwft.v`
 
 Asymmetric FIFO where the **read port is wider** than the write port. Multiple narrow writes are concatenated into a single wide read word.
 
@@ -242,7 +242,7 @@ async_fifo_asymm_concat_fwft #(
 
 ### async_fifo_asymm_split_fwft
 
-**File:** `rtl/async_fifo_asymm_split_fwft.v`
+**File:** `src/cores/async_fifo/rtl/async_fifo_asymm_split_fwft.v`
 
 Asymmetric FIFO where the **write port is wider** than the read port. A single wide write is split into multiple narrow read words.
 
@@ -434,7 +434,22 @@ async_fifo_asymm_split_fwft #(
 
 ### CMake Integration
 
-Register RTL sources in `rtl/CMakeLists.txt`:
+The project uses a hierarchical CMake structure:
+
+```
+src/
+├── CMakeText.txt                    # add_subdirectory(cores)
+└── cores/
+    ├── CMakeText.txt                # add_subdirectory(async_fifo)
+    └── async_fifo/
+        ├── CMakeText.txt            # add_subdirectory(rtl), add_subdirectory(test)
+        ├── rtl/
+        │   └── CMakeLists.txt       # RTL source definitions
+        └── test/
+            └── ...
+```
+
+Register RTL sources in `src/cores/async_fifo/rtl/CMakeLists.txt`:
 
 ```cmake
 add_hdl_source( async_fifo.v
@@ -446,14 +461,18 @@ add_hdl_source( async_fifo_fwft.v
     async_fifo )
 ```
 
+**CMake File Naming Convention:**
+- `CMakeText.txt` - Directory includes only (`add_subdirectory()` calls)
+- `CMakeLists.txt` - Source/test definitions (`add_hdl_source()` or `add_vunit_test()`)
+
 ### File Include Order
 
 When not using CMake, include files in dependency order:
 
 1. `sync_reg.v` (external dependency)
-2. `async_fifo.v`
-3. `async_fifo_fwft.v` (if using FWFT)
-4. `async_fifo_flags.v` (if using flags variant)
+2. `src/cores/async_fifo/rtl/async_fifo.v`
+3. `src/cores/async_fifo/rtl/async_fifo_fwft.v` (if using FWFT)
+4. `src/cores/async_fifo/rtl/async_fifo_flags.v` (if using flags variant)
 5. Asymmetric variants as needed
 
 ---
@@ -462,13 +481,13 @@ When not using CMake, include files in dependency order:
 
 ### Test Structure
 
-Tests are located in `test/` subdirectories:
+Tests are located in `src/cores/async_fifo/test/` subdirectories:
 
 | Directory | Description |
 |-----------|-------------|
-| `clock_rates/` | Tests various write/read clock ratios |
-| `write_past/` | Tests write-past-full behavior (standard) |
-| `write_past_fwft/` | Tests write-past-full behavior (FWFT) |
+| `test/clock_rates/` | Tests various write/read clock ratios |
+| `test/write_past/` | Tests write-past-full behavior (standard) |
+| `test/write_past_fwft/` | Tests write-past-full behavior (FWFT) |
 
 ### Running Tests
 
