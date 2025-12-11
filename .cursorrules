@@ -155,16 +155,27 @@ ctest                         # CTest integration
 
 ---
 
-## Prompt Logging
+## Prompt Logging (MANDATORY)
 
-### Requirements
-All significant AI interactions should be logged in the `.prompts/` directory.
+### ⚠️ CRITICAL REQUIREMENT
+**At the END of EVERY response, you MUST update the prompt log.**
+
+This is not optional. Before concluding any response:
+1. Check if a session log exists for today in `.prompts/sessions/`
+2. If not, create one using the template
+3. Append the current prompt to the log
+4. Update session statistics
+
+### Logging Checklist (perform at end of each response)
+- [ ] Open/create today's session log
+- [ ] Add new prompt entry with: number, thinking time, query, summary, outcome
+- [ ] Update statistics (prompt count, tests, files)
+- [ ] Save the file
 
 ### When to Log
-- At the end of multi-prompt sessions
-- After completing major features or test implementations
-- When making significant architectural decisions
-- After debugging sessions
+- **EVERY user prompt** - no exceptions
+- Even simple questions get logged
+- Even "check status" prompts get logged
 
 ### Log Location
 ```
