@@ -130,6 +130,7 @@ function(create_vunit_test_target TEST_NAME)
     # Output files
     set(VVP_FILE ${CMAKE_CURRENT_BINARY_DIR}/${TEST_NAME}.vvp)
     set(LOG_FILE ${CMAKE_CURRENT_BINARY_DIR}/${TEST_NAME}.log)
+    set(EXIT_CODE_FILE ${CMAKE_CURRENT_BINARY_DIR}/vunit_exit_code.txt)
 
     # Build include flags
     set(INCLUDE_FLAGS "")
@@ -161,9 +162,11 @@ function(create_vunit_test_target TEST_NAME)
         DEPENDS ${VVP_FILE}
     )
 
-    # Run target
+    # Run target - runs simulation and checks exit code file
     add_custom_target(${TARGET_NAME}_run
+        COMMAND ${CMAKE_COMMAND} -E remove -f ${EXIT_CODE_FILE}
         COMMAND ${VVP_EXECUTABLE} ${VVP_FILE}
+        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/_cmake/CheckExitCode.cmake
         DEPENDS ${VVP_FILE}
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         COMMENT "Running test: ${TEST_NAME}"

@@ -68,7 +68,7 @@ end
 
 `TEST_SUITE begin
 
-  `TEST_CASE("Multiple-clock-ratios") begin
+  `TEST_CASE("Multiple-clock-ratios")
     $dumpfile("test_case_1.vcd");
     $dumpvars();
 
