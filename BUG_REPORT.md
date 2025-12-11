@@ -2,263 +2,190 @@
 
 This document reports bugs found during testing of the CMake infrastructure with Icarus Verilog.
 
+**Status: ALL BUGS FIXED** ✅
+
 ---
 
 ## Summary
 
-| ID | Severity | Component | Description |
-|----|----------|-----------|-------------|
-| BUG-001 | High | VUnit Macros | `$finish(1)` exit code not propagated to shell |
-| BUG-002 | High | VUnit Macros | `CHECK_EQUAL` failures don't stop test execution |
-| BUG-003 | Medium | VUnit Macros | Tests don't auto-terminate after TEST_SUITE completes |
-| BUG-004 | Medium | Test Config | Missing test directories referenced in CMakeLists.txt |
-| BUG-005 | Low | VUnit Macros | No test summary printed at end of test |
-| BUG-006 | Low | VCD Output | VCD warning about $unit package |
+| ID | Severity | Status | Description |
+|----|----------|--------|-------------|
+| BUG-001 | High | ✅ FIXED | `$finish(1)` exit code not propagated to shell |
+| BUG-002 | High | ✅ FIXED | `CHECK_EQUAL` failures don't stop test execution |
+| BUG-003 | Medium | ✅ FIXED | Tests don't auto-terminate after TEST_SUITE completes |
+| BUG-004 | Medium | ✅ FIXED | Missing test directories referenced in CMakeLists.txt |
+| BUG-005 | Low | ✅ FIXED | No test summary printed at end of test |
+| BUG-006 | Low | N/A | VCD warning about $unit package (cosmetic, not fixed) |
 
 ---
 
-## BUG-001: Exit Code Not Propagated
+## Fixes Applied
 
-**Severity:** High  
-**Component:** `_cmake/vunit/vunit_defines.svh`  
-**Affected:** All tests
+### BUG-001: Exit Code Not Propagated - FIXED
 
-### Description
+**Solution:** Implemented file-based exit code mechanism.
 
-When `$finish(1)` is called (indicating failure), Icarus Verilog's `vvp` returns exit code 0 to the shell. This causes CTest to report passing tests even when failures occur.
+The VUnit macros now write the exit code to `vunit_exit_code.txt`, and a CMake script (`CheckExitCode.cmake`) reads this file after simulation to determine pass/fail status.
 
-### Evidence
+**Files Modified:**
+- `_cmake/vunit/vunit_defines.svh` - Added `__vunit_write_result()` task
+- `_cmake/CheckExitCode.cmake` - New file to check exit code
+- `_cmake/VUnitHelpers.cmake` - Updated to call CheckExitCode.cmake
 
-```
-!!! WATCHDOG TIMEOUT after 10000000000 !!!
-/workspace/.../async_fifo_writepast_tb.sv:159: $finish(1) called at 10000000100 (1ps)
-Exit code: 0
-```
+### BUG-002: CHECK_EQUAL Failures Continue Execution - FIXED
 
-### Expected Behavior
+**Solution:** Failures are now tracked and reported in summary.
 
-`$finish(1)` should cause vvp to return exit code 1, causing CTest to mark the test as failed.
+The `__vunit_fail_count` counter tracks all failures. At test completion, the summary reports total failures and the exit code file reflects the failure status.
 
-### Root Cause
+**Behavior:**
+- Tests continue after failures (allows multiple failures to be detected)
+- Final summary shows all failures
+- Exit code is non-zero if any failures occurred
 
-Icarus Verilog does not propagate the `$finish` argument as the process exit code. This is a known limitation of iverilog/vvp.
+### BUG-003: Tests Don't Auto-Terminate - FIXED
 
-### Suggested Fix
+**Solution:** Added `TEST_DONE` macro and watchdog completion handling.
 
-Use `$fatal` or a custom PLI/VPI function to set the exit code, or use a post-processing script to parse output for "FAIL" strings.
+**Mechanism:**
+1. Tests call `TEST_DONE` at end of TEST_SUITE
+2. WATCHDOG monitors `__vunit_test_done` flag
+3. When flag is set, watchdog prints summary and exits gracefully
+4. If timeout occurs before completion, test fails
 
----
+**Files Modified:**
+- `_cmake/vunit/vunit_defines.svh` - Added `TEST_DONE` macro and completion thread
+- All testbenches - Added `TEST_DONE;` before closing `end`
 
-## BUG-002: CHECK_EQUAL Failures Don't Stop Execution
+### BUG-004: Missing Test Directories - FIXED
 
-**Severity:** High  
-**Component:** `_cmake/vunit/vunit_defines.svh`  
-**Affected:** All tests using `CHECK_EQUAL`
+**Solution:** Removed references to non-existent directories.
 
-### Description
-
-When `CHECK_EQUAL` detects a mismatch, it prints a failure message but allows test execution to continue. This can mask the root cause of failures and cause misleading test results.
-
-### Evidence
-
-```systemverilog
-`CHECK_EQUAL(8'd10, 8'd20);  // This fails
-$display("After failed check");  // This still executes
-```
-
-Output:
-```
-FAIL: CHECK_EQUAL at test_vunit_macros.sv:9
-  Expected: 10 (0xa)
-  Actual:   20 (0x14)
-After failed check (should not reach here cleanly)
-```
-
-### Expected Behavior
-
-Test execution should optionally stop on first failure, or at minimum the final exit code should reflect the failure.
-
-### Suggested Fix
-
-Add an option to stop on first failure:
-```systemverilog
-`ifdef STOP_ON_FAILURE
-    $finish(1);
-`endif
-```
-
----
-
-## BUG-003: Tests Don't Auto-Terminate
-
-**Severity:** Medium  
-**Component:** `_cmake/vunit/vunit_defines.svh`  
-**Affected:** All tests
-
-### Description
-
-Tests complete their stimulus but don't call `$finish`. They rely entirely on the `WATCHDOG` macro to terminate the simulation. This means all tests appear to "timeout" even when they pass.
-
-### Evidence
-
-All three tests show:
-```
-!!! WATCHDOG TIMEOUT after 10000000000 !!!
-```
-
-Even though all data checks passed (all "MATCH" messages).
-
-### Expected Behavior
-
-The `TEST_SUITE` macro should call `$finish(0)` after all test cases complete successfully.
-
-### Suggested Fix
-
-Modify `TEST_SUITE` to add automatic termination:
-```systemverilog
-`define TEST_SUITE \
-    initial begin \
-        // test cases here \
-        // ... \
-        $display("All tests completed"); \
-        $finish(0); \
-    end
-```
-
-Or add a `TEST_COMPLETE` macro that users must call.
-
----
-
-## BUG-004: Missing Test Directories
-
-**Severity:** Medium  
-**Component:** `src/cores/async_fifo/test/CMakeLists.txt`  
-**Affected:** Build system
-
-### Description
-
-The test CMakeLists.txt references directories that don't exist:
+**File Modified:** `src/cores/async_fifo/test/CMakeLists.txt`
 
 ```cmake
-add_subdirectory(write_past_flags)   # Does not exist
-add_subdirectory(asymm_concat)       # Does not exist
-add_subdirectory(asymm_split)        # Does not exist
+# Only existing directories included
+add_subdirectory(clock_rates)
+add_subdirectory(write_past)
+add_subdirectory(write_past_fwft)
+
+# TODO: Create these test directories when tests are implemented
+# add_subdirectory(write_past_flags)
+# add_subdirectory(asymm_concat)
+# add_subdirectory(asymm_split)
 ```
 
-### Evidence
+### BUG-005: No Test Summary - FIXED
+
+**Solution:** Added comprehensive test summary output.
+
+The `__vunit_print_summary()` task now prints:
+
+```
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 2000
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+```
+
+### BUG-006: VCD Warning - NOT FIXED (Cosmetic)
+
+This is a known limitation of Icarus Verilog / VCD format and has no functional impact.
+
+---
+
+## Test Results After Fixes
+
+All tests now pass correctly:
+
+```
+$ ctest --output-on-failure
+Test project /workspace/build
+    Start 1: async_fifo_clkrates_tb
+1/3 Test #1: async_fifo_clkrates_tb ...........   Passed    0.10 sec
+    Start 2: async_fifo_writepast_tb
+2/3 Test #2: async_fifo_writepast_tb ..........   Passed    0.01 sec
+    Start 3: async_fifo_fwft_writepast_tb
+3/3 Test #3: async_fifo_fwft_writepast_tb .....   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 3
+```
+
+### Failure Detection Verified
+
+Intentional failures are properly detected:
+
+```
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at test_failure.sv:9
+  Test: Intentional-Failure
+  Expected: 10 (0xa)
+  Actual:   20 (0x14)
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 2
+  Failures     : 1
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+CMake Error: Test FAILED (exit code: 1)
+```
+
+---
+
+## Files Modified
+
+| File | Changes |
+|------|---------|
+| `_cmake/vunit/vunit_defines.svh` | Complete rewrite with proper test tracking |
+| `_cmake/VUnitHelpers.cmake` | Added exit code checking |
+| `_cmake/CheckExitCode.cmake` | New file for exit code verification |
+| `src/cores/async_fifo/test/CMakeLists.txt` | Removed non-existent directories |
+| `src/cores/async_fifo/test/clock_rates/async_fifo_clkrates_tb.sv` | Added `TEST_DONE` |
+| `src/cores/async_fifo/test/write_past/async_fifo_writepast_tb.sv` | Added `TEST_DONE` |
+| `src/cores/async_fifo/test/write_past_fwft/async_fifo_fwft_writepast_tb.sv` | Added `TEST_DONE` |
+
+---
+
+## Usage Notes
+
+### Adding `TEST_DONE` to Testbenches
+
+All testbenches using the VUnit macros must add `TEST_DONE;` before the closing `end` of `TEST_SUITE`:
+
+```systemverilog
+`TEST_SUITE begin
+  `TEST_CASE("Test-Name") begin
+    // test code
+  end
+  
+  `TEST_DONE;  // <-- Add this line
+end
+
+`WATCHDOG(10000us);
+```
+
+### Running Tests
 
 ```bash
-$ ls src/cores/async_fifo/test/
-clock_rates/  CMakeLists.txt  TESTBENCH.md  TEST_PLAN.md  write_past/  write_past_fwft/
+# Build and run all tests
+cd build
+cmake ..
+make run_all_tests
+
+# Run specific test
+make test_async_fifo_clkrates_tb
+
+# Run via CTest
+ctest -V
 ```
-
-### Impact
-
-If the full test/CMakeLists.txt were included (via add_subdirectory), CMake would fail with:
-```
-CMake Error: The source directory does not exist
-```
-
-Currently avoided because top-level CMakeLists.txt includes test directories individually.
-
-### Suggested Fix
-
-Either:
-1. Create the missing test directories with placeholder CMakeLists.txt
-2. Remove the non-existent subdirectory references from test/CMakeLists.txt
-3. Add conditional checks in CMakeLists.txt
-
----
-
-## BUG-005: No Test Summary Printed
-
-**Severity:** Low  
-**Component:** `_cmake/vunit/vunit_defines.svh`  
-**Affected:** Test output readability
-
-### Description
-
-The `TEST_COMPLETE` macro exists in vunit_defines.svh but is never called by tests. As a result, no summary of passed/failed checks is printed at the end.
-
-### Expected Behavior
-
-At end of test:
-```
-=== TEST SUMMARY ===
-  Checks: 2000
-  Failures: 0
-  Result: PASSED
-====================
-```
-
-### Suggested Fix
-
-Either:
-1. Require tests to call `TEST_COMPLETE`
-2. Automatically call summary in `TEST_SUITE` end
-3. Document the need to call `TEST_COMPLETE`
-
----
-
-## BUG-006: VCD Warning About $unit Package
-
-**Severity:** Low  
-**Component:** Icarus Verilog / Testbenches  
-**Affected:** VCD output
-
-### Description
-
-Every test produces a warning during VCD generation:
-
-```
-VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
-```
-
-### Impact
-
-Warning is cosmetic only. VCD files are generated correctly and contain all expected signals.
-
-### Root Cause
-
-SystemVerilog's `$unit` compilation unit scope cannot be dumped to VCD format. This is a limitation of the VCD format / Icarus Verilog.
-
-### Suggested Fix
-
-Suppress warning or ignore (no functional impact).
-
----
-
-## Test Results Summary
-
-Despite the bugs above, the core functionality works:
-
-| Test | Compilation | Data Integrity | Exit Code | Overall |
-|------|-------------|----------------|-----------|---------|
-| async_fifo_clkrates_tb | ✅ Pass | ✅ All MATCH | ⚠️ 0 (watchdog) | Functional |
-| async_fifo_writepast_tb | ✅ Pass | ✅ All MATCH | ⚠️ 0 (watchdog) | Functional |
-| async_fifo_fwft_writepast_tb | ✅ Pass | ✅ All MATCH | ⚠️ 0 (watchdog) | Functional |
-
-**Key Observations:**
-- All HDL modules compile without errors
-- All data integrity checks pass (FIFO behavior correct)
-- All tests produce valid VCD waveforms
-- Dependency tracking works correctly
-- CTest integration works (but reports false positives due to BUG-001)
-
----
-
-## Recommendations
-
-### Priority 1 (Must Fix)
-1. **BUG-001/002**: Implement proper exit code handling or output parsing
-2. **BUG-003**: Add auto-termination to TEST_SUITE
-
-### Priority 2 (Should Fix)
-3. **BUG-004**: Sync test/CMakeLists.txt with actual directory structure
-4. **BUG-005**: Add test summary output
-
-### Priority 3 (Nice to Have)
-5. **BUG-006**: Document or suppress VCD warning
 
 ---
 
@@ -267,5 +194,4 @@ Despite the bugs above, the core functionality works:
 - **OS:** Ubuntu (linux 6.1.147)
 - **CMake:** 3.16+
 - **Icarus Verilog:** 12.0-2build2
-- **iverilog location:** /usr/bin/iverilog
-- **vvp location:** /usr/bin/vvp
+- **VUnit:** 4.7.0 (installed but using custom standalone macros)

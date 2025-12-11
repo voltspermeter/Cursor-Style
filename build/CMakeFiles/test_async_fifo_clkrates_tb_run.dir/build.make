@@ -68,7 +68,9 @@ include CMakeFiles/test_async_fifo_clkrates_tb_run.dir/progress.make
 
 CMakeFiles/test_async_fifo_clkrates_tb_run: async_fifo_clkrates_tb.vvp
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running test: async_fifo_clkrates_tb"
+	/usr/bin/cmake -E remove -f /workspace/build/vunit_exit_code.txt
 	/usr/bin/vvp /workspace/build/async_fifo_clkrates_tb.vvp
+	/usr/bin/cmake -P /workspace/_cmake/CheckExitCode.cmake
 
 async_fifo_clkrates_tb.vvp: /workspace/src/cores/async_fifo/rtl/async_fifo.v
 async_fifo_clkrates_tb.vvp: stubs/sync_reg.v

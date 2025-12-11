@@ -68,7 +68,7 @@ end
 
 `TEST_SUITE begin
 
-  `TEST_CASE("Multiple-clock-ratios")
+  `TEST_CASE("Multiple-clock-ratios") begin
     $dumpfile("test_case_1.vcd");
     $dumpvars();
 
@@ -139,6 +139,7 @@ end
     `CHECK_EQUAL( 1'b1, 1'b1 );
   end
 
+  `TEST_DONE;
 end
 
 `WATCHDOG(10000us);

@@ -2,8 +2,15 @@
 //
 // vunit_defines.svh - VUnit compatibility macros for Icarus Verilog
 //
-// This file provides VUnit-compatible macros that work with Icarus Verilog.
-// It implements a simplified version of the VUnit test framework.
+// This file provides VUnit-compatible macros that work with Icarus Verilog
+// in standalone mode (without the VUnit Python runner).
+//
+// Features:
+//   - CHECK_EQUAL, CHECK_TRUE, CHECK_FALSE assertions
+//   - TEST_SUITE / TEST_CASE structure
+//   - WATCHDOG timeout protection
+//   - Exit code file for CMake integration
+//   - Automatic test completion and summary
 //
 //------------------------------------------------------------------------------
 
@@ -11,25 +18,49 @@
 `define VUNIT_DEFINES_SVH
 
 //------------------------------------------------------------------------------
-// Configuration
+// Global test state variables
+// These must be declared at module scope before TEST_SUITE
 //------------------------------------------------------------------------------
 
-// Set to 1 to stop simulation on first failure
-`ifndef VUNIT_STOP_ON_FAILURE
-`define VUNIT_STOP_ON_FAILURE 0
-`endif
+integer __vunit_check_count = 0;
+integer __vunit_fail_count = 0;
+integer __vunit_test_done = 0;
+string  __vunit_current_test = "";
 
 //------------------------------------------------------------------------------
-// Test Status Tracking (global variables)
+// Exit code file writer
+// Writes test result to file for CMake to check
 //------------------------------------------------------------------------------
 
-// These are declared in the module scope by TEST_SUITE_VARS
-`define TEST_SUITE_VARS \
-    integer __vunit_test_passed = 1; \
-    integer __vunit_check_count = 0; \
-    integer __vunit_fail_count = 0; \
-    integer __vunit_exit_code = 0; \
-    string  __vunit_current_test = ""
+task automatic __vunit_write_result(input integer failed);
+    integer fd;
+    fd = $fopen("vunit_exit_code.txt", "w");
+    if (fd) begin
+        $fdisplay(fd, "%0d", failed ? 1 : 0);
+        $fclose(fd);
+    end
+endtask
+
+//------------------------------------------------------------------------------
+// Test summary printer
+//------------------------------------------------------------------------------
+
+task automatic __vunit_print_summary();
+    $display("");
+    $display("============================================================");
+    $display("                     TEST SUMMARY");
+    $display("============================================================");
+    $display("  Total Checks : %0d", __vunit_check_count);
+    $display("  Failures     : %0d", __vunit_fail_count);
+    $display("------------------------------------------------------------");
+    if (__vunit_fail_count == 0) begin
+        $display("  RESULT: *** PASSED ***");
+    end else begin
+        $display("  RESULT: *** FAILED ***");
+    end
+    $display("============================================================");
+    $display("");
+endtask
 
 //------------------------------------------------------------------------------
 // TEST_SUITE - Defines a test suite
@@ -37,185 +68,138 @@
 // Usage:
 //   `TEST_SUITE begin
 //     `TEST_CASE("test1") begin ... end
-//     `TEST_CASE("test2") begin ... end
 //   end
 //
-// The TEST_SUITE automatically:
-//   - Declares tracking variables
-//   - Prints test summary at end
-//   - Calls $finish with appropriate exit code
+// The closing 'end' will trigger test completion.
 //------------------------------------------------------------------------------
+
 `define TEST_SUITE \
-    `TEST_SUITE_VARS; \
-    initial begin \
-        __vunit_test_passed = 1; \
-        __vunit_check_count = 0; \
-        __vunit_fail_count = 0; \
-        __vunit_exit_code = 0
+    initial
 
 //------------------------------------------------------------------------------
-// TEST_SUITE_END - End of test suite (call after all TEST_CASEs)
-//------------------------------------------------------------------------------
-`define TEST_SUITE_END \
-        /* Print summary */ \
-        $display(""); \
-        $display("=== TEST SUMMARY ==="); \
-        $display("  Total checks: %0d", __vunit_check_count); \
-        $display("  Failures: %0d", __vunit_fail_count); \
-        if (__vunit_fail_count == 0) begin \
-            $display("  Result: PASSED"); \
-            __vunit_exit_code = 0; \
-        end else begin \
-            $display("  Result: FAILED"); \
-            __vunit_exit_code = 1; \
-        end \
-        $display("===================="); \
-        $display(""); \
-        /* Write exit code to file for external checking */ \
-        __vunit_write_exit_code(__vunit_exit_code); \
-        $finish; \
-    end
-
-//------------------------------------------------------------------------------
-// TEST_CASE - Defines a test case within a suite
+// TEST_CASE - Defines a test case
 //
 // Usage:
 //   `TEST_CASE("Test Name") begin
 //     // test code
 //   end
 //------------------------------------------------------------------------------
-`define TEST_CASE(name) \
-    __vunit_current_test = name; \
-    __vunit_test_passed = 1; \
+
+`define TEST_CASE(test_name) \
+    __vunit_current_test = test_name; \
     $display(""); \
-    $display("=== TEST CASE: %s ===", name); \
+    $display("============================================================"); \
+    $display("  TEST CASE: %s", test_name); \
+    $display("============================================================"); \
     $display("");
 
 //------------------------------------------------------------------------------
-// CHECK_EQUAL - Assert that two values are equal
+// CHECK_EQUAL - Assert equality
 //
 // Usage:
 //   `CHECK_EQUAL(expected, actual)
-//
-// On failure:
-//   - Prints diagnostic message
-//   - Increments failure counter
-//   - Optionally stops simulation (if VUNIT_STOP_ON_FAILURE=1)
 //------------------------------------------------------------------------------
+
 `define CHECK_EQUAL(expected, actual) \
-    __vunit_check_count = __vunit_check_count + 1; \
-    if ((expected) !== (actual)) begin \
-        $display(""); \
-        $display("FAIL: CHECK_EQUAL at %s:%0d", `__FILE__, `__LINE__); \
-        $display("  Test: %s", __vunit_current_test); \
-        $display("  Expected: %0d (0x%0h)", (expected), (expected)); \
-        $display("  Actual:   %0d (0x%0h)", (actual), (actual)); \
-        $display(""); \
-        __vunit_test_passed = 0; \
-        __vunit_fail_count = __vunit_fail_count + 1; \
-        __vunit_exit_code = 1; \
-        if (`VUNIT_STOP_ON_FAILURE) begin \
-            $display("!!! STOPPING ON FIRST FAILURE !!!"); \
-            __vunit_write_exit_code(1); \
-            $finish; \
+    begin \
+        __vunit_check_count = __vunit_check_count + 1; \
+        if ((expected) !== (actual)) begin \
+            $display(""); \
+            $display("*** ASSERTION FAILED ***"); \
+            $display("  CHECK_EQUAL at %s:%0d", `__FILE__, `__LINE__); \
+            $display("  Test: %s", __vunit_current_test); \
+            $display("  Expected: %0d (0x%0h)", (expected), (expected)); \
+            $display("  Actual:   %0d (0x%0h)", (actual), (actual)); \
+            $display(""); \
+            __vunit_fail_count = __vunit_fail_count + 1; \
         end \
     end
 
 //------------------------------------------------------------------------------
-// CHECK_TRUE - Assert that a condition is true
-//
-// Usage:
-//   `CHECK_TRUE(condition)
+// CHECK_TRUE - Assert condition is true
 //------------------------------------------------------------------------------
+
 `define CHECK_TRUE(condition) \
-    __vunit_check_count = __vunit_check_count + 1; \
-    if (!(condition)) begin \
-        $display(""); \
-        $display("FAIL: CHECK_TRUE at %s:%0d", `__FILE__, `__LINE__); \
-        $display("  Test: %s", __vunit_current_test); \
-        $display("  Condition was false"); \
-        $display(""); \
-        __vunit_test_passed = 0; \
-        __vunit_fail_count = __vunit_fail_count + 1; \
-        __vunit_exit_code = 1; \
-        if (`VUNIT_STOP_ON_FAILURE) begin \
-            $display("!!! STOPPING ON FIRST FAILURE !!!"); \
-            __vunit_write_exit_code(1); \
-            $finish; \
+    begin \
+        __vunit_check_count = __vunit_check_count + 1; \
+        if (!(condition)) begin \
+            $display(""); \
+            $display("*** ASSERTION FAILED ***"); \
+            $display("  CHECK_TRUE at %s:%0d", `__FILE__, `__LINE__); \
+            $display("  Test: %s", __vunit_current_test); \
+            $display("  Condition was FALSE"); \
+            $display(""); \
+            __vunit_fail_count = __vunit_fail_count + 1; \
         end \
     end
 
 //------------------------------------------------------------------------------
-// CHECK_FALSE - Assert that a condition is false
-//
-// Usage:
-//   `CHECK_FALSE(condition)
+// CHECK_FALSE - Assert condition is false
 //------------------------------------------------------------------------------
+
 `define CHECK_FALSE(condition) \
-    __vunit_check_count = __vunit_check_count + 1; \
-    if (condition) begin \
-        $display(""); \
-        $display("FAIL: CHECK_FALSE at %s:%0d", `__FILE__, `__LINE__); \
-        $display("  Test: %s", __vunit_current_test); \
-        $display("  Condition was true"); \
-        $display(""); \
-        __vunit_test_passed = 0; \
-        __vunit_fail_count = __vunit_fail_count + 1; \
-        __vunit_exit_code = 1; \
-        if (`VUNIT_STOP_ON_FAILURE) begin \
-            $display("!!! STOPPING ON FIRST FAILURE !!!"); \
-            __vunit_write_exit_code(1); \
-            $finish; \
+    begin \
+        __vunit_check_count = __vunit_check_count + 1; \
+        if (condition) begin \
+            $display(""); \
+            $display("*** ASSERTION FAILED ***"); \
+            $display("  CHECK_FALSE at %s:%0d", `__FILE__, `__LINE__); \
+            $display("  Test: %s", __vunit_current_test); \
+            $display("  Condition was TRUE"); \
+            $display(""); \
+            __vunit_fail_count = __vunit_fail_count + 1; \
         end \
     end
 
 //------------------------------------------------------------------------------
-// WATCHDOG - Set a timeout for the simulation
+// WATCHDOG - Timeout protection
 //
 // Usage:
-//   `WATCHDOG(10000us)  // 10ms timeout
+//   `WATCHDOG(10000us)
 //
-// If the watchdog triggers, it's considered a failure.
+// The watchdog monitors the __vunit_test_done flag and terminates
+// the simulation with proper cleanup if the test completes or times out.
 //------------------------------------------------------------------------------
+
 `define WATCHDOG(timeout) \
-    initial begin \
-        #(timeout); \
-        $display(""); \
-        $display("!!! WATCHDOG TIMEOUT after %0t !!!", $time); \
-        $display(""); \
-        __vunit_fail_count = __vunit_fail_count + 1; \
-        __vunit_exit_code = 1; \
-        /* Print summary before exit */ \
-        $display("=== TEST SUMMARY ==="); \
-        $display("  Total checks: %0d", __vunit_check_count); \
-        $display("  Failures: %0d (includes timeout)", __vunit_fail_count); \
-        $display("  Result: FAILED (TIMEOUT)"); \
-        $display("===================="); \
-        $display(""); \
-        __vunit_write_exit_code(1); \
-        $finish; \
+    initial begin : __vunit_watchdog_block \
+        fork \
+            begin : timeout_thread \
+                #(timeout); \
+                if (!__vunit_test_done) begin \
+                    $display(""); \
+                    $display("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"); \
+                    $display("  WATCHDOG TIMEOUT after %0t", $time); \
+                    $display("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"); \
+                    __vunit_fail_count = __vunit_fail_count + 1; \
+                    __vunit_print_summary(); \
+                    __vunit_write_result(1); \
+                    $finish; \
+                end \
+            end \
+            begin : completion_thread \
+                wait(__vunit_test_done == 1); \
+                disable timeout_thread; \
+                __vunit_print_summary(); \
+                __vunit_write_result(__vunit_fail_count > 0); \
+                $finish; \
+            end \
+        join \
     end
 
 //------------------------------------------------------------------------------
-// Helper function to write exit code to file
+// TEST_DONE - Mark test as complete (call at end of TEST_SUITE)
 //
-// Since Icarus Verilog doesn't propagate $finish argument to shell,
-// we write the exit code to a file that can be checked by the test runner.
-//------------------------------------------------------------------------------
-function automatic void __vunit_write_exit_code(input integer code);
-    integer fd;
-    fd = $fopen("vunit_exit_code.txt", "w");
-    if (fd) begin
-        $fdisplay(fd, "%0d", code);
-        $fclose(fd);
-    end
-endfunction
-
-//------------------------------------------------------------------------------
-// Compatibility defines
+// This triggers the watchdog's completion thread to finish gracefully.
 //------------------------------------------------------------------------------
 
-// File and line macros (Icarus Verilog supports these)
+`define TEST_DONE \
+    __vunit_test_done = 1
+
+//------------------------------------------------------------------------------
+// Compatibility: File/line macros
+//------------------------------------------------------------------------------
+
 `ifndef __FILE__
 `define __FILE__ "unknown"
 `endif
