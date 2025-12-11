@@ -1,0 +1,216 @@
+# Verilog/SystemVerilog Code Generation Rules
+
+When generating or modifying Verilog/SystemVerilog code in this project, strictly follow the conventions documented in `VERILOG_STYLE_GUIDE.md`. Key rules are summarized below:
+
+## File Organization
+- Start RTL files with the standard header block (dashed separators, description, copyright)
+- Use `.v` extension for RTL modules, `.sv` for SystemVerilog testbenches
+- File names must match module names using snake_case
+
+## Module Declaration
+- Use **leading comma style** for port lists:
+  ```verilog
+  ) (   input rst
+      , input wr_clk
+      , input wr_en
+  ```
+- Declare parameters first with UPPER_CASE names and default values
+- Group ports by clock domain with blank line separators
+
+## Naming Conventions
+- **snake_case** for signals and variables: `wr_data`, `rd_ptr_sync`
+- **UPPER_CASE** for parameters, localparams, instance names: `DATA_WIDTH`, `FIFO_INST`
+- Use standard prefixes: `wr_` (write domain), `rd_` (read domain)
+- Use standard suffixes:
+  - `_i` for internal signals
+  - `_r` or `_reg` for registered versions
+  - `_d1` for 1-cycle delayed
+  - `_s1`, `_s2` for synchronizer stages
+  - `_sync` for synchronized cross-domain signals
+  - `_gray` for gray-coded values
+  - `_cnt` for counters
+
+## Data Types and Constants
+- Use `wire` for combinational, `reg` for sequential
+- Use `localparam` for derived constants
+- Use explicit bit-widths: `1'b0`, `1'b1`, `3'd7`, `8'hFF`
+- Use `'b0` shorthand for zero initialization in resets
+
+## Sequential Logic
+- Use `always @(posedge clk)` with non-blocking assignments (`<=`)
+- Check reset condition first in always blocks
+- Use the reset counter pattern for controlled reset release
+
+## Combinational Logic
+- Use `assign` statements for simple combinational logic
+- Create named internal signals for complex conditions: `wire wr_en_i = wr_en & ~full_i;`
+
+## Module Instantiation
+- Use UPPER_CASE instance names: `FIFO_INST`, `SYNC_WR`, `DUT`
+- Use leading comma style for port connections
+- Use named port connections: `.port_name(signal_name)`
+
+## Formatting
+- Use **2 spaces** for indentation (no tabs)
+- Place `begin` on the same line as the condition
+- Separate logical sections with blank lines
+- Use spaces around binary operators
+
+## Testbenches
+- Use VUnit framework macros: `TEST_SUITE`, `TEST_CASE`, `CHECK_EQUAL`, `WATCHDOG`
+- Use `logic` type for testbench signals
+- Use `DUT` as the instance name for the device under test
+- Use dynamic arrays (`$`) for verification queues
+
+## Synthesis Directives
+- Use `(* RAM_STYLE = ... *)` attributes for RAM inference
+- Use `/* verilator lint_off/on ... */` pragmas for known lint warnings
+
+---
+
+## CMake Build System
+
+### RTL Source Registration
+Use `add_hdl_source()` for RTL modules:
+```cmake
+add_hdl_source( module_name.v
+  DEPENDS
+    dependency_module )
+```
+- First argument: source file name with `.v` extension
+- `DEPENDS`: list module dependencies (modules instantiated internally)
+- Module/target name is derived from filename without extension
+- Indent dependencies with 4 spaces, one per line
+
+### VUnit Test Registration
+Use `add_vunit_test()` for testbenches:
+```cmake
+add_vunit_test( module_tb.sv
+  DEPENDS rtl_module
+  VCDS
+    test_case_1
+  VIEW_SIGNALS
+    DUT.rst
+    DUT.clk
+    DUT.data
+)
+```
+- First argument: testbench file with `.sv` extension
+- `DEPENDS`: the RTL module under test
+- `VCDS`: VCD dump file names (match test case names)
+- `VIEW_SIGNALS`: hierarchical signals for waveform viewer (use `DUT.` prefix)
+
+### Directory Organization
+```
+src/
+├── CMakeText.txt           # add_subdirectory(cores)
+└── cores/
+    ├── CMakeText.txt       # add_subdirectory(<core_name>)
+    └── <core_name>/
+        ├── CMakeText.txt   # add_subdirectory(rtl), add_subdirectory(test)
+        ├── rtl/
+        │   └── CMakeLists.txt # add_hdl_source() calls
+        └── test/
+            ├── CMakeLists.txt # add_subdirectory() for each test
+            └── test_name/
+                └── CMakeLists.txt # add_vunit_test() call
+```
+
+### CMake File Naming
+- `CMakeText.txt` - Directory includes only (add_subdirectory calls)
+- `CMakeLists.txt` - Source/test definitions (add_hdl_source or add_vunit_test)
+
+### CMake Formatting
+- 2-space indentation for continuation
+- One dependency/signal per line
+- Close parenthesis on last argument line
+- Blank line between function calls
+
+---
+
+## CMake Build Infrastructure
+
+### Location
+CMake modules are in `_cmake/` directory:
+- `HDLHelpers.cmake` - HDL source management functions
+- `IcarusVerilog.cmake` - Icarus Verilog compilation functions
+- `VUnitHelpers.cmake` - VUnit testbench support
+- `vunit/vunit_defines.svh` - VUnit compatibility macros
+
+### Building
+```bash
+mkdir build && cd build
+cmake ..
+make                          # Build all
+make hdl_<module>             # Compile HDL module
+make test_<name>              # Run specific test
+make run_all_tests            # Run all tests
+ctest                         # CTest integration
+```
+
+### Dependency Tracking
+- Module dependencies tracked via `add_hdl_source(... DEPENDS ...)`
+- Test dependencies tracked via `add_vunit_test(... DEPENDS ...)`
+- Dependency list generated at `build/dependencies.txt`
+
+---
+
+## Prompt Logging (MANDATORY)
+
+### ⚠️ CRITICAL REQUIREMENT
+**At the END of EVERY response, you MUST update the prompt log.**
+
+This is not optional. Before concluding any response:
+1. Check if a session log exists for today in `.prompts/sessions/`
+2. If not, create one using the template
+3. Append the current prompt to the log
+4. Update session statistics
+
+### Logging Checklist (perform at end of each response)
+- [ ] Open/create today's session log
+- [ ] Add new prompt entry with: number, thinking time, query, summary, outcome
+- [ ] Update statistics (prompt count, tests, files)
+- [ ] Save the file
+
+### When to Log
+- **EVERY user prompt** - no exceptions
+- Even simple questions get logged
+- Even "check status" prompts get logged
+
+### Log Location
+```
+.prompts/
+├── README.md           # Documentation
+├── sessions/           # Session logs (YYYY-MM-DD_description.md)
+└── templates/          # Log templates
+```
+
+### Log Format
+Each session log must include:
+
+1. **Header**: Date, project name, session/branch ID
+2. **For each prompt**:
+   - Sequence number
+   - Estimated thinking time
+   - Verbatim user query (in code block)
+   - Summary of actions taken
+   - Outcome/result
+3. **Session statistics**: Total prompts, files created/modified, test results
+4. **Files list**: All files created or modified during session
+
+### Naming Convention
+`YYYY-MM-DD_<brief-description>.md`
+
+Examples:
+- `2025-12-11_async_fifo_testing.md`
+- `2025-12-12_priority3_tests.md`
+
+### Template
+Use the template at `.prompts/templates/session_template.md` for new logs.
+
+### Thinking Time
+Record estimated thinking/processing time for each prompt:
+- Simple queries: ~1-2s
+- Code generation: ~3-5s
+- Complex multi-file changes: ~5-10s
+- Debugging/analysis: ~5-15s
