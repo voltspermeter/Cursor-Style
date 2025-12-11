@@ -479,15 +479,20 @@ When not using CMake, include files in dependency order:
 
 ## Testing
 
+For detailed testbench documentation, see [test/TESTBENCH.md](test/TESTBENCH.md).
+
 ### Test Structure
 
 Tests are located in `src/cores/async_fifo/test/` subdirectories:
 
-| Directory | Description |
-|-----------|-------------|
-| `test/clock_rates/` | Tests various write/read clock ratios |
-| `test/write_past/` | Tests write-past-full behavior (standard) |
-| `test/write_past_fwft/` | Tests write-past-full behavior (FWFT) |
+| Directory | Target Module | Description |
+|-----------|---------------|-------------|
+| `clock_rates/` | `async_fifo_fwft` | Multiple write/read clock ratios (40-500 MHz) |
+| `write_past/` | `async_fifo` | Write-past-full protection (standard) |
+| `write_past_fwft/` | `async_fifo_fwft` | Write-past-full protection (FWFT) |
+| `write_past_flags/` | `async_fifo_flags` | Write-past-full with flag variants |
+| `asymm_concat/` | `async_fifo_asymm_concat_fwft` | Asymmetric width (narrow→wide) |
+| `asymm_split/` | `async_fifo_asymm_split_fwft` | Asymmetric width (wide→narrow) |
 
 ### Running Tests
 
@@ -495,19 +500,37 @@ Tests use the VUnit framework with VCD waveform generation:
 
 ```bash
 # From build directory
-ctest -R async_fifo
+cmake ..
+ctest -R async_fifo         # Run all async_fifo tests
+ctest -R async_fifo -V      # Verbose output
+ctest -R clock_rates        # Run specific test
+```
+
+### Viewing Waveforms
+
+```bash
+gtkwave test_case_1.vcd
 ```
 
 ### Test Coverage
 
 The test suite verifies:
 
-- Multiple clock frequency ratios (40 MHz to 250 MHz)
+- Multiple clock frequency ratios (40 MHz to 500 MHz)
 - Full condition handling
 - Empty condition handling
 - Reset behavior
 - Data integrity across clock domains
 - Write-past-full protection
+- FWFT vs standard read latency behavior
+
+### Verification Methodology
+
+All testbenches use a reference queue model:
+- Write data is pushed to a SystemVerilog dynamic array
+- Read data is compared against queue entries
+- VUnit `CHECK_EQUAL` macro asserts correctness
+- `WATCHDOG` macro prevents test hangs
 
 ---
 
