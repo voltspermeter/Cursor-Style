@@ -1115,6 +1115,19 @@ test_async_fifo_asymm_ratios_tb/fast:
 .PHONY : test_async_fifo_asymm_ratios_tb/fast
 
 #=============================================================================
+# Target rules for targets named build_all_tests
+
+# Build rule for target.
+build_all_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 build_all_tests
+.PHONY : build_all_tests
+
+# fast build rule for target.
+build_all_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build_all_tests.dir/build.make CMakeFiles/build_all_tests.dir/build
+.PHONY : build_all_tests/fast
+
+#=============================================================================
 # Target rules for targets named run_all_tests
 
 # Build rule for target.
@@ -1127,6 +1140,19 @@ run_all_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_all_tests.dir/build.make CMakeFiles/run_all_tests.dir/build
 .PHONY : run_all_tests/fast
 
+#=============================================================================
+# Target rules for targets named run_all_tests_all
+
+# Build rule for target.
+run_all_tests_all: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_all_tests_all
+.PHONY : run_all_tests_all
+
+# fast build rule for target.
+run_all_tests_all/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_all_tests_all.dir/build.make CMakeFiles/run_all_tests_all.dir/build
+.PHONY : run_all_tests_all/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1136,6 +1162,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... build_all_tests"
 	@echo "... hdl_async_fifo"
 	@echo "... hdl_async_fifo_asymm_concat_fwft"
 	@echo "... hdl_async_fifo_asymm_split_fwft"
@@ -1144,6 +1171,7 @@ help:
 	@echo "... hdl_async_fifo_fwft"
 	@echo "... hdl_sync_reg"
 	@echo "... run_all_tests"
+	@echo "... run_all_tests_all"
 	@echo "... test_async_fifo_asymm_boundary_tb"
 	@echo "... test_async_fifo_asymm_boundary_tb_compile"
 	@echo "... test_async_fifo_asymm_boundary_tb_run"

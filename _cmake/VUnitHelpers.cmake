@@ -204,9 +204,35 @@ function(create_all_vunit_test_targets)
 endfunction()
 
 #------------------------------------------------------------------------------
+# add_build_all_tests_target()
+#
+# Create a target that compiles all registered tests without running them.
+# This is useful for ensuring all tests are built before running ctest.
+#
+#------------------------------------------------------------------------------
+function(add_build_all_tests_target)
+    get_property(TESTS GLOBAL PROPERTY VUNIT_TESTS)
+
+    set(COMPILE_TARGETS "")
+    foreach(TEST ${TESTS})
+        list(APPEND COMPILE_TARGETS "test_${TEST}_compile")
+    endforeach()
+
+    if(COMPILE_TARGETS)
+        add_custom_target(build_all_tests
+            DEPENDS ${COMPILE_TARGETS}
+            COMMENT "Building all test benches"
+        )
+        message(STATUS "Created target: build_all_tests")
+    endif()
+endfunction()
+
+#------------------------------------------------------------------------------
 # add_test_suite(<suite_name>)
 #
 # Create a target that runs all registered tests.
+# Note: This target stops on first failure. Use 'ctest' for running all tests
+# and collecting results even when some fail.
 #
 #------------------------------------------------------------------------------
 function(add_test_suite SUITE_NAME)
@@ -224,6 +250,75 @@ function(add_test_suite SUITE_NAME)
         )
         message(STATUS "Created test suite: ${SUITE_NAME}")
     endif()
+endfunction()
+
+#------------------------------------------------------------------------------
+# add_test_suite_script(<suite_name>)
+#
+# Create a target that runs all tests via a script, continuing past failures.
+# Results are summarized at the end.
+#
+#------------------------------------------------------------------------------
+function(add_test_suite_script SUITE_NAME)
+    get_property(TESTS GLOBAL PROPERTY VUNIT_TESTS)
+
+    # Create a shell script that runs all tests and collects results
+    set(SCRIPT_FILE "${CMAKE_BINARY_DIR}/run_${SUITE_NAME}.sh")
+    
+    set(SCRIPT_CONTENT "#!/bin/bash\n")
+    string(APPEND SCRIPT_CONTENT "# Auto-generated test runner script\n")
+    string(APPEND SCRIPT_CONTENT "# Runs all tests and reports summary\n\n")
+    string(APPEND SCRIPT_CONTENT "cd \"${CMAKE_BINARY_DIR}\"\n\n")
+    string(APPEND SCRIPT_CONTENT "PASSED=0\n")
+    string(APPEND SCRIPT_CONTENT "FAILED=0\n")
+    string(APPEND SCRIPT_CONTENT "FAILED_TESTS=\"\"\n\n")
+
+    foreach(TEST ${TESTS})
+        string(APPEND SCRIPT_CONTENT "echo \"Running: ${TEST}\"\n")
+        string(APPEND SCRIPT_CONTENT "if ${VVP_EXECUTABLE} ${CMAKE_BINARY_DIR}/${TEST}.vvp\; then\n")
+        string(APPEND SCRIPT_CONTENT "    ((PASSED++))\n")
+        string(APPEND SCRIPT_CONTENT "else\n")
+        string(APPEND SCRIPT_CONTENT "    ((FAILED++))\n")
+        string(APPEND SCRIPT_CONTENT "    FAILED_TESTS=\"\$FAILED_TESTS ${TEST}\"\n")
+        string(APPEND SCRIPT_CONTENT "fi\n\n")
+    endforeach()
+
+    string(APPEND SCRIPT_CONTENT "echo \"\"\n")
+    string(APPEND SCRIPT_CONTENT "echo \"============================================\"\n")
+    string(APPEND SCRIPT_CONTENT "echo \"  TEST SUMMARY\"\n")
+    string(APPEND SCRIPT_CONTENT "echo \"============================================\"\n")
+    string(APPEND SCRIPT_CONTENT "echo \"  Passed: \$PASSED\"\n")
+    string(APPEND SCRIPT_CONTENT "echo \"  Failed: \$FAILED\"\n")
+    string(APPEND SCRIPT_CONTENT "echo \"  Total:  \$((PASSED + FAILED))\"\n")
+    string(APPEND SCRIPT_CONTENT "if [ \$FAILED -gt 0 ]\; then\n")
+    string(APPEND SCRIPT_CONTENT "    echo \"\"\n")
+    string(APPEND SCRIPT_CONTENT "    echo \"  Failed tests:\$FAILED_TESTS\"\n")
+    string(APPEND SCRIPT_CONTENT "fi\n")
+    string(APPEND SCRIPT_CONTENT "echo \"============================================\"\n")
+    string(APPEND SCRIPT_CONTENT "exit \$FAILED\n")
+
+    file(WRITE ${SCRIPT_FILE} ${SCRIPT_CONTENT})
+
+    # Make script executable
+    file(CHMOD ${SCRIPT_FILE} 
+        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+                    GROUP_READ GROUP_EXECUTE
+                    WORLD_READ WORLD_EXECUTE)
+
+    # Create target that depends on compilation and runs the script
+    get_property(TESTS GLOBAL PROPERTY VUNIT_TESTS)
+    set(COMPILE_TARGETS "")
+    foreach(TEST ${TESTS})
+        list(APPEND COMPILE_TARGETS "test_${TEST}_compile")
+    endforeach()
+
+    add_custom_target(${SUITE_NAME}_all
+        COMMAND ${SCRIPT_FILE}
+        DEPENDS ${COMPILE_TARGETS}
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        COMMENT "Running all tests (continues past failures)"
+    )
+    message(STATUS "Created test suite script: ${SUITE_NAME}_all")
 endfunction()
 
 #------------------------------------------------------------------------------

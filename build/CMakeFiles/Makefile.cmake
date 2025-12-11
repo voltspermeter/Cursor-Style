@@ -164,5 +164,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_async_fifo_asymm_ratios_tb_compile.dir/DependInfo.cmake"
   "CMakeFiles/test_async_fifo_asymm_ratios_tb_run.dir/DependInfo.cmake"
   "CMakeFiles/test_async_fifo_asymm_ratios_tb.dir/DependInfo.cmake"
+  "CMakeFiles/build_all_tests.dir/DependInfo.cmake"
   "CMakeFiles/run_all_tests.dir/DependInfo.cmake"
+  "CMakeFiles/run_all_tests_all.dir/DependInfo.cmake"
   )

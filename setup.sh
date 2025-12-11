@@ -311,9 +311,6 @@ verify_installation() {
 #------------------------------------------------------------------------------
 
 setup_build_directory() {
-    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-    BUILD_DIR="$SCRIPT_DIR/build"
-    
     log_info "Setting up build directory..."
     
     if [ -d "$BUILD_DIR" ]; then
@@ -323,30 +320,38 @@ setup_build_directory() {
     fi
     
     cd "$BUILD_DIR"
-    cmake .. 
+    cmake "$SCRIPT_DIR"
     
     log_success "Build directory configured at: $BUILD_DIR"
 }
 
 run_tests() {
-    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-    BUILD_DIR="$SCRIPT_DIR/build"
-    
     if [ ! -d "$BUILD_DIR" ]; then
         log_error "Build directory not found. Run setup first."
         return 1
     fi
     
-    log_info "Running tests to verify setup..."
     cd "$BUILD_DIR"
     
-    # Build and run a simple test
-    if make test_async_fifo_writepast_tb 2>/dev/null; then
-        log_success "Test execution successful!"
+    # Compile all tests first
+    log_info "Compiling all test benches..."
+    if ! make -j$(nproc) build_all_tests; then
+        log_error "Test compilation failed!"
+        return 1
+    fi
+    log_success "All tests compiled successfully!"
+    
+    echo ""
+    log_info "Running all tests with CTest..."
+    echo ""
+    
+    # Run tests with CTest (continues past failures and shows summary)
+    if ctest --output-on-failure; then
+        log_success "All tests passed!"
         return 0
     else
-        log_warn "Test execution had issues (may be normal for first run)"
-        return 0
+        log_error "Some tests failed. See output above for details."
+        return 1
     fi
 }
 
@@ -377,6 +382,10 @@ print_usage() {
 
 main() {
     print_banner
+    
+    # Set up paths (before any directory changes)
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    BUILD_DIR="$SCRIPT_DIR/build"
     
     # Parse arguments
     DO_INSTALL=false

@@ -121,8 +121,12 @@ create_all_hdl_targets()
 # Create VUnit test targets
 create_all_vunit_test_targets()
 
-# Create test suite target
+# Create build_all_tests target (compiles without running)
+add_build_all_tests_target()
+
+# Create test suite targets
 add_test_suite(run_all_tests)
+add_test_suite_script(run_all_tests)
 
 #------------------------------------------------------------------------------
 # Print summary
@@ -155,9 +159,11 @@ endforeach()
 
 message(STATUS "")
 message(STATUS "=== Build Targets ===")
-message(STATUS "  make                    - Build all")
+message(STATUS "  make                    - Build all HDL modules")
 message(STATUS "  make hdl_<module>       - Compile specific HDL module")
-message(STATUS "  make test_<name>        - Run specific test")
-message(STATUS "  make run_all_tests      - Run all tests")
-message(STATUS "  ctest                   - Run tests via CTest")
+message(STATUS "  make build_all_tests    - Compile all test benches")
+message(STATUS "  make test_<name>        - Compile and run specific test")
+message(STATUS "  make run_all_tests      - Run all tests (stops on first failure)")
+message(STATUS "  make run_all_tests_all  - Run all tests (continues past failures)")
+message(STATUS "  ctest                   - Run tests via CTest (recommended)")
 message(STATUS "")

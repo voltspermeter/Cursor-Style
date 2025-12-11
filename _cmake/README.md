@@ -28,18 +28,36 @@ _cmake/
 mkdir build && cd build
 cmake ..
 
-# Build all targets
-make
+# Compile all test benches
+make build_all_tests
 
 # Run a specific test
 make test_async_fifo_clkrates_tb
 
-# Run all tests
+# Run all tests (recommended - continues past failures)
+ctest --output-on-failure
+
+# Alternative: Run all tests via make (stops on first failure)
 make run_all_tests
 
-# Run tests with CTest
-ctest
-ctest -V  # Verbose output
+# Alternative: Run all tests via script (continues past failures)
+make run_all_tests_all
+
+# Verbose CTest output
+ctest -V
+```
+
+### Recommended Workflow
+
+```bash
+# From a clean state
+./setup.sh                    # Install deps, configure, build, test
+
+# Or manually:
+mkdir build && cd build
+cmake ..
+make build_all_tests          # Compile all tests first
+ctest --output-on-failure     # Run all tests
 ```
 
 ## CMake Functions

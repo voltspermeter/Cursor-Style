@@ -492,15 +492,76 @@ Tested the complete development environment setup from a clean state:
 
 ---
 
+## Prompt 24
+**Time:** Current  
+**Thinking Time:** ~2s
+
+### User Query
+```
+Was the process to build and execute tests smooth, or were extra steps required outside of what was already automated?
+```
+
+### Summary
+Identified friction points in the build/test workflow:
+1. CTest doesn't auto-compile tests - `.vvp` files not built
+2. `make` with no target doesn't build tests
+3. `run_all_tests` stops on first failure
+
+### Outcome
+Documented issues and proposed improvements
+
+---
+
+## Prompt 25
+**Time:** Current  
+**Thinking Time:** ~10s
+
+### User Query
+```
+Yes. Please implement the improvements.
+```
+
+### Summary
+Implemented three workflow improvements:
+
+1. **Added `build_all_tests` target** in VUnitHelpers.cmake:
+   - New function `add_build_all_tests_target()`
+   - Compiles all test `.vvp` files without running them
+
+2. **Added `run_all_tests_all` target**:
+   - New function `add_test_suite_script()`
+   - Generates shell script that runs all tests
+   - Continues past failures and shows summary
+
+3. **Updated `setup.sh --test`**:
+   - Now runs `make build_all_tests` first
+   - Then runs `ctest --output-on-failure`
+   - Fixed path issue when called after `--build`
+
+4. **Updated documentation**:
+   - `_cmake/README.md` with new targets and workflow
+   - CMakeLists.txt help message updated
+
+### Outcome
+Smooth workflow now available:
+```bash
+./setup.sh --build --test  # One command does everything
+# or
+make build_all_tests && ctest  # Manual approach
+```
+All 23 tests pass in ~31 seconds
+
+---
+
 ## Session Statistics
 
 | Metric | Value |
 |--------|-------|
-| Total Prompts | 23 |
+| Total Prompts | 25 |
 | Tests Created | 20 |
 | Total Test Cases | ~100 |
 | All Tests Passing | Yes (23/23) |
-| Session Duration | ~3.5 hours |
+| Session Duration | ~4 hours |
 
 ## Files Created This Session
 
