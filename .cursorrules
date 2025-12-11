@@ -125,3 +125,30 @@ src/
 - One dependency/signal per line
 - Close parenthesis on last argument line
 - Blank line between function calls
+
+---
+
+## CMake Build Infrastructure
+
+### Location
+CMake modules are in `_cmake/` directory:
+- `HDLHelpers.cmake` - HDL source management functions
+- `IcarusVerilog.cmake` - Icarus Verilog compilation functions
+- `VUnitHelpers.cmake` - VUnit testbench support
+- `vunit/vunit_defines.svh` - VUnit compatibility macros
+
+### Building
+```bash
+mkdir build && cd build
+cmake ..
+make                          # Build all
+make hdl_<module>             # Compile HDL module
+make test_<name>              # Run specific test
+make run_all_tests            # Run all tests
+ctest                         # CTest integration
+```
+
+### Dependency Tracking
+- Module dependencies tracked via `add_hdl_source(... DEPENDS ...)`
+- Test dependencies tracked via `add_vunit_test(... DEPENDS ...)`
+- Dependency list generated at `build/dependencies.txt`

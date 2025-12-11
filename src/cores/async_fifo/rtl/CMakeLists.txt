@@ -1,23 +1,35 @@
-add_hdl_source( async_fifo.v
-  DEPENDS
-    sync_reg )
+#------------------------------------------------------------------------------
+#
+# CMakeLists.txt - RTL source registration for async_fifo modules
+#
+#------------------------------------------------------------------------------
 
-add_hdl_source( async_fifo_flags.v
-  DEPENDS
-    sync_reg )
+# Base async_fifo module
+add_hdl_source(${CMAKE_CURRENT_SOURCE_DIR}/async_fifo.v
+    DEPENDS sync_reg
+)
 
-add_hdl_source( async_fifo_fwft.v
-  DEPENDS
-    async_fifo )
+# Async FIFO with flags
+add_hdl_source(${CMAKE_CURRENT_SOURCE_DIR}/async_fifo_flags.v
+    DEPENDS sync_reg
+)
 
-add_hdl_source( async_fifo_flags_fwft.v
-  DEPENDS
-    async_fifo_flags )
+# First Word Fall Through variant
+add_hdl_source(${CMAKE_CURRENT_SOURCE_DIR}/async_fifo_fwft.v
+    DEPENDS async_fifo
+)
 
-add_hdl_source( async_fifo_asymm_concat_fwft.v
-  DEPENDS
-    async_fifo_fwft)
+# FWFT variant with flags
+add_hdl_source(${CMAKE_CURRENT_SOURCE_DIR}/async_fifo_flags_fwft.v
+    DEPENDS async_fifo_flags
+)
 
-add_hdl_source( async_fifo_asymm_split_fwft.v
-  DEPENDS
-    async_fifo_fwft)
+# Asymmetric FIFO - narrow write, wide read
+add_hdl_source(${CMAKE_CURRENT_SOURCE_DIR}/async_fifo_asymm_concat_fwft.v
+    DEPENDS async_fifo_fwft
+)
+
+# Asymmetric FIFO - wide write, narrow read
+add_hdl_source(${CMAKE_CURRENT_SOURCE_DIR}/async_fifo_asymm_split_fwft.v
+    DEPENDS async_fifo_fwft
+)
