@@ -1,0 +1,6 @@
+add_subdirectory(clock_rates)
+add_subdirectory(write_past)
+add_subdirectory(write_past_flags)
+add_subdirectory(write_past_fwft)
+add_subdirectory(asymm_concat)
+add_subdirectory(asymm_split)
