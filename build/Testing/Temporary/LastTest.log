@@ -1,10 +1,10 @@
-Start testing: Dec 11 21:16 UTC
+Start testing: Dec 11 23:02 UTC
 ----------------------------------------------------------
 1/23 Testing: async_fifo_clkrates_tb
 1/23 Test: async_fifo_clkrates_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clkrates_tb.vvp"
 Directory: /workspace/build
-"async_fifo_clkrates_tb" start time: Dec 11 21:16 UTC
+"async_fifo_clkrates_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4037,7 +4037,7 @@ Output data was 237,           MATCH
 Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_clkrates_tb" end time: Dec 11 21:16 UTC
+"async_fifo_clkrates_tb" end time: Dec 11 23:02 UTC
 "async_fifo_clkrates_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4045,7 +4045,7 @@ Test Passed.
 2/23 Test: async_fifo_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_writepast_tb" start time: Dec 11 21:16 UTC
+"async_fifo_writepast_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4143,7 +4143,7 @@ Output data was  35,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_writepast_tb" end time: Dec 11 21:16 UTC
+"async_fifo_writepast_tb" end time: Dec 11 23:02 UTC
 "async_fifo_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4151,7 +4151,7 @@ Test Passed.
 3/23 Test: async_fifo_fwft_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_fwft_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_fwft_writepast_tb" start time: Dec 11 21:16 UTC
+"async_fifo_fwft_writepast_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4251,7 +4251,7 @@ Output data was  36,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_fwft_writepast_tb" end time: Dec 11 21:16 UTC
+"async_fifo_fwft_writepast_tb" end time: Dec 11 23:02 UTC
 "async_fifo_fwft_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4259,7 +4259,7 @@ Test Passed.
 4/23 Test: async_fifo_reset_sync_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_reset_sync_tb.vvp"
 Directory: /workspace/build
-"async_fifo_reset_sync_tb" start time: Dec 11 21:16 UTC
+"async_fifo_reset_sync_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4344,7 +4344,7 @@ Testing: FIFO functional after reset
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_reset_sync_tb" end time: Dec 11 21:16 UTC
+"async_fifo_reset_sync_tb" end time: Dec 11 23:02 UTC
 "async_fifo_reset_sync_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4352,7 +4352,7 @@ Test Passed.
 5/23 Test: async_fifo_ptr_wraparound_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_ptr_wraparound_tb.vvp"
 Directory: /workspace/build
-"async_fifo_ptr_wraparound_tb" start time: Dec 11 21:16 UTC
+"async_fifo_ptr_wraparound_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4431,7 +4431,7 @@ Testing: Continuous streaming across 100 entries
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_ptr_wraparound_tb" end time: Dec 11 21:16 UTC
+"async_fifo_ptr_wraparound_tb" end time: Dec 11 23:02 UTC
 "async_fifo_ptr_wraparound_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4439,7 +4439,7 @@ Test Passed.
 6/23 Test: async_fifo_empty_timing_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_empty_timing_tb.vvp"
 Directory: /workspace/build
-"async_fifo_empty_timing_tb" start time: Dec 11 21:16 UTC
+"async_fifo_empty_timing_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4510,7 +4510,7 @@ Testing: Empty timing consistency
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_empty_timing_tb" end time: Dec 11 21:16 UTC
+"async_fifo_empty_timing_tb" end time: Dec 11 23:02 UTC
 "async_fifo_empty_timing_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4518,7 +4518,7 @@ Test Passed.
 7/23 Test: async_fifo_full_timing_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_full_timing_tb.vvp"
 Directory: /workspace/build
-"async_fifo_full_timing_tb" start time: Dec 11 21:16 UTC
+"async_fifo_full_timing_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4611,7 +4611,7 @@ Testing: Full flag transitions
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_full_timing_tb" end time: Dec 11 21:16 UTC
+"async_fifo_full_timing_tb" end time: Dec 11 23:02 UTC
 "async_fifo_full_timing_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4619,7 +4619,7 @@ Test Passed.
 8/23 Test: async_fifo_read_empty_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_read_empty_tb.vvp"
 Directory: /workspace/build
-"async_fifo_read_empty_tb" start time: Dec 11 21:16 UTC
+"async_fifo_read_empty_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4694,7 +4694,7 @@ Testing: Interleaved writes/reads with empty gaps
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_read_empty_tb" end time: Dec 11 21:16 UTC
+"async_fifo_read_empty_tb" end time: Dec 11 23:02 UTC
 "async_fifo_read_empty_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4702,7 +4702,7 @@ Test Passed.
 9/23 Test: async_fifo_data_patterns_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_data_patterns_tb.vvp"
 Directory: /workspace/build
-"async_fifo_data_patterns_tb" start time: Dec 11 21:16 UTC
+"async_fifo_data_patterns_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4771,10 +4771,10 @@ Testing: LFSR pseudo-random pattern
 
 /workspace/src/cores/async_fifo/test/data_patterns/async_fifo_data_patterns_tb.sv:383: $finish called at 2000000000 (1ps)
 <end of output>
-Test time =   0.33 sec
+Test time =   0.34 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_data_patterns_tb" end time: Dec 11 21:16 UTC
+"async_fifo_data_patterns_tb" end time: Dec 11 23:02 UTC
 "async_fifo_data_patterns_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4782,7 +4782,7 @@ Test Passed.
 10/23 Test: async_fifo_back_to_back_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_back_to_back_tb.vvp"
 Directory: /workspace/build
-"async_fifo_back_to_back_tb" start time: Dec 11 21:16 UTC
+"async_fifo_back_to_back_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4852,10 +4852,10 @@ Testing: Maximum throughput
 
 /workspace/src/cores/async_fifo/test/back_to_back/async_fifo_back_to_back_tb.sv:444: $finish called at 39910000 (1ps)
 <end of output>
-Test time =   0.02 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_back_to_back_tb" end time: Dec 11 21:16 UTC
+"async_fifo_back_to_back_tb" end time: Dec 11 23:02 UTC
 "async_fifo_back_to_back_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -4863,7 +4863,7 @@ Test Passed.
 11/23 Test: async_fifo_simultaneous_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_simultaneous_tb.vvp"
 Directory: /workspace/build
-"async_fifo_simultaneous_tb" start time: Dec 11 21:16 UTC
+"async_fifo_simultaneous_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7125,7 +7125,7 @@ Testing: Alternating single write/read
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_simultaneous_tb" end time: Dec 11 21:16 UTC
+"async_fifo_simultaneous_tb" end time: Dec 11 23:02 UTC
 "async_fifo_simultaneous_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7133,7 +7133,7 @@ Test Passed.
 12/23 Test: async_fifo_single_entry_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_single_entry_tb.vvp"
 Directory: /workspace/build
-"async_fifo_single_entry_tb" start time: Dec 11 21:16 UTC
+"async_fifo_single_entry_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7196,7 +7196,7 @@ Testing: Single entry data integrity
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_single_entry_tb" end time: Dec 11 21:16 UTC
+"async_fifo_single_entry_tb" end time: Dec 11 23:02 UTC
 "async_fifo_single_entry_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7204,7 +7204,7 @@ Test Passed.
 13/23 Test: async_fifo_near_full_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_near_full_tb.vvp"
 Directory: /workspace/build
-"async_fifo_near_full_tb" start time: Dec 11 21:16 UTC
+"async_fifo_near_full_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7274,7 +7274,7 @@ Testing: Data integrity while operating at near-full
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_near_full_tb" end time: Dec 11 21:16 UTC
+"async_fifo_near_full_tb" end time: Dec 11 23:02 UTC
 "async_fifo_near_full_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7282,7 +7282,7 @@ Test Passed.
 14/23 Test: async_fifo_near_empty_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_near_empty_tb.vvp"
 Directory: /workspace/build
-"async_fifo_near_empty_tb" start time: Dec 11 21:16 UTC
+"async_fifo_near_empty_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7349,7 +7349,7 @@ Testing: Data integrity while operating at near-empty
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_near_empty_tb" end time: Dec 11 21:16 UTC
+"async_fifo_near_empty_tb" end time: Dec 11 23:02 UTC
 "async_fifo_near_empty_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7357,7 +7357,7 @@ Test Passed.
 15/23 Test: async_fifo_depth_variation_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_depth_variation_tb.vvp"
 Directory: /workspace/build
-"async_fifo_depth_variation_tb" start time: Dec 11 21:16 UTC
+"async_fifo_depth_variation_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7415,7 +7415,7 @@ Testing: All depths operating concurrently
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_depth_variation_tb" end time: Dec 11 21:16 UTC
+"async_fifo_depth_variation_tb" end time: Dec 11 23:02 UTC
 "async_fifo_depth_variation_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7423,7 +7423,7 @@ Test Passed.
 16/23 Test: async_fifo_width_variation_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_width_variation_tb.vvp"
 Directory: /workspace/build
-"async_fifo_width_variation_tb" start time: Dec 11 21:16 UTC
+"async_fifo_width_variation_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7485,7 +7485,7 @@ Testing: Full bit utilization (all 1s and all 0s)
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_width_variation_tb" end time: Dec 11 21:16 UTC
+"async_fifo_width_variation_tb" end time: Dec 11 23:02 UTC
 "async_fifo_width_variation_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7493,7 +7493,7 @@ Test Passed.
 17/23 Test: async_fifo_random_traffic_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_random_traffic_tb.vvp"
 Directory: /workspace/build
-"async_fifo_random_traffic_tb" start time: Dec 11 21:16 UTC
+"async_fifo_random_traffic_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7526,10 +7526,10 @@ Testing: Balanced random traffic (P_wr=0.5, P_rd=0.5)
 
 /workspace/src/cores/async_fifo/test/random_traffic/async_fifo_random_traffic_tb.sv:441: $finish called at 50000000000 (1ps)
 <end of output>
-Test time =  10.21 sec
+Test time =  10.08 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_random_traffic_tb" end time: Dec 11 21:16 UTC
+"async_fifo_random_traffic_tb" end time: Dec 11 23:02 UTC
 "async_fifo_random_traffic_tb" time elapsed: 00:00:10
 ----------------------------------------------------------
 
@@ -7537,7 +7537,7 @@ Test Passed.
 18/23 Test: async_fifo_clock_jitter_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clock_jitter_tb.vvp"
 Directory: /workspace/build
-"async_fifo_clock_jitter_tb" start time: Dec 11 21:16 UTC
+"async_fifo_clock_jitter_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7565,10 +7565,10 @@ Testing: ±5% jitter on write clock only
 
 /workspace/src/cores/async_fifo/test/clock_jitter/async_fifo_clock_jitter_tb.sv:351: $finish called at 30000000000 (1ps)
 <end of output>
-Test time =  15.36 sec
+Test time =  15.07 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_clock_jitter_tb" end time: Dec 11 21:16 UTC
+"async_fifo_clock_jitter_tb" end time: Dec 11 23:02 UTC
 "async_fifo_clock_jitter_tb" time elapsed: 00:00:15
 ----------------------------------------------------------
 
@@ -7576,7 +7576,7 @@ Test Passed.
 19/23 Test: async_fifo_clock_switching_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clock_switching_tb.vvp"
 Directory: /workspace/build
-"async_fifo_clock_switching_tb" start time: Dec 11 21:16 UTC
+"async_fifo_clock_switching_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7603,10 +7603,10 @@ Testing: Frequency change during data transfer
 
 /workspace/src/cores/async_fifo/test/clock_switching/async_fifo_clock_switching_tb.sv:483: $finish called at 20000000000 (1ps)
 <end of output>
-Test time =   4.72 sec
+Test time =   4.59 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_clock_switching_tb" end time: Dec 11 21:16 UTC
+"async_fifo_clock_switching_tb" end time: Dec 11 23:02 UTC
 "async_fifo_clock_switching_tb" time elapsed: 00:00:04
 ----------------------------------------------------------
 
@@ -7614,7 +7614,7 @@ Test Passed.
 20/23 Test: async_fifo_prog_full_accuracy_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_prog_full_accuracy_tb.vvp"
 Directory: /workspace/build
-"async_fifo_prog_full_accuracy_tb" start time: Dec 11 21:16 UTC
+"async_fifo_prog_full_accuracy_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7678,7 +7678,7 @@ Testing: full=1 always implies prog_full=1
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_prog_full_accuracy_tb" end time: Dec 11 21:16 UTC
+"async_fifo_prog_full_accuracy_tb" end time: Dec 11 23:02 UTC
 "async_fifo_prog_full_accuracy_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7686,7 +7686,7 @@ Test Passed.
 21/23 Test: async_fifo_flag_consistency_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_flag_consistency_tb.vvp"
 Directory: /workspace/build
-"async_fifo_flag_consistency_tb" start time: Dec 11 21:16 UTC
+"async_fifo_flag_consistency_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7747,7 +7747,7 @@ Testing: has_data is always inverse of empty
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_flag_consistency_tb" end time: Dec 11 21:16 UTC
+"async_fifo_flag_consistency_tb" end time: Dec 11 23:02 UTC
 "async_fifo_flag_consistency_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7755,7 +7755,7 @@ Test Passed.
 22/23 Test: async_fifo_asymm_boundary_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_asymm_boundary_tb.vvp"
 Directory: /workspace/build
-"async_fifo_asymm_boundary_tb" start time: Dec 11 21:16 UTC
+"async_fifo_asymm_boundary_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7881,7 +7881,7 @@ Testing: Split - Streaming 10 words (40 bytes)
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_asymm_boundary_tb" end time: Dec 11 21:16 UTC
+"async_fifo_asymm_boundary_tb" end time: Dec 11 23:02 UTC
 "async_fifo_asymm_boundary_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -7889,7 +7889,7 @@ Test Passed.
 23/23 Test: async_fifo_asymm_ratios_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_asymm_ratios_tb.vvp"
 Directory: /workspace/build
-"async_fifo_asymm_ratios_tb" start time: Dec 11 21:16 UTC
+"async_fifo_asymm_ratios_tb" start time: Dec 11 23:02 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -8014,8 +8014,8 @@ Testing: All ratios operating concurrently
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_asymm_ratios_tb" end time: Dec 11 21:16 UTC
+"async_fifo_asymm_ratios_tb" end time: Dec 11 23:02 UTC
 "async_fifo_asymm_ratios_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 11 21:16 UTC
+End testing: Dec 11 23:02 UTC
