@@ -42,3 +42,23 @@ TEST async_fifo_fwft_writepast_tb
   SOURCE /workspace/src/cores/async_fifo/test/write_past_fwft/async_fifo_fwft_writepast_tb.sv
   DEPENDS async_fifo_fwft
 
+TEST async_fifo_reset_sync_tb
+  SOURCE /workspace/src/cores/async_fifo/test/reset_sync/async_fifo_reset_sync_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_ptr_wraparound_tb
+  SOURCE /workspace/src/cores/async_fifo/test/ptr_wraparound/async_fifo_ptr_wraparound_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_empty_timing_tb
+  SOURCE /workspace/src/cores/async_fifo/test/empty_timing/async_fifo_empty_timing_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_full_timing_tb
+  SOURCE /workspace/src/cores/async_fifo/test/full_timing/async_fifo_full_timing_tb.sv
+  DEPENDS async_fifo
+
+TEST async_fifo_read_empty_tb
+  SOURCE /workspace/src/cores/async_fifo/test/read_empty/async_fifo_read_empty_tb.sv
+  DEPENDS async_fifo
+

@@ -44,17 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/workspace/build/src/cores/async_fifo/test/clock_rates/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/workspace/build/src/cores/async_fifo/test/write_past/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/workspace/build/src/cores/async_fifo/test/write_past_fwft/cmake_install.cmake")
+  include("/workspace/build/src/cores/async_fifo/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

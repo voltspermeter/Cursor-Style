@@ -1,4 +1,9 @@
-async_fifo_clkrates_tb 1 0.0951826
-async_fifo_writepast_tb 1 0.00823003
-async_fifo_fwft_writepast_tb 1 0.00762334
+async_fifo_clkrates_tb 1 0.0916428
+async_fifo_writepast_tb 1 0.00863816
+async_fifo_fwft_writepast_tb 1 0.00821688
+async_fifo_reset_sync_tb 1 0.00709368
+async_fifo_ptr_wraparound_tb 1 0.00993846
+async_fifo_empty_timing_tb 1 0.00663457
+async_fifo_full_timing_tb 1 0.00704077
+async_fifo_read_empty_tb 1 0.00681692
 ---

@@ -1,10 +1,10 @@
-Start testing: Dec 11 15:15 UTC
+Start testing: Dec 11 15:30 UTC
 ----------------------------------------------------------
-1/3 Testing: async_fifo_clkrates_tb
-1/3 Test: async_fifo_clkrates_tb
+1/8 Testing: async_fifo_clkrates_tb
+1/8 Test: async_fifo_clkrates_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clkrates_tb.vvp"
 Directory: /workspace/build
-"async_fifo_clkrates_tb" start time: Dec 11 15:15 UTC
+"async_fifo_clkrates_tb" start time: Dec 11 15:30 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4034,18 +4034,18 @@ Output data was 237,           MATCH
 
 /workspace/src/cores/async_fifo/test/clock_rates/async_fifo_clkrates_tb.sv:166: $finish called at 53198044 (1ps)
 <end of output>
-Test time =   0.10 sec
+Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_clkrates_tb" end time: Dec 11 15:15 UTC
+"async_fifo_clkrates_tb" end time: Dec 11 15:30 UTC
 "async_fifo_clkrates_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/3 Testing: async_fifo_writepast_tb
-2/3 Test: async_fifo_writepast_tb
+2/8 Testing: async_fifo_writepast_tb
+2/8 Test: async_fifo_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_writepast_tb" start time: Dec 11 15:15 UTC
+"async_fifo_writepast_tb" start time: Dec 11 15:30 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4143,15 +4143,15 @@ Output data was  35,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_writepast_tb" end time: Dec 11 15:15 UTC
+"async_fifo_writepast_tb" end time: Dec 11 15:30 UTC
 "async_fifo_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/3 Testing: async_fifo_fwft_writepast_tb
-3/3 Test: async_fifo_fwft_writepast_tb
+3/8 Testing: async_fifo_fwft_writepast_tb
+3/8 Test: async_fifo_fwft_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_fwft_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_fwft_writepast_tb" start time: Dec 11 15:15 UTC
+"async_fifo_fwft_writepast_tb" start time: Dec 11 15:30 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4251,8 +4251,441 @@ Output data was  36,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_fwft_writepast_tb" end time: Dec 11 15:15 UTC
+"async_fifo_fwft_writepast_tb" end time: Dec 11 15:30 UTC
 "async_fifo_fwft_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 11 15:15 UTC
+4/8 Testing: async_fifo_reset_sync_tb
+4/8 Test: async_fifo_reset_sync_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_reset_sync_tb.vvp"
+Directory: /workspace/build
+"async_fifo_reset_sync_tb" start time: Dec 11 15:30 UTC
+Output:
+----------------------------------------------------------
+
+============================================================
+  TEST CASE: Reset-Clears-Data
+============================================================
+
+Testing: Assert reset while FIFO contains data
+  Asserting reset with data in FIFO
+  PASS: Reset cleared FIFO data
+
+============================================================
+  TEST CASE: Reset-During-Write
+============================================================
+
+Testing: Assert reset during active write
+  Asserting reset during write
+  PASS: Reset during write handled correctly
+
+============================================================
+  TEST CASE: Reset-During-Read
+============================================================
+
+Testing: Assert reset during active read
+  Asserting reset during read
+  PASS: Reset during read handled correctly
+
+============================================================
+  TEST CASE: Reset-Release-Timing
+============================================================
+
+Testing: Reset release timing
+  wr_rst deasserted after 12 cycles
+  rd_rst deasserted after 12 cycles
+  PASS: Reset release timing correct
+
+============================================================
+  TEST CASE: Multiple-Reset-Pulses
+============================================================
+
+Testing: Multiple reset pulses in succession
+  Reset pulse 1
+  Reset pulse 2
+  Reset pulse 3
+  PASS: Multiple reset pulses handled correctly
+
+============================================================
+  TEST CASE: Short-Reset-Pulse
+============================================================
+
+Testing: Short reset pulse behavior
+  Applying 2-cycle reset pulse
+  PASS: Short reset pulse handled correctly
+
+============================================================
+  TEST CASE: Full-Flag-During-Reset
+============================================================
+
+Testing: Full flag asserted during reset
+  PASS: Full flag behavior during reset correct
+
+============================================================
+  TEST CASE: Operation-After-Reset
+============================================================
+
+Testing: FIFO functional after reset
+  PASS: FIFO functional after reset
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 35
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/reset_sync/async_fifo_reset_sync_tb.sv:433: $finish called at 12670000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_reset_sync_tb" end time: Dec 11 15:30 UTC
+"async_fifo_reset_sync_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/8 Testing: async_fifo_ptr_wraparound_tb
+5/8 Test: async_fifo_ptr_wraparound_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_ptr_wraparound_tb.vvp"
+Directory: /workspace/build
+"async_fifo_ptr_wraparound_tb" start time: Dec 11 15:30 UTC
+Output:
+----------------------------------------------------------
+
+============================================================
+  TEST CASE: Basic-Wraparound
+============================================================
+
+Testing: Basic pointer wraparound
+  FIFO depth: 4 entries
+  Iterations: 10
+  Iteration 0: wr_ptr=0, rd_ptr=0
+  Iteration 1: wr_ptr=4, rd_ptr=4
+  Iteration 2: wr_ptr=0, rd_ptr=0
+  Iteration 3: wr_ptr=4, rd_ptr=4
+  Iteration 4: wr_ptr=0, rd_ptr=0
+  Iteration 5: wr_ptr=4, rd_ptr=4
+  Iteration 6: wr_ptr=0, rd_ptr=0
+  Iteration 7: wr_ptr=4, rd_ptr=4
+  Iteration 8: wr_ptr=0, rd_ptr=0
+  Iteration 9: wr_ptr=4, rd_ptr=4
+  Total writes: 40, Total reads: 40
+  PASS: Basic wraparound correct
+
+============================================================
+  TEST CASE: Partial-Fill-Wraparound
+============================================================
+
+Testing: Wraparound with partial fill/empty
+  Total values transferred: 40
+  PASS: Partial fill wraparound correct
+
+============================================================
+  TEST CASE: Gray-Code-Wraparound
+============================================================
+
+Testing: Gray code encoding at wraparound
+  PASS: Gray code encoding correct at wraparound
+
+============================================================
+  TEST CASE: Full-Empty-Wrapped
+============================================================
+
+Testing: Full/empty with wrapped pointers
+  Cycle 0: Filling FIFO
+  Cycle 0: Emptying FIFO
+  Cycle 0: wr_ptr=4, rd_ptr=4
+  Cycle 1: Filling FIFO
+  Cycle 1: Emptying FIFO
+  Cycle 1: wr_ptr=0, rd_ptr=0
+  Cycle 2: Filling FIFO
+  Cycle 2: Emptying FIFO
+  Cycle 2: wr_ptr=4, rd_ptr=4
+  PASS: Full/empty detection correct with wrapped pointers
+
+============================================================
+  TEST CASE: Continuous-Streaming
+============================================================
+
+Testing: Continuous streaming across 100 entries
+  Total pointer wraps: ~25
+  PASS: Continuous streaming correct
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 208
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/ptr_wraparound/async_fifo_ptr_wraparound_tb.sv:372: $finish called at 24450000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_ptr_wraparound_tb" end time: Dec 11 15:30 UTC
+"async_fifo_ptr_wraparound_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/8 Testing: async_fifo_empty_timing_tb
+6/8 Test: async_fifo_empty_timing_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_empty_timing_tb.vvp"
+Directory: /workspace/build
+"async_fifo_empty_timing_tb" start time: Dec 11 15:30 UTC
+Output:
+----------------------------------------------------------
+
+============================================================
+  TEST CASE: Empty-Deassert-Timing
+============================================================
+
+Testing: Empty flag deassertion timing after write
+  Write at time: 850000
+  Empty deasserted at time: 970000
+  Cycles until empty deassert: 5 rd_clk cycles
+  PASS: Empty deassert timing correct
+
+============================================================
+  TEST CASE: Empty-Assert-Timing
+============================================================
+
+Testing: Empty flag assertion timing after last read
+  Read at time: 1870000
+  Empty asserted at time: 1910000
+  Cycles until empty assert: 1 rd_clk cycles
+  PASS: Empty assert timing correct
+
+============================================================
+  TEST CASE: Single-Entry-Empty
+============================================================
+
+Testing: Empty behavior with single entry operations
+  PASS: Single entry empty behavior correct
+
+============================================================
+  TEST CASE: Empty-During-Reset
+============================================================
+
+Testing: Empty flag during and after reset
+  PASS: Empty during reset correct
+
+============================================================
+  TEST CASE: Has-Data-Inverse-Empty
+============================================================
+
+Testing: has_data is always inverse of empty
+  PASS: has_data is always inverse of empty
+
+============================================================
+  TEST CASE: Empty-Timing-Clock-Ratio
+============================================================
+
+Testing: Empty timing consistency
+  Trial 0: empty deassert in 5 cycles
+  Trial 1: empty deassert in 5 cycles
+  Trial 2: empty deassert in 5 cycles
+  PASS: Empty timing consistent
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 60
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/empty_timing/async_fifo_empty_timing_tb.sv:367: $finish called at 10210000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_empty_timing_tb" end time: Dec 11 15:30 UTC
+"async_fifo_empty_timing_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/8 Testing: async_fifo_full_timing_tb
+7/8 Test: async_fifo_full_timing_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_full_timing_tb.vvp"
+Directory: /workspace/build
+"async_fifo_full_timing_tb" start time: Dec 11 15:30 UTC
+Output:
+----------------------------------------------------------
+
+============================================================
+  TEST CASE: Full-Assert-At-Capacity
+============================================================
+
+Testing: Full flag assertion at capacity
+  FIFO depth: 16 entries
+  Write 1: full=0, wr_ptr=0
+  Write 2: full=0, wr_ptr=1
+  Write 3: full=0, wr_ptr=2
+  Write 4: full=0, wr_ptr=3
+  Write 5: full=0, wr_ptr=4
+  Write 6: full=0, wr_ptr=5
+  Write 7: full=0, wr_ptr=6
+  Write 8: full=0, wr_ptr=7
+  Write 9: full=0, wr_ptr=8
+  Write 10: full=0, wr_ptr=9
+  Write 11: full=0, wr_ptr=10
+  Write 12: full=0, wr_ptr=11
+  Write 13: full=0, wr_ptr=12
+  Write 14: full=0, wr_ptr=13
+  Write 15: full=0, wr_ptr=14
+  Write 16: full=0, wr_ptr=15
+  Full asserted after 17 writes
+  PASS: Full asserts at capacity
+
+============================================================
+  TEST CASE: Full-Deassert-After-Read
+============================================================
+
+Testing: Full flag deassertion after read
+  Full deasserted after 5 wr_clk cycles
+  PASS: Full deasserts after read
+
+============================================================
+  TEST CASE: Full-Exact-Boundary
+============================================================
+
+Testing: Full at exact capacity boundary
+  After 15 writes: full=0
+  After 16 writes: full=1
+  PASS: Full at exact boundary correct
+
+============================================================
+  TEST CASE: Full-During-Reset
+============================================================
+
+Testing: Full flag during reset
+  PASS: Full during reset correct
+
+============================================================
+  TEST CASE: Conservative-Full
+============================================================
+
+Testing: Conservative full assertion (never late)
+  Attempted 21 writes, accepted 16
+  PASS: Full is conservative (accepted 16/16)
+
+============================================================
+  TEST CASE: Full-Transitions
+============================================================
+
+Testing: Full flag transitions
+  Cycle 0
+    Filled to full
+    Drained half, full=0
+  Cycle 1
+    Filled to full
+    Drained half, full=0
+  Cycle 2
+    Filled to full
+    Drained half, full=0
+  PASS: Full transitions correct
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 18
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/full_timing/async_fifo_full_timing_tb.sv:360: $finish called at 13330000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_full_timing_tb" end time: Dec 11 15:30 UTC
+"async_fifo_full_timing_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/8 Testing: async_fifo_read_empty_tb
+8/8 Test: async_fifo_read_empty_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_read_empty_tb.vvp"
+Directory: /workspace/build
+"async_fifo_read_empty_tb" start time: Dec 11 15:30 UTC
+Output:
+----------------------------------------------------------
+
+============================================================
+  TEST CASE: Read-While-Empty-NoPtr
+============================================================
+
+Testing: rd_en while empty - pointer should not change
+  Initial rd_ptr: 0
+  Final rd_ptr: 0
+  PASS: Read while empty doesn't change pointer
+
+============================================================
+  TEST CASE: Read-Has-Data-Zero
+============================================================
+
+Testing: rd_en while has_data=0 - no data corruption
+  PASS: No corruption after read while has_data=0
+
+============================================================
+  TEST CASE: Continuous-Read-Empty
+============================================================
+
+Testing: Continuous rd_en assertion on empty FIFO
+  PASS: Continuous read on empty FIFO handled correctly
+
+============================================================
+  TEST CASE: Read-Race-Empty
+============================================================
+
+Testing: rd_en race with FIFO becoming empty
+  Initial rd_ptr: 0, Final rd_ptr: 3
+  PASS: Race condition handled correctly
+
+============================================================
+  TEST CASE: Read-Data-Stability
+============================================================
+
+Testing: rd_data stability when reading empty FIFO
+  Last valid data: 0xef
+  rd_data when empty: 0xef
+  PASS: rd_data stable, FIFO functional after reading empty
+
+============================================================
+  TEST CASE: Read-Before-Writes
+============================================================
+
+Testing: Read attempts before any data written
+  PASS: Read before writes handled correctly
+
+============================================================
+  TEST CASE: Interleaved-With-Empty
+============================================================
+
+Testing: Interleaved writes/reads with empty gaps
+  Valid reads: 10
+  PASS: Interleaved operations handled correctly
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 133
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/read_empty/async_fifo_read_empty_tb.sv:478: $finish called at 11830000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_read_empty_tb" end time: Dec 11 15:30 UTC
+"async_fifo_read_empty_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 11 15:30 UTC

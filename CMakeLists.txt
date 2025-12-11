@@ -108,10 +108,8 @@ endif()
 # Add RTL sources
 add_subdirectory(src/cores/async_fifo/rtl)
 
-# Add test directories
-add_subdirectory(src/cores/async_fifo/test/clock_rates)
-add_subdirectory(src/cores/async_fifo/test/write_past)
-add_subdirectory(src/cores/async_fifo/test/write_past_fwft)
+# Add test directories (use parent CMakeLists.txt to include all tests)
+add_subdirectory(src/cores/async_fifo/test)
 
 #------------------------------------------------------------------------------
 # Create targets
