@@ -152,3 +152,54 @@ ctest                         # CTest integration
 - Module dependencies tracked via `add_hdl_source(... DEPENDS ...)`
 - Test dependencies tracked via `add_vunit_test(... DEPENDS ...)`
 - Dependency list generated at `build/dependencies.txt`
+
+---
+
+## Prompt Logging
+
+### Requirements
+All significant AI interactions should be logged in the `.prompts/` directory.
+
+### When to Log
+- At the end of multi-prompt sessions
+- After completing major features or test implementations
+- When making significant architectural decisions
+- After debugging sessions
+
+### Log Location
+```
+.prompts/
+├── README.md           # Documentation
+├── sessions/           # Session logs (YYYY-MM-DD_description.md)
+└── templates/          # Log templates
+```
+
+### Log Format
+Each session log must include:
+
+1. **Header**: Date, project name, session/branch ID
+2. **For each prompt**:
+   - Sequence number
+   - Estimated thinking time
+   - Verbatim user query (in code block)
+   - Summary of actions taken
+   - Outcome/result
+3. **Session statistics**: Total prompts, files created/modified, test results
+4. **Files list**: All files created or modified during session
+
+### Naming Convention
+`YYYY-MM-DD_<brief-description>.md`
+
+Examples:
+- `2025-12-11_async_fifo_testing.md`
+- `2025-12-12_priority3_tests.md`
+
+### Template
+Use the template at `.prompts/templates/session_template.md` for new logs.
+
+### Thinking Time
+Record estimated thinking/processing time for each prompt:
+- Simple queries: ~1-2s
+- Code generation: ~3-5s
+- Complex multi-file changes: ~5-10s
+- Debugging/analysis: ~5-15s
