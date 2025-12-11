@@ -1,0 +1,67 @@
+# Verilog/SystemVerilog Code Generation Rules
+
+When generating or modifying Verilog/SystemVerilog code in this project, strictly follow the conventions documented in `VERILOG_STYLE_GUIDE.md`. Key rules are summarized below:
+
+## File Organization
+- Start RTL files with the standard header block (dashed separators, description, copyright)
+- Use `.v` extension for RTL modules, `.sv` for SystemVerilog testbenches
+- File names must match module names using snake_case
+
+## Module Declaration
+- Use **leading comma style** for port lists:
+  ```verilog
+  ) (   input rst
+      , input wr_clk
+      , input wr_en
+  ```
+- Declare parameters first with UPPER_CASE names and default values
+- Group ports by clock domain with blank line separators
+
+## Naming Conventions
+- **snake_case** for signals and variables: `wr_data`, `rd_ptr_sync`
+- **UPPER_CASE** for parameters, localparams, instance names: `DATA_WIDTH`, `FIFO_INST`
+- Use standard prefixes: `wr_` (write domain), `rd_` (read domain)
+- Use standard suffixes:
+  - `_i` for internal signals
+  - `_r` or `_reg` for registered versions
+  - `_d1` for 1-cycle delayed
+  - `_s1`, `_s2` for synchronizer stages
+  - `_sync` for synchronized cross-domain signals
+  - `_gray` for gray-coded values
+  - `_cnt` for counters
+
+## Data Types and Constants
+- Use `wire` for combinational, `reg` for sequential
+- Use `localparam` for derived constants
+- Use explicit bit-widths: `1'b0`, `1'b1`, `3'd7`, `8'hFF`
+- Use `'b0` shorthand for zero initialization in resets
+
+## Sequential Logic
+- Use `always @(posedge clk)` with non-blocking assignments (`<=`)
+- Check reset condition first in always blocks
+- Use the reset counter pattern for controlled reset release
+
+## Combinational Logic
+- Use `assign` statements for simple combinational logic
+- Create named internal signals for complex conditions: `wire wr_en_i = wr_en & ~full_i;`
+
+## Module Instantiation
+- Use UPPER_CASE instance names: `FIFO_INST`, `SYNC_WR`, `DUT`
+- Use leading comma style for port connections
+- Use named port connections: `.port_name(signal_name)`
+
+## Formatting
+- Use **2 spaces** for indentation (no tabs)
+- Place `begin` on the same line as the condition
+- Separate logical sections with blank lines
+- Use spaces around binary operators
+
+## Testbenches
+- Use VUnit framework macros: `TEST_SUITE`, `TEST_CASE`, `CHECK_EQUAL`, `WATCHDOG`
+- Use `logic` type for testbench signals
+- Use `DUT` as the instance name for the device under test
+- Use dynamic arrays (`$`) for verification queues
+
+## Synthesis Directives
+- Use `(* RAM_STYLE = ... *)` attributes for RAM inference
+- Use `/* verilator lint_off/on ... */` pragmas for known lint warnings
