@@ -23,7 +23,24 @@ add_subdirectory(back_to_back)
 add_subdirectory(simultaneous_rdwr)
 add_subdirectory(single_entry)
 
+# Priority 3 tests
+add_subdirectory(near_full)
+add_subdirectory(near_empty)
+add_subdirectory(depth_variation)
+add_subdirectory(width_variation)
+
+# Priority 4 tests
+add_subdirectory(random_traffic)
+add_subdirectory(clock_jitter)
+add_subdirectory(clock_switching)
+
+# Priority 5 tests
+add_subdirectory(prog_full_accuracy)
+add_subdirectory(flag_consistency)
+
+# Priority 6 tests
+add_subdirectory(asymm_boundary)
+add_subdirectory(asymm_ratios)
+
 # TODO: Create these test directories when tests are implemented
 # add_subdirectory(write_past_flags)
-# add_subdirectory(asymm_concat)
-# add_subdirectory(asymm_split)

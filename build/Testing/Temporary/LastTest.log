@@ -1,10 +1,10 @@
-Start testing: Dec 11 16:40 UTC
+Start testing: Dec 11 17:15 UTC
 ----------------------------------------------------------
-1/12 Testing: async_fifo_clkrates_tb
-1/12 Test: async_fifo_clkrates_tb
+1/23 Testing: async_fifo_clkrates_tb
+1/23 Test: async_fifo_clkrates_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clkrates_tb.vvp"
 Directory: /workspace/build
-"async_fifo_clkrates_tb" start time: Dec 11 16:40 UTC
+"async_fifo_clkrates_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4037,15 +4037,15 @@ Output data was 237,           MATCH
 Test time =   0.10 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_clkrates_tb" end time: Dec 11 16:40 UTC
+"async_fifo_clkrates_tb" end time: Dec 11 17:15 UTC
 "async_fifo_clkrates_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/12 Testing: async_fifo_writepast_tb
-2/12 Test: async_fifo_writepast_tb
+2/23 Testing: async_fifo_writepast_tb
+2/23 Test: async_fifo_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_writepast_tb" start time: Dec 11 16:40 UTC
+"async_fifo_writepast_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4143,15 +4143,15 @@ Output data was  35,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_writepast_tb" end time: Dec 11 16:40 UTC
+"async_fifo_writepast_tb" end time: Dec 11 17:15 UTC
 "async_fifo_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/12 Testing: async_fifo_fwft_writepast_tb
-3/12 Test: async_fifo_fwft_writepast_tb
+3/23 Testing: async_fifo_fwft_writepast_tb
+3/23 Test: async_fifo_fwft_writepast_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_fwft_writepast_tb.vvp"
 Directory: /workspace/build
-"async_fifo_fwft_writepast_tb" start time: Dec 11 16:40 UTC
+"async_fifo_fwft_writepast_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 
@@ -4251,15 +4251,15 @@ Output data was  36,           MATCH
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_fwft_writepast_tb" end time: Dec 11 16:40 UTC
+"async_fifo_fwft_writepast_tb" end time: Dec 11 17:15 UTC
 "async_fifo_fwft_writepast_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/12 Testing: async_fifo_reset_sync_tb
-4/12 Test: async_fifo_reset_sync_tb
+4/23 Testing: async_fifo_reset_sync_tb
+4/23 Test: async_fifo_reset_sync_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_reset_sync_tb.vvp"
 Directory: /workspace/build
-"async_fifo_reset_sync_tb" start time: Dec 11 16:40 UTC
+"async_fifo_reset_sync_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4344,15 +4344,15 @@ Testing: FIFO functional after reset
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_reset_sync_tb" end time: Dec 11 16:40 UTC
+"async_fifo_reset_sync_tb" end time: Dec 11 17:15 UTC
 "async_fifo_reset_sync_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/12 Testing: async_fifo_ptr_wraparound_tb
-5/12 Test: async_fifo_ptr_wraparound_tb
+5/23 Testing: async_fifo_ptr_wraparound_tb
+5/23 Test: async_fifo_ptr_wraparound_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_ptr_wraparound_tb.vvp"
 Directory: /workspace/build
-"async_fifo_ptr_wraparound_tb" start time: Dec 11 16:40 UTC
+"async_fifo_ptr_wraparound_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4428,18 +4428,18 @@ Testing: Continuous streaming across 100 entries
 
 /workspace/src/cores/async_fifo/test/ptr_wraparound/async_fifo_ptr_wraparound_tb.sv:378: $finish called at 24450000 (1ps)
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_ptr_wraparound_tb" end time: Dec 11 16:40 UTC
+"async_fifo_ptr_wraparound_tb" end time: Dec 11 17:15 UTC
 "async_fifo_ptr_wraparound_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/12 Testing: async_fifo_empty_timing_tb
-6/12 Test: async_fifo_empty_timing_tb
+6/23 Testing: async_fifo_empty_timing_tb
+6/23 Test: async_fifo_empty_timing_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_empty_timing_tb.vvp"
 Directory: /workspace/build
-"async_fifo_empty_timing_tb" start time: Dec 11 16:40 UTC
+"async_fifo_empty_timing_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4510,15 +4510,15 @@ Testing: Empty timing consistency
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_empty_timing_tb" end time: Dec 11 16:40 UTC
+"async_fifo_empty_timing_tb" end time: Dec 11 17:15 UTC
 "async_fifo_empty_timing_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/12 Testing: async_fifo_full_timing_tb
-7/12 Test: async_fifo_full_timing_tb
+7/23 Testing: async_fifo_full_timing_tb
+7/23 Test: async_fifo_full_timing_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_full_timing_tb.vvp"
 Directory: /workspace/build
-"async_fifo_full_timing_tb" start time: Dec 11 16:40 UTC
+"async_fifo_full_timing_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4611,15 +4611,15 @@ Testing: Full flag transitions
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_full_timing_tb" end time: Dec 11 16:40 UTC
+"async_fifo_full_timing_tb" end time: Dec 11 17:15 UTC
 "async_fifo_full_timing_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-8/12 Testing: async_fifo_read_empty_tb
-8/12 Test: async_fifo_read_empty_tb
+8/23 Testing: async_fifo_read_empty_tb
+8/23 Test: async_fifo_read_empty_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_read_empty_tb.vvp"
 Directory: /workspace/build
-"async_fifo_read_empty_tb" start time: Dec 11 16:40 UTC
+"async_fifo_read_empty_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4694,15 +4694,15 @@ Testing: Interleaved writes/reads with empty gaps
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_read_empty_tb" end time: Dec 11 16:40 UTC
+"async_fifo_read_empty_tb" end time: Dec 11 17:15 UTC
 "async_fifo_read_empty_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-9/12 Testing: async_fifo_data_patterns_tb
-9/12 Test: async_fifo_data_patterns_tb
+9/23 Testing: async_fifo_data_patterns_tb
+9/23 Test: async_fifo_data_patterns_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_data_patterns_tb.vvp"
 Directory: /workspace/build
-"async_fifo_data_patterns_tb" start time: Dec 11 16:40 UTC
+"async_fifo_data_patterns_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4771,18 +4771,18 @@ Testing: LFSR pseudo-random pattern
 
 /workspace/src/cores/async_fifo/test/data_patterns/async_fifo_data_patterns_tb.sv:383: $finish called at 2000000000 (1ps)
 <end of output>
-Test time =   0.34 sec
+Test time =   0.33 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_data_patterns_tb" end time: Dec 11 16:40 UTC
+"async_fifo_data_patterns_tb" end time: Dec 11 17:15 UTC
 "async_fifo_data_patterns_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-10/12 Testing: async_fifo_back_to_back_tb
-10/12 Test: async_fifo_back_to_back_tb
+10/23 Testing: async_fifo_back_to_back_tb
+10/23 Test: async_fifo_back_to_back_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_back_to_back_tb.vvp"
 Directory: /workspace/build
-"async_fifo_back_to_back_tb" start time: Dec 11 16:40 UTC
+"async_fifo_back_to_back_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -4855,15 +4855,15 @@ Testing: Maximum throughput
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_back_to_back_tb" end time: Dec 11 16:40 UTC
+"async_fifo_back_to_back_tb" end time: Dec 11 17:15 UTC
 "async_fifo_back_to_back_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-11/12 Testing: async_fifo_simultaneous_tb
-11/12 Test: async_fifo_simultaneous_tb
+11/23 Testing: async_fifo_simultaneous_tb
+11/23 Test: async_fifo_simultaneous_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_simultaneous_tb.vvp"
 Directory: /workspace/build
-"async_fifo_simultaneous_tb" start time: Dec 11 16:40 UTC
+"async_fifo_simultaneous_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7125,15 +7125,15 @@ Testing: Alternating single write/read
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_simultaneous_tb" end time: Dec 11 16:40 UTC
+"async_fifo_simultaneous_tb" end time: Dec 11 17:15 UTC
 "async_fifo_simultaneous_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-12/12 Testing: async_fifo_single_entry_tb
-12/12 Test: async_fifo_single_entry_tb
+12/23 Testing: async_fifo_single_entry_tb
+12/23 Test: async_fifo_single_entry_tb
 Command: "/usr/bin/vvp" "/workspace/build/async_fifo_single_entry_tb.vvp"
 Directory: /workspace/build
-"async_fifo_single_entry_tb" start time: Dec 11 16:40 UTC
+"async_fifo_single_entry_tb" start time: Dec 11 17:15 UTC
 Output:
 ----------------------------------------------------------
 VCD info: dumpfile test_case_1.vcd opened for output.
@@ -7196,8 +7196,826 @@ Testing: Single entry data integrity
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"async_fifo_single_entry_tb" end time: Dec 11 16:40 UTC
+"async_fifo_single_entry_tb" end time: Dec 11 17:15 UTC
 "async_fifo_single_entry_tb" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 11 16:40 UTC
+13/23 Testing: async_fifo_near_full_tb
+13/23 Test: async_fifo_near_full_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_near_full_tb.vvp"
+Directory: /workspace/build
+"async_fifo_near_full_tb" start time: Dec 11 17:15 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: N-Minus-1-Not-Full
+============================================================
+
+Testing: Write N-1 entries, verify not full
+  FIFO depth: 16
+  After 15 writes: full=0
+  PASS: N-1 entries does not trigger full
+
+============================================================
+  TEST CASE: N-Entries-Full
+============================================================
+
+Testing: Write N entries, verify full
+  After 16 writes: full=1
+  PASS: N entries triggers full
+
+============================================================
+  TEST CASE: Sustained-Near-Full
+============================================================
+
+Testing: Operate at N-1 entries for 100 cycles
+  Completed 100 cycles at near-full
+  PASS: Sustained near-full operation
+
+============================================================
+  TEST CASE: Reserve-Early-Full
+============================================================
+
+Testing: RESERVE=4 triggers full at 12 entries
+  After 11 writes: full_r4=0
+  After 12 writes: full_r4=1
+  PASS: RESERVE triggers early full correctly
+
+============================================================
+  TEST CASE: Full-Boundary-Timing
+============================================================
+
+Testing: Full flag timing at capacity boundary
+  After 1 read: full=0
+  After 1 write: full=1
+  PASS: Full flag boundary timing correct
+
+============================================================
+  TEST CASE: Near-Full-Integrity
+============================================================
+
+Testing: Data integrity while operating at near-full
+  PASS: Data integrity at near-full verified
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 171
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/near_full/async_fifo_near_full_tb.sv:403: $finish called at 33070000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_near_full_tb" end time: Dec 11 17:15 UTC
+"async_fifo_near_full_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/23 Testing: async_fifo_near_empty_tb
+14/23 Test: async_fifo_near_empty_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_near_empty_tb.vvp"
+Directory: /workspace/build
+"async_fifo_near_empty_tb" start time: Dec 11 17:15 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: One-Entry-Not-Empty
+============================================================
+
+Testing: Read to 1 entry remaining, verify not empty
+  With 1 entry: empty=0, has_data=1
+  PASS: 1 entry remaining is not empty
+
+============================================================
+  TEST CASE: Last-Entry-Empty
+============================================================
+
+Testing: Read last entry, verify empty
+  After reading last entry: empty=1, has_data=0
+  PASS: Last entry read triggers empty
+
+============================================================
+  TEST CASE: Sustained-Near-Empty
+============================================================
+
+Testing: Operate at 1 entry for 100 cycles
+  Completed 100 cycles at near-empty
+  PASS: Sustained near-empty operation
+
+============================================================
+  TEST CASE: Has-Data-Empty-Consistency
+============================================================
+
+Testing: has_data vs empty consistency
+  PASS: has_data always inverse of empty
+
+============================================================
+  TEST CASE: Empty-Boundary-Timing
+============================================================
+
+Testing: Empty flag timing at boundary
+  Empty deasserted after 5 cycles
+  Empty asserted after 1 cycles
+  PASS: Empty boundary timing correct
+
+============================================================
+  TEST CASE: Near-Empty-Integrity
+============================================================
+
+Testing: Data integrity while operating at near-empty
+  PASS: Data integrity at near-empty verified
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 203
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/near_empty/async_fifo_near_empty_tb.sv:407: $finish called at 34710000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_near_empty_tb" end time: Dec 11 17:15 UTC
+"async_fifo_near_empty_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/23 Testing: async_fifo_depth_variation_tb
+15/23 Test: async_fifo_depth_variation_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_depth_variation_tb.vvp"
+Directory: /workspace/build
+"async_fifo_depth_variation_tb" start time: Dec 11 17:15 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Depth-4-Fill-Empty
+============================================================
+
+Testing: ADDR_WIDTH=2, Depth=4 entries
+  Filled 4 entries, full=1
+  PASS: Depth=4 fill and empty
+
+============================================================
+  TEST CASE: Depth-16-Fill-Empty
+============================================================
+
+Testing: ADDR_WIDTH=4, Depth=16 entries
+  Filled 16 entries, full=1
+  PASS: Depth=16 fill and empty
+
+============================================================
+  TEST CASE: Depth-64-Fill-Empty
+============================================================
+
+Testing: ADDR_WIDTH=6, Depth=64 entries
+  Filled 64 entries, full=1
+  PASS: Depth=64 fill and empty
+
+============================================================
+  TEST CASE: Depth-4-Streaming
+============================================================
+
+Testing: Depth=4 streaming 100 entries
+  PASS: Depth=4 streaming
+
+============================================================
+  TEST CASE: All-Depths-Concurrent
+============================================================
+
+Testing: All depths operating concurrently
+  PASS: All depths concurrent operation
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 280
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/depth_variation/async_fifo_depth_variation_tb.sv:463: $finish called at 21690000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_depth_variation_tb" end time: Dec 11 17:15 UTC
+"async_fifo_depth_variation_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/23 Testing: async_fifo_width_variation_tb
+16/23 Test: async_fifo_width_variation_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_width_variation_tb.vvp"
+Directory: /workspace/build
+"async_fifo_width_variation_tb" start time: Dec 11 17:15 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Width-1-Bit
+============================================================
+
+Testing: DATA_WIDTH=1 (single bit)
+  PASS: 1-bit width verified
+
+============================================================
+  TEST CASE: Width-8-Byte
+============================================================
+
+Testing: DATA_WIDTH=8 (byte)
+  PASS: 8-bit width verified
+
+============================================================
+  TEST CASE: Width-32-Word
+============================================================
+
+Testing: DATA_WIDTH=32 (word)
+  PASS: 32-bit width verified
+
+============================================================
+  TEST CASE: Width-64-Dword
+============================================================
+
+Testing: DATA_WIDTH=64 (double word)
+  PASS: 64-bit width verified
+
+============================================================
+  TEST CASE: All-Widths-Concurrent
+============================================================
+
+Testing: All widths operating concurrently
+  PASS: All widths concurrent operation
+
+============================================================
+  TEST CASE: Full-Bit-Utilization
+============================================================
+
+Testing: Full bit utilization (all 1s and all 0s)
+  PASS: Full bit utilization verified
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 194
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/width_variation/async_fifo_width_variation_tb.sv:603: $finish called at 13530000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_width_variation_tb" end time: Dec 11 17:15 UTC
+"async_fifo_width_variation_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/23 Testing: async_fifo_random_traffic_tb
+17/23 Test: async_fifo_random_traffic_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_random_traffic_tb.vvp"
+Directory: /workspace/build
+"async_fifo_random_traffic_tb" start time: Dec 11 17:15 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Random-Balanced
+============================================================
+
+Testing: Balanced random traffic (P_wr=0.5, P_rd=0.5)
+  Transactions: 5000
+  ERROR at read 6
+  ERROR at read 7
+  ERROR at read 9
+  ERROR at read 10
+  ERROR at read 11
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  WATCHDOG TIMEOUT after 50000000000
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 0
+  Failures     : 1
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/random_traffic/async_fifo_random_traffic_tb.sv:441: $finish called at 50000000000 (1ps)
+<end of output>
+Test time =  10.15 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_random_traffic_tb" end time: Dec 11 17:16 UTC
+"async_fifo_random_traffic_tb" time elapsed: 00:00:10
+----------------------------------------------------------
+
+18/23 Testing: async_fifo_clock_jitter_tb
+18/23 Test: async_fifo_clock_jitter_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clock_jitter_tb.vvp"
+Directory: /workspace/build
+"async_fifo_clock_jitter_tb" start time: Dec 11 17:16 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Write-Clock-Jitter
+============================================================
+
+Testing: ±5% jitter on write clock only
+  Transactions: 500
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  WATCHDOG TIMEOUT after 30000000000
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 0
+  Failures     : 1
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/clock_jitter/async_fifo_clock_jitter_tb.sv:351: $finish called at 30000000000 (1ps)
+<end of output>
+Test time =  15.28 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_clock_jitter_tb" end time: Dec 11 17:16 UTC
+"async_fifo_clock_jitter_tb" time elapsed: 00:00:15
+----------------------------------------------------------
+
+19/23 Testing: async_fifo_clock_switching_tb
+19/23 Test: async_fifo_clock_switching_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_clock_switching_tb.vvp"
+Directory: /workspace/build
+"async_fifo_clock_switching_tb" start time: Dec 11 17:16 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Freq-Change-Mid-Transfer
+============================================================
+
+Testing: Frequency change during data transfer
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  WATCHDOG TIMEOUT after 20000000000
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 0
+  Failures     : 1
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/clock_switching/async_fifo_clock_switching_tb.sv:483: $finish called at 20000000000 (1ps)
+<end of output>
+Test time =   4.83 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_clock_switching_tb" end time: Dec 11 17:16 UTC
+"async_fifo_clock_switching_tb" time elapsed: 00:00:04
+----------------------------------------------------------
+
+20/23 Testing: async_fifo_prog_full_accuracy_tb
+20/23 Test: async_fifo_prog_full_accuracy_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_prog_full_accuracy_tb.vvp"
+Directory: /workspace/build
+"async_fifo_prog_full_accuracy_tb" start time: Dec 11 17:16 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Reserve-0-Same-As-Full
+============================================================
+
+Testing: RESERVE=0 - prog_full should equal full
+  FIFO depth: 16, threshold: 16
+  After 15 writes: full=0, prog_full=0
+  After 16 writes: full=1, prog_full=1
+  PASS: RESERVE=0 - prog_full equals full
+
+============================================================
+  TEST CASE: Reserve-4-Threshold
+============================================================
+
+Testing: RESERVE=4 - prog_full at 12 entries
+  After 11 writes: full=0, prog_full=0
+  After 12 writes: full=0, prog_full=1
+  After 16 writes: full=1, prog_full=1
+  PASS: RESERVE=4 threshold correct
+
+============================================================
+  TEST CASE: Reserve-8-Half-Full
+============================================================
+
+Testing: RESERVE=8 - prog_full at 8 entries (half full)
+  After 7 writes: full=0, prog_full=0
+  After 8 writes: full=0, prog_full=1
+  PASS: RESERVE=8 threshold correct
+
+============================================================
+  TEST CASE: Prog-Full-Deassert
+============================================================
+
+Testing: prog_full deasserts when below threshold
+  After 5 reads: full=0, prog_full=0
+  PASS: prog_full deasserts correctly
+
+============================================================
+  TEST CASE: Prog-Full-Full-Relationship
+============================================================
+
+Testing: full=1 always implies prog_full=1
+  PASS: full implies prog_full relationship verified
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 21
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/prog_full_accuracy/async_fifo_prog_full_accuracy_tb.sv:386: $finish called at 9570000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_prog_full_accuracy_tb" end time: Dec 11 17:16 UTC
+"async_fifo_prog_full_accuracy_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/23 Testing: async_fifo_flag_consistency_tb
+21/23 Test: async_fifo_flag_consistency_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_flag_consistency_tb.vvp"
+Directory: /workspace/build
+"async_fifo_flag_consistency_tb" start time: Dec 11 17:16 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Fill-Empty-Monitor
+============================================================
+
+Testing: Flag invariants during fill and empty cycle
+  Samples checked: 66, Violations: 0
+  PASS: Fill/empty flag consistency
+
+============================================================
+  TEST CASE: Random-Monitor
+============================================================
+
+Testing: Flag invariants during random operations
+  Samples checked: 1000, Violations: 0
+  PASS: Random operation flag consistency
+
+============================================================
+  TEST CASE: Boundary-Transitions
+============================================================
+
+Testing: Flag invariants at boundary transitions
+  Samples checked: 190, Violations: 0
+  PASS: Boundary transition flag consistency
+
+============================================================
+  TEST CASE: Reset-Transitions
+============================================================
+
+Testing: Flag invariants during reset transitions
+  After reset: full=0, prog_full=0, empty=1, has_data=0
+  Samples checked: 1, Violations: 0
+  PASS: Reset transition flag consistency
+
+============================================================
+  TEST CASE: Has-Data-Empty-Inverse
+============================================================
+
+Testing: has_data is always inverse of empty
+  Samples checked: 96, Violations: 0
+  PASS: has_data always inverse of empty
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 7
+  Failures     : 0
+------------------------------------------------------------
+  RESULT: *** PASSED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/flag_consistency/async_fifo_flag_consistency_tb.sv:436: $finish called at 42409500 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_flag_consistency_tb" end time: Dec 11 17:16 UTC
+"async_fifo_flag_consistency_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/23 Testing: async_fifo_asymm_boundary_tb
+22/23 Test: async_fifo_asymm_boundary_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_asymm_boundary_tb.vvp"
+Directory: /workspace/build
+"async_fifo_asymm_boundary_tb" start time: Dec 11 17:16 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Concat-Width-Ratio-Boundary
+============================================================
+
+Testing: Concat - Write 4 bytes, verify one 32-bit read
+  After 3 writes: empty=1, has_data=0
+  After 4 writes: empty=0, has_data=1
+  Read data: 0xa3a2a1a0, expected: 0xa3a2a1a0
+  PASS: Concat width ratio boundary
+
+============================================================
+  TEST CASE: Split-Width-Ratio-Boundary
+============================================================
+
+Testing: Split - Write one 32-bit word, verify 4 byte reads
+  After 1 write: empty=0, has_data=1
+  Read[0]: 0xbe
+  Read[1]: 0xad
+  Read[2]: 0xde
+  Read[3]: 0xef
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:227
+  Test: Split-Width-Ratio-Boundary
+  Expected: 190 (0xbe)
+  Actual:   239 (0xef)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:228
+  Test: Split-Width-Ratio-Boundary
+  Expected: 173 (0xad)
+  Actual:   190 (0xbe)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:229
+  Test: Split-Width-Ratio-Boundary
+  Expected: 222 (0xde)
+  Actual:   173 (0xad)
+
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:230
+  Test: Split-Width-Ratio-Boundary
+  Expected: 239 (0xef)
+  Actual:   222 (0xde)
+
+  PASS: Split width ratio boundary
+
+============================================================
+  TEST CASE: Concat-Multiple-Words
+============================================================
+
+Testing: Concat - 4 complete words
+  ERROR word 0: got 0x13121110, expected 0x03020100
+  ERROR word 1: got 0x23222120, expected 0x13121110
+  ERROR word 2: got 0x33323130, expected 0x23222120
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:290
+  Test: Concat-Multiple-Words
+  Expected: 3 (0x3)
+  Actual:   0 (0x0)
+
+  PASS: Concat multiple words
+
+============================================================
+  TEST CASE: Split-Interleaved
+============================================================
+
+Testing: Split - Interleaved read/write
+  Read[0]: 0x03
+  Read[1]: 0x02
+  Read[2]: 0x01
+  Read[3]: 0x08
+  Read[4]: 0x07
+  Read[5]: 0x06
+  Read[6]: 0x05
+  Read[7]: 0x08
+  Total bytes read: 8 (expected 8)
+  PASS: Split interleaved
+
+============================================================
+  TEST CASE: Concat-Streaming
+============================================================
+
+Testing: Concat - Streaming 10 words
+  Words transferred: 10, Errors: 0
+  PASS: Concat streaming
+
+============================================================
+  TEST CASE: Split-Streaming
+============================================================
+
+Testing: Split - Streaming 10 words (40 bytes)
+  Bytes transferred: 40, Errors: 40
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:480
+  Test: Split-Streaming
+  Expected: 40 (0x28)
+  Actual:   0 (0x0)
+
+  PASS: Split streaming
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 19
+  Failures     : 6
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/asymm_boundary/async_fifo_asymm_boundary_tb.sv:508: $finish called at 12490000 (1ps)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_asymm_boundary_tb" end time: Dec 11 17:16 UTC
+"async_fifo_asymm_boundary_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/23 Testing: async_fifo_asymm_ratios_tb
+23/23 Test: async_fifo_asymm_ratios_tb
+Command: "/usr/bin/vvp" "/workspace/build/async_fifo_asymm_ratios_tb.vvp"
+Directory: /workspace/build
+"async_fifo_asymm_ratios_tb" start time: Dec 11 17:16 UTC
+Output:
+----------------------------------------------------------
+VCD info: dumpfile test_case_1.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+
+============================================================
+  TEST CASE: Concat-2to1-Ratio
+============================================================
+
+Testing: Concat 2:1 (8-bit write, 16-bit read)
+  ERROR word 0: got 0x0302
+  ERROR word 1: got 0x0504
+  ERROR word 2: got 0x0706
+  ERROR word 3: got 0x0908
+  Errors: 4
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_ratios/async_fifo_asymm_ratios_tb.sv:205
+  Test: Concat-2to1-Ratio
+  Expected: 4 (0x4)
+  Actual:   0 (0x0)
+
+  PASS: Concat 2:1 ratio
+
+============================================================
+  TEST CASE: Concat-4to1-Ratio
+============================================================
+
+Testing: Concat 4:1 (8-bit write, 32-bit read)
+  Errors: 16
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_ratios/async_fifo_asymm_ratios_tb.sv:257
+  Test: Concat-4to1-Ratio
+  Expected: 16 (0x10)
+  Actual:   0 (0x0)
+
+  PASS: Concat 4:1 ratio
+
+============================================================
+  TEST CASE: Split-2to1-Ratio
+============================================================
+
+Testing: Split 2:1 (16-bit write, 8-bit read)
+  ERROR byte 0: got 0x01, expected 0x00000000
+  ERROR byte 1: got 0x02, expected 0x00000001
+  ERROR byte 2: got 0x03, expected 0x00000002
+  ERROR byte 3: got 0x04, expected 0x00000003
+  ERROR byte 4: got 0x05, expected 0x00000004
+  ERROR byte 5: got 0x06, expected 0x00000005
+  ERROR byte 6: got 0x07, expected 0x00000006
+  ERROR byte 7: got 0x08, expected 0x00000007
+  ERROR byte 8: got 0x09, expected 0x00000008
+  ERROR byte 9: got 0x08, expected 0x00000009
+  Bytes read: 10, Errors: 10
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_ratios/async_fifo_asymm_ratios_tb.sv:309
+  Test: Split-2to1-Ratio
+  Expected: 10 (0xa)
+  Actual:   0 (0x0)
+
+  PASS: Split 2:1 ratio
+
+============================================================
+  TEST CASE: Split-4to1-Ratio
+============================================================
+
+Testing: Split 4:1 (32-bit write, 8-bit read)
+  ERROR byte 0: got 0x01, expected 0x00000000
+  ERROR byte 1: got 0x02, expected 0x00000001
+  ERROR byte 2: got 0x03, expected 0x00000002
+  ERROR byte 3: got 0x04, expected 0x00000003
+  ERROR byte 4: got 0x05, expected 0x00000004
+  ERROR byte 5: got 0x06, expected 0x00000005
+  ERROR byte 6: got 0x07, expected 0x00000006
+  ERROR byte 7: got 0x08, expected 0x00000007
+  ERROR byte 8: got 0x09, expected 0x00000008
+  ERROR byte 9: got 0x0a, expected 0x00000009
+  ERROR byte 10: got 0x0b, expected 0x0000000a
+  ERROR byte 11: got 0x0c, expected 0x0000000b
+  ERROR byte 12: got 0x0d, expected 0x0000000c
+  ERROR byte 13: got 0x0e, expected 0x0000000d
+  ERROR byte 14: got 0x0f, expected 0x0000000e
+  ERROR byte 15: got 0x10, expected 0x0000000f
+  ERROR byte 16: got 0x11, expected 0x00000010
+  ERROR byte 17: got 0x12, expected 0x00000011
+  ERROR byte 18: got 0x13, expected 0x00000012
+  ERROR byte 19: got 0x10, expected 0x00000013
+  Bytes read: 20, Errors: 20
+
+*** ASSERTION FAILED ***
+  CHECK_EQUAL at /workspace/src/cores/async_fifo/test/asymm_ratios/async_fifo_asymm_ratios_tb.sv:361
+  Test: Split-4to1-Ratio
+  Expected: 20 (0x14)
+  Actual:   0 (0x0)
+
+  PASS: Split 4:1 ratio
+
+============================================================
+  TEST CASE: All-Ratios-Concurrent
+============================================================
+
+Testing: All ratios operating concurrently
+  Concat2: wr=20, rd=10
+  Concat4: wr=40, rd=10
+  Split2: wr=10, rd=20
+  Split4: wr=10, rd=40
+  PASS: All ratios concurrent
+
+============================================================
+                     TEST SUMMARY
+============================================================
+  Total Checks : 8
+  Failures     : 4
+------------------------------------------------------------
+  RESULT: *** FAILED ***
+============================================================
+
+/workspace/src/cores/async_fifo/test/asymm_ratios/async_fifo_asymm_ratios_tb.sv:523: $finish called at 11290000 (1ps)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"async_fifo_asymm_ratios_tb" end time: Dec 11 17:16 UTC
+"async_fifo_asymm_ratios_tb" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 11 17:16 UTC
