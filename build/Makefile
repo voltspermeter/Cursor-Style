@@ -127,6 +127,214 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named hdl_sync_reg
+
+# Build rule for target.
+hdl_sync_reg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_sync_reg
+.PHONY : hdl_sync_reg
+
+# fast build rule for target.
+hdl_sync_reg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_sync_reg.dir/build.make CMakeFiles/hdl_sync_reg.dir/build
+.PHONY : hdl_sync_reg/fast
+
+#=============================================================================
+# Target rules for targets named hdl_async_fifo
+
+# Build rule for target.
+hdl_async_fifo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_async_fifo
+.PHONY : hdl_async_fifo
+
+# fast build rule for target.
+hdl_async_fifo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_async_fifo.dir/build.make CMakeFiles/hdl_async_fifo.dir/build
+.PHONY : hdl_async_fifo/fast
+
+#=============================================================================
+# Target rules for targets named hdl_async_fifo_flags
+
+# Build rule for target.
+hdl_async_fifo_flags: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_async_fifo_flags
+.PHONY : hdl_async_fifo_flags
+
+# fast build rule for target.
+hdl_async_fifo_flags/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_async_fifo_flags.dir/build.make CMakeFiles/hdl_async_fifo_flags.dir/build
+.PHONY : hdl_async_fifo_flags/fast
+
+#=============================================================================
+# Target rules for targets named hdl_async_fifo_fwft
+
+# Build rule for target.
+hdl_async_fifo_fwft: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_async_fifo_fwft
+.PHONY : hdl_async_fifo_fwft
+
+# fast build rule for target.
+hdl_async_fifo_fwft/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_async_fifo_fwft.dir/build.make CMakeFiles/hdl_async_fifo_fwft.dir/build
+.PHONY : hdl_async_fifo_fwft/fast
+
+#=============================================================================
+# Target rules for targets named hdl_async_fifo_flags_fwft
+
+# Build rule for target.
+hdl_async_fifo_flags_fwft: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_async_fifo_flags_fwft
+.PHONY : hdl_async_fifo_flags_fwft
+
+# fast build rule for target.
+hdl_async_fifo_flags_fwft/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_async_fifo_flags_fwft.dir/build.make CMakeFiles/hdl_async_fifo_flags_fwft.dir/build
+.PHONY : hdl_async_fifo_flags_fwft/fast
+
+#=============================================================================
+# Target rules for targets named hdl_async_fifo_asymm_concat_fwft
+
+# Build rule for target.
+hdl_async_fifo_asymm_concat_fwft: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_async_fifo_asymm_concat_fwft
+.PHONY : hdl_async_fifo_asymm_concat_fwft
+
+# fast build rule for target.
+hdl_async_fifo_asymm_concat_fwft/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_async_fifo_asymm_concat_fwft.dir/build.make CMakeFiles/hdl_async_fifo_asymm_concat_fwft.dir/build
+.PHONY : hdl_async_fifo_asymm_concat_fwft/fast
+
+#=============================================================================
+# Target rules for targets named hdl_async_fifo_asymm_split_fwft
+
+# Build rule for target.
+hdl_async_fifo_asymm_split_fwft: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdl_async_fifo_asymm_split_fwft
+.PHONY : hdl_async_fifo_asymm_split_fwft
+
+# fast build rule for target.
+hdl_async_fifo_asymm_split_fwft/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hdl_async_fifo_asymm_split_fwft.dir/build.make CMakeFiles/hdl_async_fifo_asymm_split_fwft.dir/build
+.PHONY : hdl_async_fifo_asymm_split_fwft/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_clkrates_tb_compile
+
+# Build rule for target.
+test_async_fifo_clkrates_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_clkrates_tb_compile
+.PHONY : test_async_fifo_clkrates_tb_compile
+
+# fast build rule for target.
+test_async_fifo_clkrates_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb_compile.dir/build
+.PHONY : test_async_fifo_clkrates_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_clkrates_tb_run
+
+# Build rule for target.
+test_async_fifo_clkrates_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_clkrates_tb_run
+.PHONY : test_async_fifo_clkrates_tb_run
+
+# fast build rule for target.
+test_async_fifo_clkrates_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb_run.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb_run.dir/build
+.PHONY : test_async_fifo_clkrates_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_clkrates_tb
+
+# Build rule for target.
+test_async_fifo_clkrates_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_clkrates_tb
+.PHONY : test_async_fifo_clkrates_tb
+
+# fast build rule for target.
+test_async_fifo_clkrates_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_clkrates_tb.dir/build.make CMakeFiles/test_async_fifo_clkrates_tb.dir/build
+.PHONY : test_async_fifo_clkrates_tb/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_writepast_tb_compile
+
+# Build rule for target.
+test_async_fifo_writepast_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_writepast_tb_compile
+.PHONY : test_async_fifo_writepast_tb_compile
+
+# fast build rule for target.
+test_async_fifo_writepast_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb_compile.dir/build.make CMakeFiles/test_async_fifo_writepast_tb_compile.dir/build
+.PHONY : test_async_fifo_writepast_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_writepast_tb_run
+
+# Build rule for target.
+test_async_fifo_writepast_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_writepast_tb_run
+.PHONY : test_async_fifo_writepast_tb_run
+
+# fast build rule for target.
+test_async_fifo_writepast_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb_run.dir/build.make CMakeFiles/test_async_fifo_writepast_tb_run.dir/build
+.PHONY : test_async_fifo_writepast_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_writepast_tb
+
+# Build rule for target.
+test_async_fifo_writepast_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_writepast_tb
+.PHONY : test_async_fifo_writepast_tb
+
+# fast build rule for target.
+test_async_fifo_writepast_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_writepast_tb.dir/build.make CMakeFiles/test_async_fifo_writepast_tb.dir/build
+.PHONY : test_async_fifo_writepast_tb/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_fwft_writepast_tb_compile
+
+# Build rule for target.
+test_async_fifo_fwft_writepast_tb_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_fwft_writepast_tb_compile
+.PHONY : test_async_fifo_fwft_writepast_tb_compile
+
+# fast build rule for target.
+test_async_fifo_fwft_writepast_tb_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb_compile.dir/build
+.PHONY : test_async_fifo_fwft_writepast_tb_compile/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_fwft_writepast_tb_run
+
+# Build rule for target.
+test_async_fifo_fwft_writepast_tb_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_fwft_writepast_tb_run
+.PHONY : test_async_fifo_fwft_writepast_tb_run
+
+# fast build rule for target.
+test_async_fifo_fwft_writepast_tb_run/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb_run.dir/build
+.PHONY : test_async_fifo_fwft_writepast_tb_run/fast
+
+#=============================================================================
+# Target rules for targets named test_async_fifo_fwft_writepast_tb
+
+# Build rule for target.
+test_async_fifo_fwft_writepast_tb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_async_fifo_fwft_writepast_tb
+.PHONY : test_async_fifo_fwft_writepast_tb
+
+# fast build rule for target.
+test_async_fifo_fwft_writepast_tb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_async_fifo_fwft_writepast_tb.dir/build.make CMakeFiles/test_async_fifo_fwft_writepast_tb.dir/build
+.PHONY : test_async_fifo_fwft_writepast_tb/fast
+
+#=============================================================================
 # Target rules for targets named run_all_tests
 
 # Build rule for target.
@@ -148,7 +356,23 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... hdl_async_fifo"
+	@echo "... hdl_async_fifo_asymm_concat_fwft"
+	@echo "... hdl_async_fifo_asymm_split_fwft"
+	@echo "... hdl_async_fifo_flags"
+	@echo "... hdl_async_fifo_flags_fwft"
+	@echo "... hdl_async_fifo_fwft"
+	@echo "... hdl_sync_reg"
 	@echo "... run_all_tests"
+	@echo "... test_async_fifo_clkrates_tb"
+	@echo "... test_async_fifo_clkrates_tb_compile"
+	@echo "... test_async_fifo_clkrates_tb_run"
+	@echo "... test_async_fifo_fwft_writepast_tb"
+	@echo "... test_async_fifo_fwft_writepast_tb_compile"
+	@echo "... test_async_fifo_fwft_writepast_tb_run"
+	@echo "... test_async_fifo_writepast_tb"
+	@echo "... test_async_fifo_writepast_tb_compile"
+	@echo "... test_async_fifo_writepast_tb_run"
 .PHONY : help
 
 

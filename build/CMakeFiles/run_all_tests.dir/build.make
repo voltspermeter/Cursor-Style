@@ -66,9 +66,7 @@ include CMakeFiles/run_all_tests.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run_all_tests.dir/progress.make
 
-CMakeFiles/run_all_tests: test_async_fifo_clkrates_tb_run
-CMakeFiles/run_all_tests: test_async_fifo_writepast_tb_run
-CMakeFiles/run_all_tests: test_async_fifo_fwft_writepast_tb_run
+CMakeFiles/run_all_tests:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running all tests in suite: run_all_tests"
 
 run_all_tests: CMakeFiles/run_all_tests

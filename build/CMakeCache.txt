@@ -67,7 +67,7 @@ CMAKE_SKIP_RPATH:BOOL=NO
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Icarus Verilog compiler
-IVERILOG_EXECUTABLE:FILEPATH=IVERILOG_EXECUTABLE-NOTFOUND
+IVERILOG_EXECUTABLE:FILEPATH=/usr/bin/iverilog
 
 //Default Icarus Verilog compiler flags
 IVERILOG_FLAGS:STRING=-g2012
@@ -82,7 +82,7 @@ SYNC_REG_SOURCE:FILEPATH=
 VUNIT_INCLUDE_DIR:PATH=/workspace/_cmake/vunit
 
 //Icarus Verilog simulation runtime
-VVP_EXECUTABLE:FILEPATH=VVP_EXECUTABLE-NOTFOUND
+VVP_EXECUTABLE:FILEPATH=/usr/bin/vvp
 
 //Value Computed by CMake
 async_fifo_project_BINARY_DIR:STATIC=/workspace/build
