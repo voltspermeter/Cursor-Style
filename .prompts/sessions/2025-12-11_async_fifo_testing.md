@@ -413,11 +413,35 @@ Enforcement mechanisms now in place:
 
 ---
 
+## Prompt 21
+**Time:** Current  
+**Thinking Time:** ~5s
+
+### User Query
+```
+Create a setup.sh script to configure a basic Linux image with any tools or package required for this project.
+```
+
+### Summary
+Created comprehensive `setup.sh` script with:
+- Multi-distro support (Ubuntu/Debian, Fedora/RHEL, Arch)
+- Package installation (git, cmake, iverilog, python3, gtkwave)
+- Version verification with minimum requirements
+- Build directory configuration
+- Test execution verification
+- Color-coded output
+- Command-line options (--install, --verify, --build, --test, --all)
+
+### Outcome
+Created `/workspace/setup.sh` - run with `./setup.sh` or `./setup.sh --help`
+
+---
+
 ## Session Statistics
 
 | Metric | Value |
 |--------|-------|
-| Total Prompts | 20 |
+| Total Prompts | 21 |
 | Tests Created | 20 |
 | Total Test Cases | ~100 |
 | All Tests Passing | Yes (23/23) |
