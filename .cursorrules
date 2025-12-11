@@ -65,3 +65,55 @@ When generating or modifying Verilog/SystemVerilog code in this project, strictl
 ## Synthesis Directives
 - Use `(* RAM_STYLE = ... *)` attributes for RAM inference
 - Use `/* verilator lint_off/on ... */` pragmas for known lint warnings
+
+---
+
+## CMake Build System
+
+### RTL Source Registration
+Use `add_hdl_source()` for RTL modules:
+```cmake
+add_hdl_source( module_name.v
+  DEPENDS
+    dependency_module )
+```
+- First argument: source file name with `.v` extension
+- `DEPENDS`: list module dependencies (modules instantiated internally)
+- Module/target name is derived from filename without extension
+- Indent dependencies with 4 spaces, one per line
+
+### VUnit Test Registration
+Use `add_vunit_test()` for testbenches:
+```cmake
+add_vunit_test( module_tb.sv
+  DEPENDS rtl_module
+  VCDS
+    test_case_1
+  VIEW_SIGNALS
+    DUT.rst
+    DUT.clk
+    DUT.data
+)
+```
+- First argument: testbench file with `.sv` extension
+- `DEPENDS`: the RTL module under test
+- `VCDS`: VCD dump file names (match test case names)
+- `VIEW_SIGNALS`: hierarchical signals for waveform viewer (use `DUT.` prefix)
+
+### Directory Organization
+```
+module/
+├── CMakeText.txt      # Top-level: add_subdirectory(rtl), add_subdirectory(test)
+├── rtl/
+│   └── CMakeLists.txt # add_hdl_source() calls
+└── test/
+    ├── CMakeLists.txt # add_subdirectory() for each test
+    └── test_name/
+        └── CMakeLists.txt # add_vunit_test() call
+```
+
+### CMake Formatting
+- 2-space indentation for continuation
+- One dependency/signal per line
+- Close parenthesis on last argument line
+- Blank line between function calls

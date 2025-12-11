@@ -18,6 +18,7 @@ This style guide documents the coding conventions and patterns found in this cod
 10. [Synthesis Directives](#synthesis-directives)
 11. [Testbench Conventions](#testbench-conventions)
 12. [Formatting and Whitespace](#formatting-and-whitespace)
+13. [CMake Build System](#cmake-build-system)
 
 ---
 
@@ -594,3 +595,136 @@ end
 | Reset values | `'b0` shorthand or explicit widths |
 | Sequential logic | Non-blocking (`<=`) |
 | Combinational logic | `assign` statements |
+
+---
+
+## CMake Build System
+
+This project uses CMake with custom functions for HDL source management and VUnit test integration.
+
+### Directory Structure
+
+```
+project/
+├── CMakeText.txt          # Top-level: includes rtl/ and test/
+├── rtl/
+│   └── CMakeLists.txt     # RTL source definitions
+└── test/
+    ├── CMakeLists.txt     # Test subdirectory includes
+    └── <test_name>/
+        └── CMakeLists.txt # Individual test definitions
+```
+
+### Top-Level CMake File
+
+The top-level file uses `add_subdirectory()` to include RTL and test directories:
+
+```cmake
+add_subdirectory(rtl)
+add_subdirectory(test)
+```
+
+### RTL Source Registration (`add_hdl_source`)
+
+Use the `add_hdl_source()` function to register RTL modules:
+
+```cmake
+add_hdl_source( <source_file>.v
+  DEPENDS
+    <dependency_module_1>
+    <dependency_module_2> )
+```
+
+**Parameters:**
+- First argument: Source file name (with `.v` extension)
+- `DEPENDS`: Keyword followed by list of module dependencies (one per line)
+
+**Example:**
+
+```cmake
+add_hdl_source( async_fifo.v
+  DEPENDS
+    sync_reg )
+
+add_hdl_source( async_fifo_fwft.v
+  DEPENDS
+    async_fifo )
+
+add_hdl_source( async_fifo_asymm_concat_fwft.v
+  DEPENDS
+    async_fifo_fwft)
+```
+
+**Conventions:**
+- The module name (target name) is derived from the file name without extension
+- Dependencies reference other module names, not file names
+- List dependencies that the module instantiates internally
+- Indent dependency names with 4 spaces
+
+### Test Directory Structure
+
+The test `CMakeLists.txt` includes subdirectories for each test:
+
+```cmake
+add_subdirectory(clock_rates)
+add_subdirectory(write_past)
+add_subdirectory(write_past_fwft)
+```
+
+### VUnit Test Registration (`add_vunit_test`)
+
+Use the `add_vunit_test()` function to register testbenches:
+
+```cmake
+add_vunit_test( <testbench_file>.sv
+  DEPENDS <rtl_module>
+  VCDS
+    <vcd_name_1>
+    <vcd_name_2>
+  VIEW_SIGNALS
+    DUT.<signal_1>
+    DUT.<signal_2>
+)
+```
+
+**Parameters:**
+- First argument: Testbench file name (with `.sv` extension)
+- `DEPENDS`: The RTL module being tested
+- `VCDS`: List of VCD dump file names (without `.vcd` extension)
+- `VIEW_SIGNALS`: Hierarchical signal names for waveform viewing
+
+**Example:**
+
+```cmake
+add_vunit_test( async_fifo_clkrates_tb.sv
+  DEPENDS async_fifo_fwft
+  VCDS
+    test_case_1
+  VIEW_SIGNALS
+    DUT.rst
+    DUT.wr_clk
+    DUT.wr_en
+    DUT.rd_clk
+    DUT.full
+    DUT.empty
+    DUT.has_data
+    DUT.rd_en
+    DUT.wr_data
+    DUT.rd_data
+)
+```
+
+**Conventions:**
+- Test directory name should be descriptive of the test purpose
+- Testbench file name follows pattern: `<module>_<test_type>_tb.sv`
+- VCD names typically match test case names in the testbench
+- VIEW_SIGNALS uses hierarchical paths starting with `DUT.`
+- Include key interface signals: clocks, resets, enables, data, flags
+
+### CMake Formatting Rules
+
+- Use 2-space indentation for continuation lines
+- Place each dependency/signal on its own line
+- No trailing spaces
+- One blank line between `add_hdl_source()` or `add_vunit_test()` calls
+- Close parenthesis on the last argument line (not on its own line)
